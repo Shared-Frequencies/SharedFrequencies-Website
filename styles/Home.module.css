@@ -107,10 +107,24 @@
   font-size: 1.25rem;
   line-height: 1.5;
 }
+.oval {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 80px;
+  border: solid black;
+  border-radius: 40px;
+}
 
 .logo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 1.5rem;
   height: 1em;
   margin-left: 0.5rem;
+  border-radius: 50%;
 }
 
 @media (max-width: 600px) {
