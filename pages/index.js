@@ -24,21 +24,23 @@ export default function Home() {
           <div className="twitch">
             <div className="twitch-video">
               <iframe
-                  src="https://player.twitch.tv/?channel=sharedfrequenciesradio&parent=www.sharedfrequencies.com&parent=sharedfrequencies.com"
+                  src="https://player.twitch.tv/?collection=38qoa9pThxWR5A&video=462690692&parent=localhost"
                   frameBorder="0"
                   scrolling="no"
+                  parent="sharedfrequencies.com"
                   allowFullScreen="true"
-                  height="100%"
-                  width="100%">
+                  height="378"
+                  width="620"
+                  >
               </iframe>
             </div>
             <div className="twitch-chat d-none d-lg-block">
               <iframe
                   frameBorder="0"
                   scrolling="no"
-                  src="https://www.twitch.tv/embed/sharedfrequenciesradio/chat?darkpopout&parent=www.sharedfrequencies.com&parent=sharedfrequencies.com"
-                  height="100%"
-                  width="100%">
+                  src="https://www.twitch.tv/embed/sharedfrequenciesradio/chat?darkpopout&parent=localhost"
+                  height="378"
+                  width="620">
               </iframe>
             </div>
           </div>
