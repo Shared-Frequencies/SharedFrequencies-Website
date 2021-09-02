@@ -13,9 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <header className={styles.header}>
-          <div className={styles.logo}>
-            <Image src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
-          </div>
+          <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
 
           <div className={styles.oval}></div>
         </header>
