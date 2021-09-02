@@ -1,6 +1,7 @@
+import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
         <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
         <div className={styles.headerSpacer}></div>
         <div className={styles.oval}>
-            <Image className={styles.playButton} src="/smallPlay.png" alt="play button" width={25} height={25}></Image>
+            <img className={styles.playButton} src="/smallPlay.png" alt="play button" width={25} height={25} />
         </div>
       </header>
 
