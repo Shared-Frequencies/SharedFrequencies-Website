@@ -14,7 +14,6 @@ export default function Home() {
 
       <header className={styles.header}>
         <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
-        <div className={styles.headerSpacer}></div>
         <div className={styles.oval}>
             <img className={styles.playButton} src="/smallPlay.png" alt="play button" width={25} height={25} />
         </div>

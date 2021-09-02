@@ -43,12 +43,10 @@
   display: flex;
 }
 
-.headerSpacer {
-  min-width: 5vw;
-}
 .oval {
   min-width: 55vw;
   height: 3em;
+  margin-left: 5vw;
   border: solid black;
   border-radius: 40px;
   position: relative;
