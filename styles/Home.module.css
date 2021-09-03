@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   height: auto;
+  margin: 0 auto;
 }
 
 .main {
@@ -15,8 +16,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   padding-bottom: 40px;
-  position: relative;
-  /*transform: translateY(-25%) translateX(0%);*/
+  margin: auto;
 }
 
 .footer {
@@ -26,12 +26,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.twitch-video {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
 }
 
 .header {
@@ -46,9 +40,44 @@
 
 .playButton {
   position: relative;
+  flex-direction: row;
   top: 50%;
   transform: translateY(-50%) translateX(70%);
   display: flex;
+  margin-right: 10em;
+}
+
+.nowPlaying {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  transform: translateY(-75%) translateX(10%);
+  align-items: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-min-size: .66em;
+  margin-right: 5em;
+  margin-left: 2em;
+}
+
+
+.twitchVideo {
+  display: flex;
+  margin-right: 50em;
+  padding-right: 3em;
+  padding-left: 3em;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.twitchChat {
+  display: flex;
+  padding-right: 3em;
+  padding-left: 3em;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .oval {
@@ -65,3 +94,32 @@
   min-width: 10vw;
 }
 
+@media only screen and (max-width: 960px) {
+  .twitchVideo {
+    margin-right: 30em;
+    width: 100%;
+    height: 300px
+  }
+  .twitchChat {
+    width: 100%;
+  }
+
+  .nowPlaying {
+    margin-right: 3em;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .twitchVideo {
+    margin-right: 0;
+    width: 100%;
+    height: 250px
+  }
+  .twitchChat {
+    width: 100%;
+  }
+
+  .nowPlaying {
+    margin-right: 2em;
+  }
+}
