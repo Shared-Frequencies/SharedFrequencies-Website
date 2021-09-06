@@ -3,17 +3,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import TwitchVideo from "../components/TwitchVideo";
 import PlayPauseToggle from "../components/PlayPauseToggle";
-import Marquee, {Motion, randomIntFromInterval} from "react-marquee-slider";
-import {times} from "lodash";
-
+import Schedule from "../components/Schedule";
 
 export default function Home({ nowPlaying, schedule }) {
-    const sched = Object.values(schedule)
-        .flat()
-        .splice(0, Object.values(schedule).flat().length-1)
-        .map((show) => JSON.stringify({id: show.id, name: show.name, time: show.starts}))
 
-    console.log(sched)
   return (
     <div className={styles.container}>
       <Head>
@@ -31,17 +24,12 @@ export default function Home({ nowPlaying, schedule }) {
             <div className={styles.nowPlaying}>
                 <p>{nowPlaying !== null ? nowPlaying.name : 'Shared Frequencies Radio'}</p>
             </div>
-
-            {/*<marquee*/}
-            {/*    className={styles.nowPlaying}*/}
-            {/*>*/}
-            {/*    */}
-            {/*</marquee>*/}
         </div>
       </header>
 
       <main className={styles.main}>
-          <TwitchVideo/>
+          <TwitchVideo classname={styles.twitch}/>
+          <Schedule schedule={schedule}/>
 
       </main>
 
