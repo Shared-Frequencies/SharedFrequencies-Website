@@ -31,6 +31,7 @@ export default function Home({ nowPlaying, schedule }) {
           <TwitchVideo classname={styles.twitch}/>
           <Schedule schedule={schedule}/>
 
+
       </main>
 
       <footer className={styles.footer}>

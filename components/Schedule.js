@@ -1,4 +1,5 @@
 import styles from '../styles/Home.module.css'
+import { parse } from 'date-format-parse';
 
 export default function Schedule({schedule}) {
     const formattedSchedule = Object.values(schedule)
@@ -17,7 +18,7 @@ export default function Schedule({schedule}) {
             <ol className={styles.dates}>
                 {formattedSchedule.map((ele) => (
                     <li>
-                        {ele.starts}
+                        {parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').toDateString()}
                     </li>
                 ))}
             </ol>

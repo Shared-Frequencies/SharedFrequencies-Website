@@ -16,7 +16,7 @@ export default function TwitchVideo() {
                 // className={styles.twitchChat}
                 frameBorder="0"
                 scrolling="no"
-                src="https://www.twitch.tv/embed/sharedfrequenciesradio/chat?darkpopout&parent=localhost"
+                src="https://www.twitch.tv/embed/sharedfrequenciesradio/chat?darkpopout&parent=sharedfrequencies.live"
                 height={`${size.height * 0.33}`}
                 width={`${size.width * 0.80}`}
             >

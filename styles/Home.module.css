@@ -120,6 +120,12 @@
   max-width: 65vw;
 }
 
+.imageBot {
+  display: grid;
+  flex-direction: row;
+  width: 35vw;
+}
+
 .logo {
   padding: 5vw;
   min-width: 10vw;
@@ -132,7 +138,7 @@
   .calendar {
     transform: translateX(6%);
   }
-  .dates P {
+  .dates {
     transform: translateX(9%);
   }
 
