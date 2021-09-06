@@ -1,8 +1,25 @@
 import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import Image from 'next/image'
+import TwitchVideo from "../components/TwitchVideo";
+import {useRef, useState} from "react";
+
+// const audioElement = new Audio("https://sharedfrequencies.out.airtime.pro/sharedfrequencies_a");
 
 export default function Home({ nowPlaying, schedule }) {
+
+
+    // const [audio] = useState(typeof Audio !== "undefined" && new Audio("https://sharedfrequencies.out.airtime.pro/sharedfrequencies_a"));
+
+    const musicPlayers = useRef(
+        typeof Audio !== "undefined" ?
+            new Audio("https://sharedfrequencies.out.airtime.pro/sharedfrequencies_a") :
+            undefined
+    );
+
+    const [playing, setPlaying] = useState(false);
+
+    const toggle = () => setPlaying(!playing);
 
     const sched = Object.values(schedule)
         .flat()
@@ -21,31 +38,36 @@ export default function Home({ nowPlaying, schedule }) {
       <header className={styles.header}>
         <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
         <div className={styles.oval}>
-            <img className={styles.playButton} src="/smallPlay.png" alt="play button" width={25} height={25} />
-            <marquee className={styles.nowPlaying}>{nowPlaying !== null ? nowPlaying.name : 'Shared Frequencies Radio'}</marquee>
+            {!playing ? <img
+                className={styles.playButton}
+                src="/smallPlay.png"
+                alt="play button"
+                width={25}
+                height={25}
+                onClick={() => {
+                    musicPlayers.current?.play()
+                    toggle()
+                } }
+            /> : <img
+                className={styles.playButton}
+                src="/smallPause.png"
+                alt="play button"
+                width={25}
+                height={25}
+                onClick={() => {
+                    musicPlayers.current?.pause()
+                    toggle()
+                } }
+            />}
+
+            <marquee
+                className={styles.nowPlaying}>{nowPlaying !== null ? nowPlaying.name : 'Shared Frequencies Radio'}
+            </marquee>
         </div>
       </header>
 
       <main className={styles.main}>
-          <iframe
-              className={styles.twitchVideo}
-              src="https://player.twitch.tv/?collection=38qoa9pThxWR5A&video=462690692&parent=localhost"
-              frameBorder="0"
-              scrolling="no"
-              parent="sharedfrequencies.live"
-              allowFullScreen="true"
-              height="378"
-              width="100%"
-          >
-          </iframe>
-          <iframe
-              className={styles.twitchChat}
-              frameBorder="0"
-              scrolling="no"
-              src="https://www.twitch.tv/embed/sharedfrequenciesradio/chat?darkpopout&parent=localhost"
-              height="378"
-              width="100%">
-          </iframe>
+          <TwitchVideo></TwitchVideo>
 
       </main>
 

@@ -60,26 +60,6 @@
   margin-left: 2em;
 }
 
-
-.twitchVideo {
-  display: flex;
-  margin-right: 50em;
-  padding-right: 3em;
-  padding-left: 3em;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.twitchChat {
-  display: flex;
-  padding-right: 3em;
-  padding-left: 3em;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-}
-
 .oval {
   min-width: 55vw;
   height: 3em;
@@ -95,14 +75,6 @@
 }
 
 @media only screen and (max-width: 960px) {
-  .twitchVideo {
-    margin-right: 30em;
-    width: 100%;
-    height: 300px
-  }
-  .twitchChat {
-    width: 100%;
-  }
 
   .nowPlaying {
     margin-right: 3em;
@@ -110,16 +82,8 @@
 }
 
 @media only screen and (max-width: 660px) {
-  .twitchVideo {
-    margin-right: 0;
-    width: 100%;
-    height: 250px
-  }
-  .twitchChat {
-    width: 100%;
-  }
 
   .nowPlaying {
-    margin-right: 2em;
+    margin-right: 3em;
   }
 }
