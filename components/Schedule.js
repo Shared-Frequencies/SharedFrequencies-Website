@@ -10,14 +10,14 @@ export default function Schedule({schedule}) {
         <div className={styles.calendar}>
             <ol className={styles.names}>
                 {formattedSchedule.map((ele) => (
-                    <li>
+                    <li key={ele.id}>
                         {ele.name}
                     </li>
                 ))}
             </ol>
             <ol className={styles.dates}>
                 {formattedSchedule.map((ele) => (
-                    <li>
+                    <li key={ele.id}>
                         {parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').toDateString()}
                     </li>
                 ))}
