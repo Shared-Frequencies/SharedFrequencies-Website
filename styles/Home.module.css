@@ -129,6 +129,13 @@
   .nowPlaying {
     margin-right: 3em;
   }
+  .calendar {
+    transform: translateX(6%);
+  }
+  .dates P {
+    transform: translateX(9%);
+  }
+
 }
 
 @media only screen and (max-width: 660px) {
