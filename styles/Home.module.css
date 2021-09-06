@@ -140,6 +140,7 @@
     font-size: .8em;
   }
   .calendar {
+    transform: translateX(-7%);
     font-size: .25em;
   }
 }
