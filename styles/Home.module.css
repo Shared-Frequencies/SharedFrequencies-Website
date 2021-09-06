@@ -50,14 +50,37 @@
 .nowPlaying {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  transform: translateY(-75%) translateX(10%);
+  justify-content: center;
+  transform: translateY(-60%) translateX(10%);
   align-items: flex-start;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-min-size: .66em;
   margin-right: 5em;
   margin-left: 2em;
+
+}
+.marquee {
+  transform: translateY(-70%) translateX(-10%);
+  width: 450px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  margin-right: 5em;
+}
+.nowPlaying p {
+  display: inline-block;
+  padding-left: 100%;
+  justify-content: center;
+  white-space: nowrap;
+  align-items: flex-start;
+  animation: nowPlaying 12s linear infinite;
+}
+
+@keyframes nowPlaying {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
 }
 
 .oval {
@@ -67,6 +90,7 @@
   border: solid black;
   border-radius: 40px;
   position: relative;
+  max-width: 65vw;
 }
 
 .logo {
@@ -84,6 +108,9 @@
 @media only screen and (max-width: 660px) {
 
   .nowPlaying {
-    margin-right: 3em;
+    margin-right: 4em;
+  }
+  .nowPlaying p {
+    font-size: .8em;
   }
 }

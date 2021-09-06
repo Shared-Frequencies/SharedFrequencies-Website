@@ -18,7 +18,8 @@ export default function TwitchVideo() {
                 scrolling="no"
                 src="https://www.twitch.tv/embed/sharedfrequenciesradio/chat?darkpopout&parent=localhost"
                 height={`${size.height * 0.33}`}
-                width={`${size.width * 0.80}`}>
+                width={`${size.width * 0.80}`}
+            >
             </iframe>
         </div>
     )
