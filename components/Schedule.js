@@ -1,5 +1,6 @@
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
 import { parse } from 'date-format-parse';
+import {decode} from 'html-entities';
 
 export default function Schedule({schedule}) {
     const formattedSchedule = Object.values(schedule)
@@ -11,7 +12,7 @@ export default function Schedule({schedule}) {
             <ol className={styles.names}>
                 {formattedSchedule.map((ele) => (
                     <li key={ele.id}>
-                        {ele.name}
+                        {decode(ele.name)}
                     </li>
                 ))}
             </ol>
