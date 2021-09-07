@@ -85,7 +85,7 @@
   0%   { transform: translate(0, 0); }
   100% { transform: translate(-100%, 0); }
 }
-.calendar{
+.calendar {
   padding-top: 1em;
   display: grid;
   grid-template-columns: auto auto;
@@ -107,7 +107,6 @@
   flex-direction: column;
   font-size: .7em;
   align-items: flex-start;
-
 }
 
 .oval {
@@ -120,17 +119,10 @@
   max-width: 65vw;
 }
 
-.imageBot {
-  display: grid;
-  flex-direction: row;
-  width: 35vw;
-}
-
 .logo {
   padding: 5vw;
   min-width: 10vw;
 }
-
 @media only screen and (max-width: 960px) {
   .nowPlaying {
     margin-right: 3em;

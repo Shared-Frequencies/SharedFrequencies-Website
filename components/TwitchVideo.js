@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import ReactPlayer from "react-player";
-import styles from "../styles/Home.module.css";
 
 export default function TwitchVideo() {
     const size = useWindowSize();
@@ -12,15 +11,6 @@ export default function TwitchVideo() {
                 height = {size.height * 0.33}
                 width = {size.width * 0.80}
             />
-            <iframe
-                // className={styles.twitchChat}
-                frameBorder="0"
-                scrolling="no"
-                src="https://www.twitch.tv/embed/sharedfrequenciesradio/chat?darkpopout&parent=localhost"
-                height={`${size.height * 0.33}`}
-                width={`${size.width * 0.80}`}
-            >
-            </iframe>
         </div>
     )
 }
