@@ -2,7 +2,7 @@ import {useRef, useState} from "react";
 import styles from "../styles/Home.module.css";
 
 export default function PlayPauseToggle() {
-    const musicPlayers = useRef(
+    let musicPlayers = useRef(
         typeof Audio !== "undefined" ?
             new Audio("https://sharedfrequencies.out.airtime.pro/sharedfrequencies_a") :
             undefined
@@ -20,6 +20,7 @@ export default function PlayPauseToggle() {
         width={25}
         height={25}
         onClick={() => {
+            musicPlayers.current?.load()
             musicPlayers.current?.play()
             toggle()
         } }
