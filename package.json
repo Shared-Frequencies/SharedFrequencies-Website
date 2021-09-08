@@ -14,7 +14,11 @@
     "next": "11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-player": "^2.9.0"
+    "react-player": "^2.9.0",
+    "reactstrap": "^8.10.0",
+    "socket.io": "^4.2.0",
+    "socket.io-client": "^4.2.0",
+    "username-generator": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "7.32.0",

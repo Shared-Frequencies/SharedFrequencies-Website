@@ -28,6 +28,10 @@
   align-items: center;
 }
 
+.twitch {
+ width: 80vw;
+}
+
 .header {
   display: flex;
   margin: 1rem 1rem 1rem 1rem;
@@ -35,10 +39,13 @@
   flex-shrink: 0;
   align-items: center;
   min-width: 90vw;
-  min-height: 10vw;
+  min-height: 10vh;
 }
-.twitch {
-
+.bottomContainer {
+  display: flex;
+  flex-direction: row;
+  max-width: 80vw;
+  transform: translateX(-3%);
 }
 
 .playButton {
@@ -108,6 +115,26 @@
   font-size: .7em;
   align-items: flex-start;
 }
+.chatStream {
+  margin-left: 0.5em;
+  overflow: auto;
+  word-wrap: break-word;
+  margin-bottom: 1em;
+
+}
+.chatTitle {
+
+}
+
+.chatBoxContainer {
+  height: 20vh;
+}
+
+.chatBoxContainer div {
+  max-width: 35vw;
+  max-height: 25vh;
+  overflow: auto;
+}
 
 .oval {
   min-width: 55vw;
@@ -117,6 +144,12 @@
   border-radius: 40px;
   position: relative;
   max-width: 65vw;
+}
+
+.chat {
+  height: auto;
+  max-height: 50vh;
+  max-width: 30vw;
 }
 
 .logo {
@@ -133,6 +166,9 @@
   .dates {
     transform: translateX(9%);
   }
+  .bottomContainer {
+    flex-direction: column;
+  }
 
 }
 
@@ -147,5 +183,8 @@
   .calendar {
     transform: translateX(-7%);
     font-size: .25em;
+  }
+  .bottomContainer {
+    flex-direction: column;
   }
 }

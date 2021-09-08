@@ -4,6 +4,7 @@ import Image from 'next/image'
 import TwitchVideo from "../components/TwitchVideo";
 import PlayPauseToggle from "../components/PlayPauseToggle";
 import Schedule from "../components/Schedule";
+import Chat from "../components/Chat";
 
 export default function Home({ nowPlaying, schedule }) {
 
@@ -25,8 +26,10 @@ export default function Home({ nowPlaying, schedule }) {
       </header>
       <main className={styles.main}>
           <TwitchVideo classname={styles.twitch}/>
-          <Schedule schedule={schedule}/>
-          {/*<Chat/>*/}
+          <div className={styles.bottomContainer}>
+              <Schedule schedule={schedule}/>
+              <Chat className={styles.chat}/>
+          </div>
       </main>
       <footer className={styles.footer}>
       </footer>
