@@ -68,20 +68,14 @@ export default function Chat() {
                     return (
                         <div className={styles.chatStream} key={index} on>
                             <b>{msgInfo.userName} </b> :  {msgInfo.msg}
-                            <small style={
-                                { marginLeft: "18px",
-                                    color: "blue",
-                                    marginTop: "5px" }
-                            }> {msgInfo.time}
-                            </small>
                             <div ref={messagesEndRef} />
                         </div>
                     ) })}
                 {}
             </div>
-            <div className="d-flex justify-content-center">
-                <Input style={{ width: "300px", display: "inline" }} id="inputmsg" value={inputValue} onChange={handleUserInput} />
-                <Button className="btn btn-info" id="btnmsg" onClick={() => { sendMessage() }}> Send </Button>
+            <div className={styles.chatInputContainer}>
+                <Input className={styles.chatInput} id="inputmsg" value={inputValue} onChange={handleUserInput} />
+                <Button className={styles.inputButton} id="btnmsg" onClick={() => { sendMessage() }}> Send </Button>
             </div>
         </div >
     );

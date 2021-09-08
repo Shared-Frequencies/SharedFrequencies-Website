@@ -1,29 +1,60 @@
 import styles from '../styles/Home.module.css';
 import { parse } from 'date-format-parse';
 import {decode} from 'html-entities';
+import _ from 'lodash';
 
 export default function Schedule({schedule}) {
     const formattedSchedule = Object.values(schedule)
         .flat()
-        .splice(0, Object.values(schedule).flat().length-1)
+        .splice(0, Object.values(schedule).flat().length-1);
+    const dates = _.map(formattedSchedule, ele => parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').toDateString())
+
+
+
+    const times = _.map(formattedSchedule, ele =>
+        `${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12} :
+        ${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() === 0 ?
+            parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() + "0" :
+            parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() }`
+    )
+
+    const shows = _.map(formattedSchedule, ele => ele.name)
+
+    const uniqueDates = _.uniq(dates)
+
+    const zippedDatesShows = _.zip(shows, dates, times)
+
 
     return (
         <div className={styles.calendarContainer}>
             <h2 className={styles.chatTitle}> Schedule </h2>
             <div className={styles.calendar}>
-                <ol className={styles.names}>
-                    {formattedSchedule.map((ele) => (
-                        <li key={ele.id}>
-                            {decode(ele.name)}
-                        </li>
-                    ))}
-                </ol>
-                <ol className={styles.dates}>
-                    {formattedSchedule.map((ele) => (
-                        <li key={ele.id}>
-                            {parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').toDateString()}
-                        </li>
-                    ))}
+                <ol className={styles.days}>
+                    {
+                        uniqueDates.map((day) => (
+                            <li key={day} className={styles.uniqueDays}>
+                                <b>
+                                    {day.toString().slice(0, day.toString().length - 4)}
+                                </b>
+                                <ol className={styles.dailyShows}>
+                                    {
+                                        zippedDatesShows
+                                            .filter((shows) => shows[1] === day)
+                                            .map((show) => (
+                                                <li key={show} className={styles.show}>
+                                                    <div className={styles.names}>
+                                                        {decode(show[0])}
+                                                    </div>
+                                                    <div className={styles.times}>
+                                                        {show[2]}
+                                                    </div>
+                                                </li>
+                                            ))
+                                    }
+                                </ol>
+                            </li>
+                        ))
+                    }
                 </ol>
             </div>
         </div>
