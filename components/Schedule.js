@@ -8,21 +8,24 @@ export default function Schedule({schedule}) {
         .splice(0, Object.values(schedule).flat().length-1)
 
     return (
-        <div className={styles.calendar}>
-            <ol className={styles.names}>
-                {formattedSchedule.map((ele) => (
-                    <li key={ele.id}>
-                        {decode(ele.name)}
-                    </li>
-                ))}
-            </ol>
-            <ol className={styles.dates}>
-                {formattedSchedule.map((ele) => (
-                    <li key={ele.id}>
-                        {parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').toDateString()}
-                    </li>
-                ))}
-            </ol>
+        <div className={styles.calendarContainer}>
+            <h2 className={styles.chatTitle}> Schedule </h2>
+            <div className={styles.calendar}>
+                <ol className={styles.names}>
+                    {formattedSchedule.map((ele) => (
+                        <li key={ele.id}>
+                            {decode(ele.name)}
+                        </li>
+                    ))}
+                </ol>
+                <ol className={styles.dates}>
+                    {formattedSchedule.map((ele) => (
+                        <li key={ele.id}>
+                            {parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').toDateString()}
+                        </li>
+                    ))}
+                </ol>
+            </div>
         </div>
     )
 }

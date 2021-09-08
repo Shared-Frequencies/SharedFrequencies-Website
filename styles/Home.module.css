@@ -44,7 +44,9 @@
 .bottomContainer {
   display: flex;
   flex-direction: row;
+  width: 80%;
   max-width: 80vw;
+  margin-left: 5vw;
   transform: translateX(-3%);
 }
 
@@ -93,12 +95,13 @@
   100% { transform: translate(-100%, 0); }
 }
 .calendar {
-  padding-top: 1em;
   display: grid;
   grid-template-columns: auto auto;
   max-width: 80vw;
-  min-width: 45vw;
+  min-width: 40vw;
   alignment: center;
+  transform: translateX(-5%);
+  border-style: inset;
 }
 
 .names li {
@@ -116,18 +119,26 @@
   align-items: flex-start;
 }
 .chatStream {
-  margin-left: 0.5em;
   overflow: auto;
   word-wrap: break-word;
-  margin-bottom: 1em;
-
+  margin: 1em 1em 1em 1em;
 }
 .chatTitle {
 
 }
 
+.chatBox {
+  width: 40vw;
+  height: inherit;
+  margin-top: 3%;
+}
+
+.calendarContainer {
+
+}
+
 .chatBoxContainer {
-  height: 20vh;
+  height: 35vh;
 }
 
 .chatBoxContainer div {
