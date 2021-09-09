@@ -9,13 +9,11 @@ export default function Schedule({schedule}) {
         .splice(0, Object.values(schedule).flat().length-1);
     const dates = _.map(formattedSchedule, ele => parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').toDateString())
 
-
-
     const times = _.map(formattedSchedule, ele =>
         `${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12} :
         ${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() === 0 ?
             parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() + "0" :
-            parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() }`
+            parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} cst`
     )
 
     const shows = _.map(formattedSchedule, ele => ele.name)
@@ -24,6 +22,12 @@ export default function Schedule({schedule}) {
 
     const zippedDatesShows = _.zip(shows, dates, times)
 
+    const today = new Date().getDay()
+
+    const shortDates = uniqueDates.slice(today, today + 5)
+
+    console.log(today)
+
 
     return (
         <div className={styles.calendarContainer}>
@@ -31,7 +35,7 @@ export default function Schedule({schedule}) {
             <div className={styles.calendar}>
                 <ol className={styles.days}>
                     {
-                        uniqueDates.map((day) => (
+                        shortDates.map((day) => (
                             <li key={day} className={styles.uniqueDays}>
                                 <b>
                                     {day.toString().slice(0, day.toString().length - 4)}

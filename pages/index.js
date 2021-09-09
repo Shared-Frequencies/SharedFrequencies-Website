@@ -5,9 +5,16 @@ import TwitchVideo from "../components/TwitchVideo";
 import PlayPauseToggle from "../components/PlayPauseToggle";
 import Schedule from "../components/Schedule";
 import Chat from "../components/Chat";
+import useSWR from 'swr'
+import {useState} from "react";
+
+const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Home({ nowPlaying, schedule }) {
+    const [int, setInt] = useState(0)
+    const { data } = useSWR('/api/nowPlaying', fetcher, { refreshInterval: 45000 })
 
+    console.log(data)
   return (
     <div className={styles.container}>
       <Head>
@@ -15,15 +22,15 @@ export default function Home({ nowPlaying, schedule }) {
         <meta name="description" content="Shared Frequencies" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <header className={styles.header}>
-        <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
-        <div className={styles.oval}>
-            <PlayPauseToggle/>
-            <div className={styles.nowPlaying}>
-                <p>{nowPlaying !== null ? nowPlaying.name : 'Shared Frequencies Radio'}</p>
+        <header className={styles.header}>
+            <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
+            <div className={styles.oval}>
+                <PlayPauseToggle/>
+                <div className={styles.nowPlaying}>
+                    <p>{data !== undefined ? data.name : 'Shared Frequencies Radio'}</p>
+                </div>
             </div>
-        </div>
-      </header>
+        </header>
       <main className={styles.main}>
           <TwitchVideo classname={styles.twitch}/>
           <div className={styles.bottomContainer}>
