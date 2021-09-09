@@ -102,7 +102,6 @@
   min-width: 40vw;
   alignment: center;
   transform: translateX(-1%);
-  border-style: inset;
 }
 
 .names li {
@@ -117,7 +116,7 @@
   font-size: .7em;
 }
 .chatStream {
-  overflow: scroll;
+  max-height: inherit;
   word-wrap: break-word;
   margin: 1em 1em 1em 1em;
 }
@@ -129,9 +128,10 @@
 
 }
 .chatBox {
+  display: table-caption;
   width: 40vw;
   height: 100%;
-  max-height: 32.20vh;
+  max-height: 34vh;
   overflow: scroll;
 }
 
@@ -191,6 +191,7 @@
   padding: 5vw;
   min-width: 10vw;
 }
+
 @media only screen and (max-width: 960px) {
   .nowPlaying {
     margin-right: 3em;
@@ -210,7 +211,6 @@
   .chatBoxContainer{
     height: 100%;
   }
-
 }
 
 @media only screen and (max-width: 660px) {
@@ -227,6 +227,10 @@
   }
   .calendar {
     transform: translateX(0);
+  }
+  .chatBox  {
+    height: 40vw;
+    width: 100%;
   }
 }
 
