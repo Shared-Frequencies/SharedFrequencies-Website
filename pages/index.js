@@ -19,16 +19,16 @@ export default function Home({ schedule }) {
                 <meta name="description" content="Shared Frequencies" />
                 <link rel="icon" href="/favicon.png" />
             </Head>
-            <header className={styles.header}>
-                <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
-                <div className={styles.oval}>
-                    <PlayPauseToggle/>
-                    <div className={styles.nowPlaying}>
-                        <p>{data !== undefined ? decode(data.name) : 'Shared Frequencies Radio'}</p>
-                    </div>
-                </div>
-            </header>
             <main className={styles.main}>
+                <header className={styles.header}>
+                    <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
+                    <div className={styles.oval}>
+                        <PlayPauseToggle/>
+                        <div className={styles.nowPlaying}>
+                            <p>{data !== undefined ? decode(data.name) : 'Shared Frequencies Radio'}</p>
+                        </div>
+                    </div>
+                </header>
                 <TwitchVideo/>
                 <div className={styles.bottomContainer}>
                     <Schedule schedule={schedule}/>
