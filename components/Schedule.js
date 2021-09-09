@@ -7,6 +7,7 @@ export default function Schedule({schedule}) {
     const formattedSchedule = Object.values(schedule)
         .flat()
         .splice(0, Object.values(schedule).flat().length-1);
+
     const dates = _.map(formattedSchedule, ele => parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').toDateString())
 
     const times = _.map(formattedSchedule, ele =>
@@ -26,9 +27,6 @@ export default function Schedule({schedule}) {
 
     const shortDates = uniqueDates.slice(today, today + 5)
 
-    console.log(today)
-
-
     return (
         <div className={styles.calendarContainer}>
             <h2 className={styles.chatTitle}> Schedule </h2>
@@ -47,6 +45,7 @@ export default function Schedule({schedule}) {
                                             .map((show) => (
                                                 <li key={show} className={styles.show}>
                                                     <div className={styles.names}>
+
                                                         {decode(show[0])}
                                                     </div>
                                                     <div className={styles.times}>

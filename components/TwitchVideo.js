@@ -9,7 +9,7 @@ export default function TwitchVideo() {
             <ReactPlayer
                 url='https://www.twitch.tv/sharedfrequenciesradio'
                 height = {size.height * 0.66}
-                width = {size.width * 0.80}
+                width = {size.width * 0.78}
             />
         </div>
     )
