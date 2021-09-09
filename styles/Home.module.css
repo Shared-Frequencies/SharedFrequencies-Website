@@ -49,7 +49,7 @@
   display: flex;
   flex-direction: row;
   width: 80%;
-  transform: translateX(-7%);
+  transform: translateX(-8%);
 }
 
 .playButton {
@@ -135,8 +135,7 @@
 }
 .chatBox {
   width: 40vw;
-  height: inherit;
-  margin-top: 3%;
+  height: 100%;
 }
 
 .uniqueDays {
@@ -154,7 +153,10 @@
 }
 
 .chatInputContainer {
+  display: flex;
+  flex-direction: row;
   padding-top: 0.5vh;
+  width: 100%;
 
 }
 .show {
@@ -164,21 +166,16 @@
 }
 
 .chatInput {
-  width: 30vw;
-  padding-left: 4em;
+  width: inherit;
 }
 .inputButton {
 
 }
 
 .chatBoxContainer {
-  height: 35vh;
-}
-
-.chatBoxContainer div {
-  max-width: 35vw;
-  max-height: 25vh;
-  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: inherit;
 }
 
 .oval {
