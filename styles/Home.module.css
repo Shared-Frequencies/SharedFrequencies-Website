@@ -13,8 +13,7 @@
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   padding-bottom: 40px;
   margin: auto;
 }
@@ -26,10 +25,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.twitch {
- width: 80vw;
 }
 
 .days {
@@ -54,9 +49,7 @@
   display: flex;
   flex-direction: row;
   width: 80%;
-  max-width: 80vw;
-  margin-left: 5vw;
-  transform: translateX(-3%);
+  transform: translateX(-7%);
 }
 
 .playButton {
@@ -137,6 +130,9 @@
   padding-left: 3vw;
 }
 
+.calendarTitle {
+
+}
 .chatBox {
   width: 40vw;
   height: inherit;
@@ -193,12 +189,6 @@
   border-radius: 40px;
   position: relative;
   max-width: 65vw;
-}
-
-.chat {
-  height: auto;
-  max-height: 50vh;
-  max-width: 30vw;
 }
 
 .logo {

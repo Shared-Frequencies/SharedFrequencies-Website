@@ -1,3 +1,4 @@
+import styles from '../styles/Home.module.css'
 import {useEffect, useState} from "react";
 import ReactPlayer from "react-player";
 
@@ -5,7 +6,7 @@ export default function TwitchVideo() {
     const size = useWindowSize();
 
     return (
-        <div>
+        <div className={styles.twitchContainer}>
             <ReactPlayer
                 url='https://www.twitch.tv/sharedfrequenciesradio'
                 height = {size.height * 0.66}

@@ -2,7 +2,6 @@ import styles from '../styles/Home.module.css'
 import { io } from "socket.io-client";
 import userGen from "username-generator"
 import {useEffect, useRef, useState} from "react";
-import { Button, Input } from 'reactstrap';
 
 const socket = io("https://shared-frequency-chat.herokuapp.com");
 
@@ -54,28 +53,21 @@ export default function Chat() {
         setInputValue(e.target.value);
     };
 
-    const resetInputField = () => {
-        setInputValue("");
-    };
-
-
-
     return (
         <div className={styles.chatBoxContainer}>
             <h2 className={styles.chatTitle}> Chat </h2>
             <div className={styles.chatBox} style={{ borderStyle: "inset" }}>
                 {recMsg.listMsg?.map((msgInfo, index) => {
                     return (
-                        <div className={styles.chatStream} key={index} on>
+                        <div className={styles.chatStream} key={index}>
                             <b>{msgInfo.userName} </b> :  {msgInfo.msg}
                             <div ref={messagesEndRef} />
                         </div>
                     ) })}
-                {}
             </div>
             <div className={styles.chatInputContainer}>
-                <Input className={styles.chatInput} id="inputmsg" value={inputValue} onChange={handleUserInput} />
-                <Button className={styles.inputButton} id="btnmsg" onClick={() => { sendMessage() }}> Send </Button>
+                <input className={styles.chatInput} id="inputmsg" value={inputValue} onChange={handleUserInput} />
+                <button className={styles.inputButton} id="btnmsg" onClick={() => { sendMessage() }}> Send </button>
             </div>
         </div >
     );

@@ -12,34 +12,33 @@ const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Home({ schedule }) {
     const { data } = useSWR('/api/nowPlaying', fetcher, { refreshInterval: 45000 })
-
-  return (
-    <div className={styles.container}>
-        <Head>
-            <title>Shared Frequencies</title>
-            <meta name="description" content="Shared Frequencies" />
-            <link rel="icon" href="/favicon.png" />
-        </Head>
-        <header className={styles.header}>
-            <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
-            <div className={styles.oval}>
-                <PlayPauseToggle/>
-                <div className={styles.nowPlaying}>
-                    <p>{data !== undefined ? decode(data.name) : 'Shared Frequencies Radio'}</p>
+    return (
+        <div className={styles.container}>
+            <Head>
+                <title>Shared Frequencies</title>
+                <meta name="description" content="Shared Frequencies" />
+                <link rel="icon" href="/favicon.png" />
+            </Head>
+            <header className={styles.header}>
+                <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
+                <div className={styles.oval}>
+                    <PlayPauseToggle/>
+                    <div className={styles.nowPlaying}>
+                        <p>{data !== undefined ? decode(data.name) : 'Shared Frequencies Radio'}</p>
+                    </div>
                 </div>
-            </div>
-        </header>
-        <main className={styles.main}>
-            <TwitchVideo classname={styles.twitch}/>
-            <div className={styles.bottomContainer}>
-                <Schedule schedule={schedule}/>
-                <Chat className={styles.chat}/>
-            </div>
-        </main>
-        <footer className={styles.footer}>
-        </footer>
-    </div>
-  )
+            </header>
+            <main className={styles.main}>
+                <TwitchVideo/>
+                <div className={styles.bottomContainer}>
+                    <Schedule schedule={schedule}/>
+                    <Chat />
+                </div>
+            </main>
+            <footer className={styles.footer}>
+            </footer>
+        </div>
+    )
 }
 
 export async function getServerSideProps(context) {

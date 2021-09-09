@@ -29,7 +29,7 @@ export default function Schedule({schedule}) {
 
     return (
         <div className={styles.calendarContainer}>
-            <h2 className={styles.chatTitle}> Schedule </h2>
+            <h2 className={styles.calendarTitle}> Schedule </h2>
             <div className={styles.calendar}>
                 <ol className={styles.days}>
                     {
