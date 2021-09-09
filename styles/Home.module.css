@@ -129,8 +129,10 @@
 }
 
 .calendarTitle {
+  padding-left: 0.5vw;
   border: solid black;
   border-radius: 40px;
+  margin-right: 5%;
 }
 .chatBox {
   width: 40vw;
