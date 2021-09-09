@@ -117,7 +117,7 @@
   font-size: .7em;
 }
 .chatStream {
-  overflow: auto;
+  overflow: scroll;
   word-wrap: break-word;
   margin: 1em 1em 1em 1em;
 }
@@ -131,6 +131,8 @@
 .chatBox {
   width: 40vw;
   height: 100%;
+  max-height: 32.20vh;
+  overflow: scroll;
 }
 
 .uniqueDays {
@@ -150,10 +152,10 @@
 .chatInputContainer {
   display: flex;
   flex-direction: row;
-  padding-top: 0.5vh;
+  padding-top: 0.25vh;
   width: 100%;
-
 }
+
 .show {
   display: flex;
   width: 50%;
@@ -171,6 +173,8 @@
   display: flex;
   flex-direction: column;
   height: inherit;
+  max-height: inherit;
+  overflow: hidden;
 }
 
 .oval {
@@ -200,6 +204,12 @@
   .bottomContainer {
     flex-direction: column;
   }
+  .calendar {
+    transform: translateX(0);
+  }
+  .chatBoxContainer{
+    height: 100%;
+  }
 
 }
 
@@ -215,8 +225,8 @@
     transform: translateX(-7%);
     font-size: .25em;
   }
-  .bottomContainer {
-    flex-direction: column;
+  .calendar {
+    transform: translateX(0);
   }
 }
 
