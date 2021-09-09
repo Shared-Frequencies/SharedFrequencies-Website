@@ -240,6 +240,7 @@
   .chatBox  {
     height: 40vw;
     width: 100%;
+    max-width: 80vw;
   }
 }
 
