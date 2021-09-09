@@ -102,6 +102,8 @@
   min-width: 40vw;
   alignment: center;
   transform: translateX(-1%);
+  border: solid black;
+  border-radius: 40px;
 }
 
 .names li {
@@ -122,17 +124,21 @@
 }
 .chatTitle {
   padding-left: 0.5vw;
+  border: solid black;
+  border-radius: 40px;
 }
 
 .calendarTitle {
-
+  border: solid black;
+  border-radius: 40px;
 }
 .chatBox {
-  display: table-caption;
   width: 40vw;
   height: 100%;
   max-height: 34vh;
   overflow: scroll;
+  border: solid black;
+  border-radius: 40px;
 }
 
 .uniqueDays {
@@ -164,9 +170,12 @@
 
 .chatInput {
   width: inherit;
+  border: solid black;
+  border-radius: 40px;
 }
 .inputButton {
-
+  border: solid black;
+  border-radius: 40px;
 }
 
 .chatBoxContainer {
