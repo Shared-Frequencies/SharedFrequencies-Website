@@ -42,14 +42,16 @@
   flex-direction: row;
   flex-shrink: 0;
   align-items: center;
-  min-width: 90vw;
+  min-width: 80vw;
   min-height: 10vh;
+  max-width: 80%;
+
 }
 .bottomContainer {
   display: flex;
   flex-direction: row;
-  width: 80%;
-  transform: translateX(-2%);
+  max-width: inherit;
+  transform: translateX(0.5%);
 }
 
 .playButton {
@@ -79,14 +81,7 @@
   margin-left: 1em;
 
 }
-.marquee {
-  transform: translateY(-70%) translateX(-10%);
-  width: 450px;
-  white-space: nowrap;
-  overflow: hidden;
-  display: flex;
-  margin-right: 5em;
-}
+
 .nowPlaying p {
   display: inline-block;
   padding-left: 100%;
@@ -106,7 +101,7 @@
   max-width: 80vw;
   min-width: 40vw;
   alignment: center;
-  transform: translateX(-5%);
+  transform: translateX(-1%);
   border-style: inset;
 }
 
@@ -127,7 +122,7 @@
   margin: 1em 1em 1em 1em;
 }
 .chatTitle {
-  padding-left: 3vw;
+  padding-left: 0.5vw;
 }
 
 .calendarTitle {
@@ -222,5 +217,12 @@
   }
   .bottomContainer {
     flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .main {
+    margin-right: 20%;
+    margin-left: 20%;
   }
 }
