@@ -31,9 +31,9 @@
   list-style-type: none;
 }
 
-
 .dailyShows {
   list-style-type: none;
+  padding: 0 0 0 5%;
 }
 
 .header {
@@ -126,13 +126,14 @@
   padding-left: 0.5vw;
   border: solid black;
   border-radius: 40px;
+  margin-right: 10%;
 }
 
 .calendarTitle {
   padding-left: 0.5vw;
   border: solid black;
   border-radius: 40px;
-  margin-right: 5%;
+  margin-right: 10%;
 }
 .chatBox {
   width: 40vw;

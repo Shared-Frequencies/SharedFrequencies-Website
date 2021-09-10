@@ -25,7 +25,7 @@ export default function Schedule({schedule}) {
 
     const today = new Date().getDay()
 
-    const shortDates = uniqueDates.slice(today, today + 5)
+    const shortDates = uniqueDates.slice(today-1, today + 4)
 
     return (
         <div className={styles.calendarContainer}>
