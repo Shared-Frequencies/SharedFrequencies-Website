@@ -56,7 +56,7 @@ export default function Chat() {
     return (
         <div className={styles.chatBoxContainer}>
             <h2 className={styles.chatTitle}> Chat </h2>
-            <div className={styles.chatBox} style={{ borderStyle: "inset" }}>
+            <div className={styles.chatBox} >
                 {recMsg.listMsg?.map((msgInfo, index) => {
                     return (
                         <div className={styles.chatStream} key={index}>
