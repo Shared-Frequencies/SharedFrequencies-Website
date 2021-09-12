@@ -5,7 +5,7 @@ import {useEffect, useRef, useState} from "react";
 
 const socket = io("https://shared-frequency-chat.herokuapp.com");
 
-export default function Chat({state, dispatch}) {
+export default function Chat({state}) {
     const messagesEndRef = useRef(null)
 
     const messageInputRef = useRef(null)
