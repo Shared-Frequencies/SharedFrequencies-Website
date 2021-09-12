@@ -29,9 +29,12 @@ export default function PlayPauseToggle() {
 }
 
 const useAudio = url => {
-    const [audio] = useState(typeof Audio !== "undefined" ?
+    const [audio] = useState(
+        typeof Audio !== "undefined" ?
         new Audio(url) :
-        undefined);
+        undefined
+    );
+
     const [playing, setPlaying] = useState(false);
 
     const toggle = () => setPlaying(!playing);

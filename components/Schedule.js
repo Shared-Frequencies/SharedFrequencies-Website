@@ -48,22 +48,9 @@ export default function Schedule({schedule, state, dispatch}) {
         () => uniqueDates.slice(today - 1 === -1 ? 7 : today - 1, today -1 === -1 ? 14 : today + 4),
         [uniqueDates, today]
     )
-    const heightRef = useRef();
-
-    useEffect(
-        () => {
-        if(heightRef.current.clientHeight){
-            setTimeout(() => {
-                dispatch({
-                    type: "SET_CALENDAR_WINDOW_HEIGHT",
-                    payload: heightRef.current.clientHeight
-                })
-            }, 1000)
-        }
-    })
 
     return (
-        <div className={styles.calendarContainer} ref={heightRef}>
+        <div className={styles.calendarContainer} >
             <h2 className={styles.calendarTitle}> Schedule </h2>
             <div className={styles.calendar}>
                 <ol className={styles.days}>

@@ -7,20 +7,12 @@ import Schedule from "../components/Schedule";
 import Chat from "../components/Chat";
 import useSWR from 'swr'
 import {decode} from "html-entities";
-import reducer from "../components/reducer";
-import {useReducer} from "react";
+
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
-export const initialState = {
-    calendarHeight: 0
-}
-
-
 export default function Home({ schedule }) {
     const { data } = useSWR('/api/nowPlaying', fetcher, { refreshInterval: 45000 })
-
-    const [state, dispatch] = useReducer(reducer, initialState)
 
     return (
         <>
@@ -42,8 +34,8 @@ export default function Home({ schedule }) {
                     </header>
                     <TwitchVideo/>
                     <div className={styles.bottomContainer}>
-                        <Schedule schedule={schedule} state={state} dispatch={dispatch}/>
-                        <Chat state={state} dispatch={dispatch}/>
+                        <Schedule schedule={schedule} />
+                        <Chat />
                     </div>
                 </main>
                 <footer className={styles.footer}>
