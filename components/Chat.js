@@ -46,8 +46,12 @@ export default function Chat({state, dispatch}) {
 
     // to send a message
     const sendMessage = () => {
-        socket.emit("sendMsg", JSON.stringify({ id: loggedUser.id, msg: inputValue }));
-        setInputValue("");
+        if(inputValue < 255) {
+            socket.emit("sendMsg", JSON.stringify({ id: loggedUser.id, msg: inputValue }))
+            setInputValue("")
+        } else {
+            setInputValue("")
+        }
     }
     const handleUserInput = (e) => {
         setInputValue(e.target.value);
