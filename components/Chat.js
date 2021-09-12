@@ -53,6 +53,12 @@ export default function Chat() {
         setInputValue(e.target.value);
     };
 
+    const enter = (event) => {
+        if (event.keyCode === 13) {
+            sendMessage()
+        }
+    }
+
     return (
         <div className={styles.chatBoxContainer}>
             <h2 className={styles.chatTitle}> Chat </h2>
@@ -66,7 +72,10 @@ export default function Chat() {
                     ) })}
             </div>
             <div className={styles.chatInputContainer}>
-                <input className={styles.chatInput} id="inputmsg" value={inputValue} onChange={handleUserInput} />
+                <input className={styles.chatInput} id="inputmsg"
+                       onKeyDown={(e) => enter(e) }
+                       value={inputValue}
+                       onChange={handleUserInput} />
                 <button className={styles.inputButton} id="btnmsg" onClick={() => { sendMessage() }}> Send </button>
             </div>
         </div >
