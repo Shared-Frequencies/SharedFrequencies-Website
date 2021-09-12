@@ -8,6 +8,8 @@ const socket = io("https://shared-frequency-chat.herokuapp.com");
 export default function Chat({state, dispatch}) {
     const messagesEndRef = useRef(null)
 
+    const messageInputRef = useRef(null)
+
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
     }
@@ -46,9 +48,16 @@ export default function Chat({state, dispatch}) {
 
     // to send a message
     const sendMessage = () => {
-        socket.emit("sendMsg", JSON.stringify({ id: loggedUser.id, msg: inputValue }));
-        setInputValue("");
+        if(inputValue.length < 1000) {
+            socket.emit("sendMsg", JSON.stringify({ id: loggedUser.id, msg: inputValue }))
+            setInputValue("")
+            messageInputRef.current.focus()
+        } else {
+            setInputValue("")
+            messageInputRef.current.focus()
+        }
     }
+
     const handleUserInput = (e) => {
         setInputValue(e.target.value);
     };
@@ -74,6 +83,7 @@ export default function Chat({state, dispatch}) {
             <div className={styles.chatInputContainer}>
                 <input className={styles.chatInput}
                        id="inputmsg"
+                       ref={messageInputRef}
                        onKeyDown={(e) => enter(e) }
                        value={inputValue}
                        onChange={handleUserInput} />
