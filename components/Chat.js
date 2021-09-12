@@ -5,7 +5,7 @@ import {useEffect, useRef, useState} from "react";
 
 const socket = io("https://shared-frequency-chat.herokuapp.com");
 
-export default function Chat() {
+export default function Chat({state, dispatch}) {
     const messagesEndRef = useRef(null)
 
     const scrollToBottom = () => {
@@ -60,7 +60,7 @@ export default function Chat() {
     }
 
     return (
-        <div className={styles.chatBoxContainer}>
+        <div className={styles.chatBoxContainer} style={{maxHeight: state.calendarHeight}}>
             <h2 className={styles.chatTitle}> Chat </h2>
             <div className={styles.chatBox} >
                 {recMsg.listMsg?.map((msgInfo, index) => {
@@ -72,11 +72,14 @@ export default function Chat() {
                     ) })}
             </div>
             <div className={styles.chatInputContainer}>
-                <input className={styles.chatInput} id="inputmsg"
+                <input className={styles.chatInput}
+                       id="inputmsg"
                        onKeyDown={(e) => enter(e) }
                        value={inputValue}
                        onChange={handleUserInput} />
-                <button className={styles.inputButton} id="btnmsg" onClick={() => { sendMessage() }}> Send </button>
+                <button className={styles.inputButton}
+                        id="btnmsg"
+                        onClick={() => { sendMessage() }}> Send </button>
             </div>
         </div >
     );

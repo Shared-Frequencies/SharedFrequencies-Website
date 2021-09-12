@@ -2,10 +2,10 @@ import styles from '../styles/Home.module.css';
 import { parse } from 'date-format-parse';
 import {decode} from 'html-entities';
 import _ from 'lodash';
-import {useMemo} from "react";
+import {useEffect, useMemo, useRef} from "react";
 
-export default function Schedule({schedule}) {
 
+export default function Schedule({schedule, state, dispatch}) {
     const formattedSchedule = useMemo(
         () => Object.values(schedule)
             .flat()
@@ -48,9 +48,22 @@ export default function Schedule({schedule}) {
         () => uniqueDates.slice(today, today + 4),
         [uniqueDates, today]
     )
-    
+    const heightRef = useRef();
+
+    useEffect(
+        () => {
+        if(heightRef.current.clientHeight){
+            setTimeout(() => {
+                dispatch({
+                    type: "SET_CALENDAR_WINDOW_HEIGHT",
+                    payload: heightRef.current.clientHeight
+                })
+            }, 1000)
+        }
+    })
+
     return (
-        <div className={styles.calendarContainer}>
+        <div className={styles.calendarContainer} ref={heightRef}>
             <h2 className={styles.calendarTitle}> Schedule </h2>
             <div className={styles.calendar}>
                 <ol className={styles.days}>
