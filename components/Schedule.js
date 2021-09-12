@@ -2,30 +2,47 @@ import styles from '../styles/Home.module.css';
 import { parse } from 'date-format-parse';
 import {decode} from 'html-entities';
 import _ from 'lodash';
+import {useMemo} from "react";
 
 export default function Schedule({schedule}) {
-    const formattedSchedule = Object.values(schedule)
-        .flat()
-        .splice(0, Object.values(schedule).flat().length-1);
 
-    const dates = _.map(formattedSchedule, ele => parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').toDateString())
-
-    const times = _.map(formattedSchedule, ele =>
-        `${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12} :
-        ${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() === 0 ?
-            parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() + "0" :
-            parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} cst`
+    const formattedSchedule = useMemo(
+        () => Object.values(schedule)
+            .flat()
+            .splice(0, Object.values(schedule).flat().length - 1), [schedule]
     )
 
-    const shows = _.map(formattedSchedule, ele => ele.name)
+    const dates = useMemo(
+        () => _
+            .map(formattedSchedule, ele => parse(ele.starts, 'YYYY-MM-DD HH:mm:ss')
+                .toDateString()), [formattedSchedule]
+    )
 
-    const uniqueDates = _.uniq(dates)
+    const times = useMemo(
+        () =>  _.map(formattedSchedule, ele =>
+            `${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12} :
+             ${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() === 0 ?
+                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() + "0" :
+                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} cst`), [formattedSchedule]
+    )
 
-    const zippedDatesShows = _.zip(shows, dates, times)
+    const shows = useMemo(
+        () => _.map(formattedSchedule, ele => ele.name), [formattedSchedule]
+    )
+
+    const uniqueDates = useMemo(
+        () => _.uniq(dates), [dates]
+    )
+
+    const zippedDatesShows = useMemo(
+        () => _.zip(shows, dates, times), [shows, dates, times]
+    )
 
     const today = new Date().getDay()
 
-    const shortDates = uniqueDates.slice(today, today + 4)
+    const shortDates = useMemo(
+        () => uniqueDates.slice(today, today + 4), [uniqueDates, today]
+    )
     
     return (
         <div className={styles.calendarContainer}>
