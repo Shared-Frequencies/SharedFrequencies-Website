@@ -45,7 +45,7 @@ export default function Schedule({schedule, state, dispatch}) {
     const today = new Date().getDay()
 
     const shortDates = useMemo(
-        () => uniqueDates.slice(today, today + 4),
+        () => uniqueDates.slice(today - 1 === -1 ? 7 : today - 1, today -1 === -1 ? 14 : today + 4),
         [uniqueDates, today]
     )
     const heightRef = useRef();
