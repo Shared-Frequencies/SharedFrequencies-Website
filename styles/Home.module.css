@@ -95,6 +95,7 @@
 }
 .calendar {
   transform: translateX(-1%);
+  height: 300px;
   border: solid black;
   border-radius: 40px;
 }
@@ -126,8 +127,9 @@
   margin-right: 10%;
 }
 .chatBox {
-  max-height:inherit;
-  overflow-y: auto;
+  overflow-y: scroll;
+  height: 100%;
+  flex-grow: 1;
   border: solid black;
   border-radius: 40px;
 }
@@ -139,7 +141,11 @@
 
 .calendarContainer {
   width: 48%;
+  display: flex;
+  flex-direction: column;
 }
+
+
 
 .times {
 
@@ -171,7 +177,6 @@
 .chatBoxContainer {
   display: flex;
   flex-direction: column;
-  height: 100%;
   overflow: hidden;
   width: 48%;
 }
