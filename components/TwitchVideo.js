@@ -18,7 +18,7 @@ export default function TwitchVideo() {
 
 
 // Hook
-function useWindowSize() {
+export function useWindowSize() {
     // Initialize state with undefined width/height so server and client renders match
     const [windowSize, setWindowSize] = useState({
         width: undefined,

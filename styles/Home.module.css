@@ -148,8 +148,9 @@
 }
 
 .calendarContainer {
-
+  height: 100%;
 }
+
 .times {
   transform: translateX(50%);
   white-space: nowrap;
