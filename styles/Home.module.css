@@ -137,7 +137,7 @@
 }
 .chatBox {
   width: 40vw;
-  height: 34vh;
+  height: 100%;
   overflow: scroll;
   border: solid black;
   border-radius: 40px;

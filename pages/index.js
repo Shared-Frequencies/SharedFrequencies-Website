@@ -7,6 +7,7 @@ import Schedule from "../components/Schedule";
 import Chat from "../components/Chat";
 import useSWR from 'swr'
 import {decode} from "html-entities";
+import {HeightProvider} from "../components/HeightProvider";
 
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
@@ -16,31 +17,33 @@ export default function Home({ schedule }) {
 
     return (
         <>
-            <div className={styles.container}>
-                <Head>
-                    <title>Shared Frequencies</title>
-                    <meta name="description" content="Shared Frequencies" />
-                    <link rel="icon" href="/favicon.png" />
-                </Head>
-                <main className={styles.main}>
-                    <header className={styles.header}>
-                        <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
-                        <div className={styles.oval}>
-                            <PlayPauseToggle/>
-                            <div className={styles.nowPlaying}>
-                                <p>{data !== undefined ? decode(data.name) : 'Shared Frequencies Radio'}</p>
+            <HeightProvider>
+                <div className={styles.container}>
+                    <Head>
+                        <title>Shared Frequencies</title>
+                        <meta name="description" content="Shared Frequencies" />
+                        <link rel="icon" href="/favicon.png" />
+                    </Head>
+                    <main className={styles.main}>
+                        <header className={styles.header}>
+                            <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
+                            <div className={styles.oval}>
+                                <PlayPauseToggle/>
+                                <div className={styles.nowPlaying}>
+                                    <p>{data !== undefined ? decode(data.name) : 'Shared Frequencies Radio'}</p>
+                                </div>
                             </div>
+                        </header>
+                        <TwitchVideo/>
+                        <div className={styles.bottomContainer}>
+                            <Schedule schedule={schedule} />
+                            <Chat />
                         </div>
-                    </header>
-                    <TwitchVideo/>
-                    <div className={styles.bottomContainer}>
-                        <Schedule schedule={schedule} />
-                        <Chat />
-                    </div>
-                </main>
-                <footer className={styles.footer}>
-                </footer>
-            </div>
+                    </main>
+                    <footer className={styles.footer}>
+                    </footer>
+                </div>
+            </HeightProvider>
         </>
     )
 }

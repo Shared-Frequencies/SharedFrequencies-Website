@@ -1,11 +1,14 @@
 import styles from '../styles/Home.module.css'
 import { io } from "socket.io-client";
 import userGen from "username-generator"
-import {useEffect, useMemo, useRef, useState} from "react";
+import {useContext, useEffect, useRef, useState} from "react";
+import HeightContext from "./HeightProvider";
 
 const socket = io("https://shared-frequency-chat.herokuapp.com");
 
 export default function Chat() {
+    const {height} = useContext(HeightContext);
+
     const messagesEndRef = useRef(null)
 
     const messageInputRef = useRef(null)
@@ -69,7 +72,7 @@ export default function Chat() {
     }
 
     return (
-        <div className={styles.chatBoxContainer}>
+        <div className={styles.chatBoxContainer} style={{height: height}}>
             <h2 className={styles.chatTitle}> Chat </h2>
             <div className={styles.chatBox} >
                 {recMsg.listMsg?.map((msgInfo, index) => {
