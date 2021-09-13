@@ -2,12 +2,12 @@ import styles from '../styles/Home.module.css';
 import { parse } from 'date-format-parse';
 import {decode} from 'html-entities';
 import _ from 'lodash';
-import {useContext, useEffect, useLayoutEffect, useMemo, useRef} from "react";
+import {useContext, useLayoutEffect, useMemo, useRef} from "react";
 import HeightContext from "./HeightProvider";
 import {useWindowSize} from "./TwitchVideo";
 
 export default function Schedule({schedule}) {
-    const {height, setHeight} = useContext(HeightContext);
+    const {setHeight} = useContext(HeightContext);
 
     const size = useWindowSize();
 
@@ -56,10 +56,9 @@ export default function Schedule({schedule}) {
         [uniqueDates, today]
     )
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if(heightRef.current.clientHeight){
             setTimeout(() => {
-                console.log('setting height ' + heightRef.current.clientHeight)
                 setHeight(heightRef.current.clientHeight)
             }, 1000)
         }

@@ -176,9 +176,14 @@
   border: solid black;
   border-radius: 40px;
 }
+
 .inputButton {
   border: solid black;
   border-radius: 40px;
+}
+
+.inputButton:hover {
+  cursor: pointer;
 }
 
 .chatBoxContainer {
