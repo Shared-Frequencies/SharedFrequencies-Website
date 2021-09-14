@@ -207,7 +207,6 @@
   border: solid black;
   border-radius: 40px;
   position: relative;
-  max-width: 65vw;
 }
 
 .logo {
@@ -255,6 +254,9 @@
     height: 40vh;
     width: 100%;
     max-width: 80vw;
+  }
+  .footer {
+    justify-content: center;
   }
 }
 
