@@ -21,7 +21,7 @@
 
 .mainColumn {
   width: 50%;
-  transform: translateX(7%) translateY(-7vh);
+  transform: translateX(7%) translateY(-25vh);
   padding-right: 3%;
 }
 
@@ -34,7 +34,7 @@
   align-items: center;
   padding: 1em;
   margin-top: 3%;
-  transform: translateY(-5vh);
+  transform: translateY(-25vh);
 }
 
 .footer a {
@@ -47,6 +47,14 @@
   alignment: left;
   justify-content: left;
   transform: translateX(-35vw);
+}
+
+.sidebar ul {
+  list-style: none;
+  font-size: 25pt;
+}
+.sidebar li {
+  padding: .5em;
 }
 
 
@@ -264,6 +272,9 @@
 }
 
 @media only screen and (max-width: 660px) {
+  .sidebar {
+    flex-direction: row;
+  }
   .nowPlaying {
     margin-right: 4em;
     margin-left: 2em;
