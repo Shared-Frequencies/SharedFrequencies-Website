@@ -21,12 +21,12 @@
 
 .mainColumn {
   width: 50%;
-  transform: translateX(7%) translateY(-25vh);
+  transform: translateX(7%) translateY(-32vh);
   padding-right: 3%;
 }
 
 .footer {
-  width: 80%;
+  width: 86%;
   height: 100px;
   border-top: 1px solid #eaeaea;
   display: flex;
@@ -34,7 +34,7 @@
   align-items: center;
   padding: 1em;
   margin-top: 3%;
-  transform: translateY(-25vh);
+  transform: translateY(-30vh);
 }
 
 .footer a {
@@ -46,7 +46,7 @@
   flex-direction: column;
   alignment: left;
   justify-content: left;
-  transform: translateX(-35vw);
+  transform: translateX(-35vw) translateY(-5vh);
 }
 
 .sidebar ul {
