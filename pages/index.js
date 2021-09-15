@@ -1,20 +1,13 @@
 import styles from '../styles/Home.module.css'
 import Head from 'next/head'
-import Image from 'next/image'
 import TwitchVideo from "../components/TwitchVideo";
-import PlayPauseToggle from "../components/PlayPauseToggle";
 import Schedule from "../components/Schedule";
 import Chat from "../components/Chat";
-import useSWR from 'swr'
-import {decode} from "html-entities";
 import {HeightProvider} from "../components/HeightProvider";
-
-
-const fetcher = (...args) => fetch(...args).then(res => res.json())
+import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
 
 export default function Home({ schedule }) {
-    const { data } = useSWR('/api/nowPlaying', fetcher, { refreshInterval: 45000 })
-
     return (
         <>
             <HeightProvider>
@@ -25,27 +18,22 @@ export default function Home({ schedule }) {
                         <link rel="icon" href="/favicon.png" />
                     </Head>
                     <main className={styles.main}>
-                        <header className={styles.header}>
-                            <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
-                            <div className={styles.oval}>
-                                <PlayPauseToggle/>
-                                <div className={styles.nowPlaying}>
-                                    <p>{data !== undefined ? decode(data.name) : 'Shared Frequencies Radio'}</p>
-                                </div>
+                        <Header/>
+                        <Sidebar/>
+                        <div className={styles.mainColumn}>
+                            <TwitchVideo/>
+                            <div className={styles.bottomContainer}>
+                                <Schedule schedule={schedule} />
+                                <Chat />
                             </div>
-                        </header>
-                        <TwitchVideo/>
-                        <div className={styles.bottomContainer}>
-                            <Schedule schedule={schedule} />
-                            <Chat />
                         </div>
+                        <footer className={styles.footer}>
+                            <a href="https://www.facebook.com/SharedFrequenciesRadio">Facebook</a>
+                            <a href="https://www.instagram.com/sharedfrequenciesradio/">Instagram</a>
+                            <a href="https://soundcloud.com/sharedfrequenciesradio">Soundcloud</a>
+                            <a href="https://twitter.com/shrdfrqncsradio">Twitter</a>
+                        </footer>
                     </main>
-                    <footer className={styles.footer}>
-                        <a href="https://www.facebook.com/SharedFrequenciesRadio">Facebook</a>
-                        <a href="https://www.instagram.com/sharedfrequenciesradio/">Instagram</a>
-                        <a href="https://soundcloud.com/sharedfrequenciesradio">Soundcloud</a>
-                        <a href="https://twitter.com/shrdfrqncsradio">Twitter</a>
-                    </footer>
                 </div>
             </HeightProvider>
         </>
