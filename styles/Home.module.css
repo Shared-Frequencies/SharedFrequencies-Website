@@ -16,12 +16,12 @@
   padding-bottom: 40px;
   margin: auto;
   width: 95vw;
-  height: 100vh;
+  height: 80vh;
 }
 
 .mainColumn {
   width: 50%;
-  transform: translateX(7%) translateY(-32vh);
+  transform: translateX(7%) ;
   padding-right: 3%;
 }
 
@@ -34,7 +34,6 @@
   align-items: center;
   padding: 1em;
   margin-top: 3%;
-  transform: translateY(-30vh);
 }
 
 .footer a {
@@ -43,10 +42,14 @@
 
 .sidebar {
   display: flex;
+  position: fixed;
   flex-direction: column;
   alignment: left;
   justify-content: left;
-  transform: translateX(-35vw) translateY(-5vh);
+  width: 10vw;
+  padding-right: 5%;
+  padding-left: 0.75%;
+  transform: translateX(-37vw) translateY(10vh);
 }
 
 .sidebar ul {
