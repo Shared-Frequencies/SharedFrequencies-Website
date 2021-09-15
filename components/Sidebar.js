@@ -11,13 +11,13 @@ export default function Sidebar() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/aboutUs">
-                        <a>About Us</a>
+                    <Link href="/residents">
+                        <a>Residents</a>
                     </Link>
                 </li>
                 <li>
-                    <Link href="/residents">
-                        <a>Residents</a>
+                    <Link href="/aboutUs">
+                        <a>About Us</a>
                     </Link>
                 </li>
                 <li>

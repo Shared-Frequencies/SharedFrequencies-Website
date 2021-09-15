@@ -1,13 +1,13 @@
-import styles from '../styles/Home.module.css'
+import styles from '../../styles/Home.module.css'
 import Head from "next/head";
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
-import {residents} from "../utils/contentful-helper";
+import Header from "../../components/Header";
+import Sidebar from "../../components/Sidebar";
+import Footer from "../../components/Footer";
+import {resident, residents} from "../../utils/contentful-helper";
 import Image from "next/image";
-import Link from "next/link";
 
-export default function Residents ({ artists }) {
+export default function Resident ({ resident }) {
+
     return (
         <>
             <div className={styles.container}>
@@ -21,10 +21,8 @@ export default function Residents ({ artists }) {
                     <Sidebar/>
                     <div className={styles.mainColumn}>
                         {
-                            artists.map((artist) =>
-                                <Link href={`/resident/${artist.name}`} key={artist.id}>
-                                    <div >
-
+                            resident.map((artist) =>
+                                    <div key={artist.id}>
                                         <Image
                                             className={styles.logo}
                                             src={artist.fullsize.url}
@@ -32,9 +30,9 @@ export default function Residents ({ artists }) {
                                             width={512} height={512} />
                                         <p>{artist.name}</p>
                                     </div>
-                                </Link>
                             )
                         }
+
                     </div>
                     <Footer/>
                 </main>
@@ -43,12 +41,20 @@ export default function Residents ({ artists }) {
     )
 }
 
-export async function getStaticProps() {
-    const data = await residents()
+export async function getStaticPaths() {
+    const artists = await residents()
 
     return {
+        paths: artists.artistCollection.items.map((artist) => ({ params: { name: artist.name }})),
+        fallback: false
+    }
+}
+
+export async function getStaticProps(context) {
+    let data = await resident(context.params.name)
+    return {
         props: {
-            artists: data.artistCollection.items,
+            resident: data.artistCollection.items
         }
     }
 }

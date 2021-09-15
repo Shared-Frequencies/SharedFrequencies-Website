@@ -1,4 +1,5 @@
 import styles from "../styles/Home.module.css";
+import Link from 'next/link'
 import Image from "next/image";
 import PlayPauseToggle from "./PlayPauseToggle";
 import {decode} from "html-entities";
@@ -11,7 +12,9 @@ export default function Header () {
 
     return (
         <header className={styles.header}>
-            <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
+            <Link href={"/"}>
+                <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
+            </Link>
             <div className={styles.oval}>
                 <PlayPauseToggle/>
                 <div className={styles.nowPlaying}>
