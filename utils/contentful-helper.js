@@ -61,6 +61,7 @@ export async function resident (name) {
   query getResident($name: String!){
   artistCollection(where: {name: $name}) {
     items {
+      id
       name
       fullsize {
         url

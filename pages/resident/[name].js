@@ -5,9 +5,9 @@ import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
 import {resident, residents} from "../../utils/contentful-helper";
 import Image from "next/image";
+import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 
 export default function Resident ({ resident }) {
-
     return (
         <>
             <div className={styles.container}>
@@ -29,6 +29,7 @@ export default function Resident ({ resident }) {
                                             alt="Shared Frequencies Logo"
                                             width={512} height={512} />
                                         <p>{artist.name}</p>
+                                        {documentToReactComponents(artist.description.json)}
                                     </div>
                             )
                         }

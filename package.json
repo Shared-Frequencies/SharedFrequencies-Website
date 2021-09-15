@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.3.6",
     "date-format-parse": "^0.2.7",
     "graphql-request": "^3.5.0",
     "html-entities": "^2.3.2",
