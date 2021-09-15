@@ -8,6 +8,35 @@
   margin: 0 auto;
 }
 
+.artistsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  alignment: center;
+  align-items: center;
+  width: 60vw;
+}
+
+.artistsGridName {
+  display: flex;
+  justify-content: center;
+}
+
+.artistsGridImages {
+  display: flex;
+  justify-content: center;
+}
+
+.artist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  alignment: center;
+  justify-content: center;
+  text-align: center;
+  transform: translateX(5vw);
+}
+
+
 .main {
   flex: 1 0 auto;
   display: flex;

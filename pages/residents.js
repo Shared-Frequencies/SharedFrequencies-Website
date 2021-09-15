@@ -20,21 +20,23 @@ export default function Residents ({ artists }) {
                     <Header/>
                     <Sidebar/>
                     <div className={styles.mainColumn}>
-                        {
-                            artists.map((artist) =>
-                                <Link href={`/resident/${artist.name}`} key={artist.id}>
-                                    <div >
+                        <div className={styles.artistsGrid}>
+                            {
+                                artists.map((artist) =>
+                                    <Link href={`/resident/${artist.name}`} key={artist.id}>
+                                        <div >
+                                            <Image
+                                                className={styles.logo}
+                                                src={artist.fullsize.url}
+                                                alt="Shared Frequencies Logo"
+                                                width={512} height={512} />
+                                            <p className={styles.artistsGridName}>{artist.name}</p>
+                                        </div>
+                                    </Link>
+                                )
+                            }
+                        </div>
 
-                                        <Image
-                                            className={styles.logo}
-                                            src={artist.fullsize.url}
-                                            alt="Shared Frequencies Logo"
-                                            width={512} height={512} />
-                                        <p>{artist.name}</p>
-                                    </div>
-                                </Link>
-                            )
-                        }
                     </div>
                     <Footer/>
                 </main>

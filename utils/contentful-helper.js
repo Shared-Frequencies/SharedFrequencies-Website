@@ -28,34 +28,6 @@ export async function residents () {
     return graphQLClient.request(query)
 }
 
-export async function residentsNames () {
-    const query = gql`
-  {
-  artistCollection {
-    items {
-      name
-    }
-  }
-}
-`
-    return graphQLClient.request(query)
-}
-
-export async function residentsImages () {
-    const query = gql`
-  {
-  artistCollection {
-    items {
-      fullsize {
-        url
-      }
-    }
-  }
-}
-`
-    return graphQLClient.request(query)
-}
-
 export async function resident (name) {
     const query = gql`
   query getResident($name: String!){

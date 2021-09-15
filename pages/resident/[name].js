@@ -12,7 +12,7 @@ export default function Resident ({ resident }) {
         <>
             <div className={styles.container}>
                 <Head>
-                    <title>Shared Frequencies</title>
+                    <title>Shared Frequencies: {resident[0].name}</title>
                     <meta name="description" content="Shared Frequencies" />
                     <link rel="icon" href="/favicon.png" />
                 </Head>
@@ -22,18 +22,17 @@ export default function Resident ({ resident }) {
                     <div className={styles.mainColumn}>
                         {
                             resident.map((artist) =>
-                                    <div key={artist.id}>
+                                    <div key={artist.id} className={styles.artist}>
                                         <Image
-                                            className={styles.logo}
+                                            className={styles.artistsGridImages}
                                             src={artist.fullsize.url}
                                             alt="Shared Frequencies Logo"
                                             width={512} height={512} />
-                                        <p>{artist.name}</p>
+                                        <p >{artist.name}</p>
                                         {documentToReactComponents(artist.description.json)}
                                     </div>
                             )
                         }
-
                     </div>
                     <Footer/>
                 </main>
