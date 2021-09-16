@@ -315,6 +315,17 @@
 @media only screen and (max-width: 660px) {
   .sidebar {
     flex-direction: row;
+    width: 10vw;
+    transform: translateX(-50vw) translateY(20vh);
+  }
+  .sidebar ul {
+    font-size: 1em;
+  }
+  .calendarTitle {
+    transform: translateX(5vw);
+  }
+  .chatTitle {
+    transform: translateX(5vw);
   }
   .nowPlaying {
     margin-right: 4em;
@@ -324,15 +335,12 @@
     font-size: .8em;
   }
   .calendar {
-    transform: translateX(-7%);
     font-size: .25em;
-  }
-  .calendar {
-    transform: translateX(0);
+    width: 60vw;
   }
   .chatBox  {
     height: 40vh;
-    width: 100%;
+    width: 60vw;
     max-width: 80vw;
   }
   .footer {
