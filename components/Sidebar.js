@@ -22,7 +22,7 @@ export default function Sidebar() {
                 </li>
                 <li>
                     <Link href="https://www.patreon.com/sharedfrequenciesradio">
-                        <a>Blog</a>
+                        <a target="_blank" rel="noopener noreferrer">Blog</a>
                     </Link>
                 </li>
             </ul>
