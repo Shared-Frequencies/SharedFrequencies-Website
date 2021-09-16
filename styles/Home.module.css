@@ -16,6 +16,10 @@
   width: 60vw;
 }
 
+.artistsGrid:hover{
+  cursor: pointer;
+}
+
 .artistsGridName {
   display: flex;
   justify-content: center;
@@ -27,6 +31,7 @@
 }
 
 .artist {
+  margin-left: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -280,6 +285,10 @@
 .logo {
   padding-right: 15%;
   min-width: 10vw;
+}
+
+.logo:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 960px) {
