@@ -30,6 +30,9 @@
   justify-content: center;
 }
 
+.richText a {
+  color: dodgerblue;
+}
 .artist {
   margin-left: 15%;
   display: flex;

@@ -29,7 +29,9 @@ export default function Resident ({ resident }) {
                                             alt="Shared Frequencies Logo"
                                             width={512} height={512} />
                                         <p >{artist.name}</p>
-                                        {documentToReactComponents(artist.description.json)}
+                                        <div className={styles.richText}>
+                                            {documentToReactComponents(artist.description.json)}
+                                        </div>
                                     </div>
                             )
                         }
