@@ -27,9 +27,10 @@ export default function Schedule({schedule}) {
 
     const times = useMemo(
         () =>  _.map(formattedSchedule, ele =>
-            `${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12} :
-             ${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() === 0 ?
-                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() + "0" :
+            `${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() === 0 ? 12 : 
+                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12} :
+             ${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() < 10 ?
+                "0" + parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() :
                 parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} cst`),
         [formattedSchedule]
     )
@@ -82,7 +83,6 @@ export default function Schedule({schedule}) {
                                             .map((show) => (
                                                 <li key={show} className={styles.show}>
                                                     <div className={styles.names}>
-
                                                         {decode(show[0])}
                                                     </div>
                                                     <div className={styles.times}>
