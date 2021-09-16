@@ -26,7 +26,6 @@ export default function Residents ({ artists }) {
                                     <Link href={`/resident/${artist.name}`} key={artist.id}>
                                         <div className={styles.singleArtist}>
                                             <Image
-                                                className={styles.logo}
                                                 src={artist.fullsize.url}
                                                 alt="Shared Frequencies Logo"
                                                 width={512} height={512} />

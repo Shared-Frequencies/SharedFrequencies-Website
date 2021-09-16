@@ -34,6 +34,7 @@ export async function resident (name) {
   artistCollection(where: {name: $name}) {
     items {
       id
+      soundcloudEmbed
       name
       fullsize {
         url

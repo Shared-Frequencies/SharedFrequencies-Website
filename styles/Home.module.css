@@ -324,22 +324,36 @@
 }
 
 @media only screen and (max-width: 660px) {
+  .header {
+    margin-bottom: 1vh;
+  }
+  .uniqueDays {
+    transform: translateX(-4vw);
+  }
+  .chatStream {
+    font-size: .25em;
+    margin-left: 1.5rem;
+  }
   .footer a {
     font-size: 10pt;
   }
   .sidebar {
-    flex-direction: row;
     width: 10vw;
-    transform: translateX(-50vw) translateY(20vh);
+    transform: translateX(-50vw) translateY(10vh);
+    height: 100%;
+    padding-top: 5%;
+
   }
   .sidebar ul {
     font-size: 1em;
   }
   .calendarTitle {
     transform: translateX(5vw);
+    border-style: none;
   }
   .chatTitle {
     transform: translateX(5vw);
+    border-style: none;
   }
   .nowPlaying {
     margin-right: 4em;

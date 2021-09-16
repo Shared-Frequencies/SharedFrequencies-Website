@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import {resident, residents} from "../../utils/contentful-helper";
 import Image from "next/image";
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
+import ReactHtmlParser from 'react-html-parser';
 
 export default function Resident ({ resident }) {
     return (
@@ -31,6 +32,9 @@ export default function Resident ({ resident }) {
                                         <p >{artist.name}</p>
                                         <div className={styles.richText}>
                                             {documentToReactComponents(artist.description.json)}
+                                        </div>
+                                        <div>
+                                            {artist.soundcloudEmbed ? ReactHtmlParser(artist.soundcloudEmbed) : null}
                                         </div>
                                     </div>
                             )
