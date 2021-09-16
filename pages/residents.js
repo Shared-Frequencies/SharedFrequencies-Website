@@ -24,7 +24,7 @@ export default function Residents ({ artists }) {
                             {
                                 artists.map((artist) =>
                                     <Link href={`/resident/${artist.name}`} key={artist.id}>
-                                        <div >
+                                        <div className={styles.singleArtist}>
                                             <Image
                                                 className={styles.logo}
                                                 src={artist.fullsize.url}

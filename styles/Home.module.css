@@ -15,7 +15,9 @@
   align-items: center;
   width: 60vw;
 }
-
+.singleArtist:hover p {
+  color: dodgerblue;
+}
 .artistsGrid:hover{
   cursor: pointer;
 }
@@ -95,6 +97,10 @@
 }
 .sidebar li {
   padding: .5em;
+}
+
+.sidebar li:hover {
+  color: dodgerblue;
 }
 
 
@@ -228,6 +234,7 @@
 }
 
 .calendarContainer {
+  min-height: 30vh;
   height: 100%;
   margin-right: 1%;
 }
@@ -265,6 +272,7 @@
 
 .inputButton:hover {
   cursor: pointer;
+  color: dodgerblue;
 }
 
 .chatBoxContainer {
@@ -316,6 +324,9 @@
 }
 
 @media only screen and (max-width: 660px) {
+  .footer a {
+    font-size: 10pt;
+  }
   .sidebar {
     flex-direction: row;
     width: 10vw;
@@ -348,6 +359,10 @@
   }
   .footer {
     justify-content: center;
+  }
+  .chatInputContainer {
+    transform: translateX(10%);
+    width: 40vw;
   }
 }
 
