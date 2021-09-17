@@ -49,3 +49,18 @@ export async function resident (name) {
 
     return graphQLClient.request(query, { name })
 }
+
+export async function about () {
+    const query = gql`
+  {
+  aboutCollection {
+    items {
+      about {
+        json
+      }
+    }
+  }
+}
+`
+    return graphQLClient.request(query)
+}
