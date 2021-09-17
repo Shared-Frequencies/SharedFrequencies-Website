@@ -43,11 +43,16 @@ export default function Chat() {
         // we get the messages
         socket.on("getMsg", data => {
             let listMessages = recMsg.listMsg;
-            listMessages.push(JSON.parse(data));
-            setRecMsg({ listMsg: listMessages });
-            scrollToBottom();
+            let prevMessage
+            if (JSON.parse(data) !== prevMessage) {
+                listMessages.push(JSON.parse(data));
+                setRecMsg({listMsg: listMessages});
+                scrollToBottom();
+                prevMessage = JSON.parse(data)
+            }
         });
     }, [recMsg.listMsg]);
+
 
     // to send a message
     const sendMessage = () => {
