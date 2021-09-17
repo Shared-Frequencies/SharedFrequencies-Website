@@ -43,15 +43,15 @@ export default function Chat() {
         // we get the messages
         socket.on("getMsg", data => {
             let listMessages = recMsg.listMsg;
-            let prevMessage
-            if (JSON.parse(data) !== prevMessage) {
-                listMessages.push(JSON.parse(data));
-                setRecMsg({listMsg: listMessages});
-                scrollToBottom();
-                prevMessage = JSON.parse(data)
-            }
+            listMessages.push(JSON.parse(data));
+            setRecMsg({listMsg: listMessages});
+            scrollToBottom();
         });
     }, [recMsg.listMsg]);
+
+    useEffect(() => {
+        socket.emit("getHistory")
+    }, [user])
 
 
     // to send a message
