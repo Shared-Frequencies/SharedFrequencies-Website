@@ -380,8 +380,13 @@
     max-width: 80vw;
   }
   .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding-left: 10vw;
     justify-content: center;
   }
+  
   .chatInputContainer {
     transform: translateX(10%);
     width: 40vw;

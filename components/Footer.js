@@ -7,6 +7,8 @@ export default function Footer () {
             <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/sharedfrequenciesradio/">Instagram</a>
             <a target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/sharedfrequenciesradio">Soundcloud</a>
             <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/shrdfrqncsradio">Twitter</a>
+            <a href={'mailto:sharedfrequencies@gmail.com?subject=Website Contact'}>Contact Us</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.paypal.com/paypalme/sharedfrequencies">Support</a>
         </footer>
     )
 }
