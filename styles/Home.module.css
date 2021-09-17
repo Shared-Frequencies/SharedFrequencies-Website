@@ -323,6 +323,13 @@
   }
 }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10vw;
+  width: 50vw;
+}
+
 @media only screen and (max-width: 660px) {
   .header {
     margin-bottom: 1vh;

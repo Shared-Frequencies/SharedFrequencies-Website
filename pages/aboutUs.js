@@ -8,7 +8,6 @@ import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 
 
 export default function AboutUs ({ about }) {
-    console.log(about)
     return (
         <>
             <div className={styles.container}>
