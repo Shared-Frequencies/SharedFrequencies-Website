@@ -28,7 +28,7 @@ export default function Residents ({ artists }) {
                                             <Image
                                                 src={artist.fullsize.url}
                                                 alt="Shared Frequencies Logo"
-                                                width={512} height={512} />
+                                                width={400} height={400} />
                                             <p className={styles.artistsGridName}>{artist.name}</p>
                                         </div>
                                     </Link>
