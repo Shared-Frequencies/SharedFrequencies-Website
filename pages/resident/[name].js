@@ -31,9 +31,9 @@ export default function Resident ({ resident }) {
                                             width={512} height={512} />
                                         <p >{artist.name}</p>
                                         <div className={styles.richText}>
-                                            {documentToReactComponents(artist.description.json)}
+                                            {artist.description ? documentToReactComponents(artist.description.json) : null}
                                         </div>
-                                        <div>
+                                        <div className={styles.soundcloud}>
                                             {artist.soundcloudEmbed ? ReactHtmlParser(artist.soundcloudEmbed) : null}
                                         </div>
                                     </div>
