@@ -47,7 +47,7 @@ export default function Chat() {
             setRecMsg({ listMsg: listMessages });
             scrollToBottom();
         });
-    }, []);
+    }, [recMsg.listMsg]);
 
     // to send a message
     const sendMessage = () => {

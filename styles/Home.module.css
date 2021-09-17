@@ -84,16 +84,11 @@
 
 .footerRight{
   display: flex;
-  align-items: center;
   justify-content: right;
 }
 
-.footer * {
+.footerRight{
   display: flex;
-  align-content: center;
-  align-self: center;
-  align-items: center;
-  alignment: center;
 }
 
 .footer a {

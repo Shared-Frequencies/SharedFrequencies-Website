@@ -63,7 +63,7 @@ export default function Schedule({schedule}) {
                 setHeight(heightRef.current.clientHeight)
             }, 1000)
         }
-    },[size])
+    },[size, setHeight])
 
     return (
         <div className={styles.calendarContainer} ref={heightRef}>
