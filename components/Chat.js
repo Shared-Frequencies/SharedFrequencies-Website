@@ -28,7 +28,7 @@ export default function Chat() {
 
     const [loggedUser, setLoggedUser] = useState();
 
-    useEffect(() => {
+    useEffect(async () => {
         // subscribe a new user
         socket.emit("login", userGen.generateUsername());
         // list of connected users
@@ -36,8 +36,9 @@ export default function Chat() {
             setUser({ usersList: JSON.parse(data) })
         });
         // get the logged user
-        socket.on("connecteduser", data => {
-            setLoggedUser(JSON.parse(data));
+        socket.on("connecteduser", async data => {
+            await setLoggedUser(JSON.parse(data));
+            console.log(loggedUser)
         });
 
         // we get the messages
@@ -47,11 +48,20 @@ export default function Chat() {
             setRecMsg({listMsg: listMessages});
             scrollToBottom();
         });
-    }, [recMsg.listMsg]);
 
-    useEffect(() => {
-        socket.emit("getHistory")
-    }, [user])
+        socket.on("sendHistory", data => {
+            let listMessages = recMsg.listMsg;
+            listMessages.push(JSON.parse(data));
+            setRecMsg({listMsg: listMessages});
+            scrollToBottom();
+        });
+
+    }, [recMsg.listMsg, setLoggedUser]);
+
+    useEffect(async () => {
+        await socket.emit("getHistory", loggedUser ? loggedUser.id : null);
+
+    }, [loggedUser])
 
 
     // to send a message
