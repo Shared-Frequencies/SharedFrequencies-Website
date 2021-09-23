@@ -58,8 +58,8 @@
 
 .mainColumn {
   width: 50%;
-  transform: translateX(7%) ;
-  padding-right: 3%;
+  /* transform: translateX(7%) ; */
+  padding: 0 15px 0 15px;
 }
 
 .footer {
@@ -174,9 +174,9 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 1.2em;
-  font-weight: 600;
-  /* font-min-size: .66em; */
+  /* font-size: 1.2em; */
+  /* font-weight: 600; */
+  font-min-size: .66em;
   margin-right: 5em;
   margin-left: 1em;
 
@@ -243,7 +243,7 @@
   flex-direction: column;
   width: 25vw;
   height: 100%;
-  overflow: none;
+  overflow: hidden;
   /* border: solid black;
   border-radius: 40px; */
 }
