@@ -54,6 +54,7 @@
   padding-bottom: 40px;
   margin: auto;
   width: 95vw;
+  margin-bottom: 3em;
 }
 
 .mainColumn {
@@ -65,13 +66,17 @@
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 86%;
-  height: 100px;
+  width: 100%;
+  height: 50px;
   border-top: 1px solid #eaeaea;
+  background-color: white;
   justify-content: left;
   align-items: center;
-  padding: 1em;
-  margin-top: 3%;
+  padding: 0 1em 0 1em;
+  /* margin-top: 3%; */
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 
 .footerImage {
@@ -121,6 +126,7 @@
 .days {
   list-style-type: none;
   padding-inline-start: 10px;
+  margin-block-start: 0;
 }
 
 .dailyShows {
@@ -223,7 +229,7 @@
 .chatStream {
   max-height: inherit;
   word-wrap: break-word;
-  margin: 1em 1em 1em 1em;
+  /* margin: 1em 1em 1em 1em; */
 }
 .chatTitle {
   /* padding-left: 0.5vw; */
