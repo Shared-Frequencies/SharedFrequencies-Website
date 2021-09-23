@@ -54,29 +54,24 @@
   padding-bottom: 40px;
   margin: auto;
   width: 95vw;
-  margin-bottom: 3em;
 }
 
 .mainColumn {
   width: 50%;
-  /* transform: translateX(7%) ; */
-  padding: 0 15px 0 15px;
+  transform: translateX(7%) ;
+  padding-right: 3%;
 }
 
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 100%;
-  height: 50px;
+  width: 86%;
+  height: 100px;
   border-top: 1px solid #eaeaea;
-  background-color: white;
   justify-content: left;
   align-items: center;
-  padding: 0 1em 0 1em;
-  /* margin-top: 3%; */
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  padding: 1em;
+  margin-top: 3%;
 }
 
 .footerImage {
@@ -125,15 +120,12 @@
 
 .days {
   list-style-type: none;
-  padding-inline-start: 10px;
-  margin-block-start: 0;
 }
 
 .dailyShows {
   list-style-type: none;
-  /* padding: 0 0 0 5%; */
+  padding: 0 0 0 5%;
   min-width: 80%;
-  padding-inline-start: 20px;
 }
 
 .header {
@@ -174,14 +166,12 @@
 .nowPlaying {
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: center;
   transform: translateY(-60%) translateX(10%);
   align-items: flex-start;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* font-size: 1.2em; */
-  /* font-weight: 600; */
   font-min-size: .66em;
   margin-right: 5em;
   margin-left: 1em;
@@ -190,11 +180,11 @@
 
 .nowPlaying p {
   display: flex;
-  /* padding-left: 40vw; */
-  /* margin-right: 20vw; */
-  justify-content: left;
+  padding-left: 40vw;
+  margin-right: 20vw;
+  justify-content: right;
   white-space: nowrap;
-  /* animation: nowPlaying 12s linear infinite; */
+  animation: nowPlaying 12s linear infinite;
 }
 
 @keyframes nowPlaying {
@@ -208,10 +198,9 @@
   width: 30vw;
   min-height: 30vh;
   max-width: 80vw;
-  alignment: center;
   transform: translateX(-1%);
-  /* border: solid black; */
-  /* border-radius: 40px; */
+  border: solid black;
+  border-radius: 40px;
   margin-right: 1%;
 }
 
@@ -229,29 +218,29 @@
 .chatStream {
   max-height: inherit;
   word-wrap: break-word;
-  /* margin: 1em 1em 1em 1em; */
+  margin: 1em 1em 1em 1em;
 }
 .chatTitle {
-  /* padding-left: 0.5vw; */
-  /* border: solid black;
-  border-radius: 40px; */
+  padding-left: 0.5vw;
+  border: solid black;
+  border-radius: 40px;
   margin-right: 10%;
 }
 
 .calendarTitle {
-  /* padding-left: 0.5vw; */
-  /* border: solid black;
-  border-radius: 40px; */
+  padding-left: 0.5vw;
+  border: solid black;
+  border-radius: 40px;
   margin-right: 10%;
 }
 .chatBox {
   display: flex;
   flex-direction: column;
-  width: 25vw;
+  width: 30vw;
   height: 100%;
-  overflow: hidden;
-  /* border: solid black;
-  border-radius: 40px; */
+  overflow: scroll;
+  border: solid black;
+  border-radius: 40px;
 }
 
 .uniqueDays {
@@ -264,7 +253,7 @@
 }
 
 .times {
-  /* transform: translateX(50%); */
+  transform: translateX(50%);
   white-space: nowrap;
   position: absolute;
   right: 4em;
@@ -285,19 +274,13 @@
 
 .chatInput {
   width: inherit;
-  border: solid 1px black;
-  border-radius: 0px;
-  font-family: inherit;
-}
-
-.chatInput:focus {
-  outline-width: 0;
+  border: solid black;
+  border-radius: 40px;
 }
 
 .inputButton {
-  border: solid 1px black;
-  border-radius: 0px;
-  font-family: inherit;
+  border: solid black;
+  border-radius: 40px;
 }
 
 .inputButton:hover {

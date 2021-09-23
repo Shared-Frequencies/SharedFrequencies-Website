@@ -28,8 +28,8 @@ export default function Home({ schedule }) {
                                 <Chat />
                             </div>
                         </div>
+                        <Footer/>
                     </main>
-                    <Footer/>
                 </div>
             </HeightProvider>
         </>
