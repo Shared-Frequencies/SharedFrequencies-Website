@@ -34,13 +34,11 @@
   color: dodgerblue;
 }
 .artist {
-  margin-left: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transform: translateX(5vw);
 }
 
 
@@ -58,11 +56,11 @@
 .mainColumn {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   align-content: center;
   /* transform: translateX(7%) ; */
-  padding: 0 15px 0 15px;
-  padding-left: 15vw;
+  /* padding: 0 15px 0 15px;
+  padding-left: 10vw; */
 }
 
 .footer {
@@ -102,13 +100,11 @@
 
 .sidebar {
   display: flex;
-  position: absolute;
   flex-direction: column;
-  justify-content: left;
-  width: 10vw;
+  align-content: flex-start;
   /* padding-right: 10vw; */
   /* padding-left: 13%; */
-  transform: translateX(-37vw) translateY(10vh);
+  /* transform: translateX(-37vw) translateY(10vh); */
 }
 
 .sidebar ul {
@@ -117,7 +113,7 @@
   list-style: none;
   font-size: 25pt;
   min-width: 25%;
-  padding-right: 5vw;
+  /* padding-right: 5vw; */
 }
 .sidebar li {
   padding: .5em;
@@ -339,7 +335,13 @@
 .footer a:hover {
   color: dodgerblue;
 }
-
+.sidebarLayout {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  max-width: inherit;
+  padding-right: 10vw;
+}
 
 @media only screen and (max-width: 1080px) {
   .sidebar ul{
@@ -395,7 +397,6 @@
 .about {
   display: flex;
   flex-direction: column;
-  padding-left: 10vw;
   width: 50vw;
 }
 

@@ -19,27 +19,30 @@ export default function Resident ({ resident }) {
                 </Head>
                 <main className={styles.main}>
                     <Header/>
-                    <Sidebar/>
-                    <div className={styles.mainColumn}>
-                        {
-                            resident.map((artist) =>
-                                    <div key={artist.id} className={styles.artist}>
-                                        <Image
-                                            className={styles.artistsGridImages}
-                                            src={artist.fullsize.url}
-                                            alt="Shared Frequencies Logo"
-                                            width={512} height={512} />
-                                        <p >{artist.name}</p>
-                                        <div className={styles.richText}>
-                                            {artist.description ? documentToReactComponents(artist.description.json) : null}
+                    <div className={styles.sidebarLayout}>
+                        <Sidebar/>
+                        <div className={styles.mainColumn}>
+                            {
+                                resident.map((artist) =>
+                                        <div key={artist.id} className={styles.artist}>
+                                            <Image
+                                                className={styles.artistsGridImages}
+                                                src={artist.fullsize.url}
+                                                alt="Shared Frequencies Logo"
+                                                width={512} height={512} />
+                                            <p >{artist.name}</p>
+                                            <div className={styles.richText}>
+                                                {artist.description ? documentToReactComponents(artist.description.json) : null}
+                                            </div>
+                                            <div className={styles.soundcloud}>
+                                                {artist.soundcloudEmbed ? ReactHtmlParser(artist.soundcloudEmbed) : null}
+                                            </div>
                                         </div>
-                                        <div className={styles.soundcloud}>
-                                            {artist.soundcloudEmbed ? ReactHtmlParser(artist.soundcloudEmbed) : null}
-                                        </div>
-                                    </div>
-                            )
-                        }
+                                )
+                            }
+                        </div>
                     </div>
+                    
                     <Footer/>
                 </main>
             </div>

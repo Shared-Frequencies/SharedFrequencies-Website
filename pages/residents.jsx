@@ -18,25 +18,28 @@ export default function Residents ({ artists }) {
                 </Head>
                 <main className={styles.main}>
                     <Header/>
-                    <Sidebar/>
-                    <div className={styles.mainColumn}>
-                        <div className={styles.artistsGrid}>
-                            {
-                                artists.map((artist) =>
-                                    <Link href={`/resident/${artist.name}`} key={artist.id}>
-                                        <div className={styles.singleArtist}>
-                                            <Image
-                                                src={artist.fullsize.url}
-                                                alt="Shared Frequencies Logo"
-                                                width={400} height={400} />
-                                            <p className={styles.artistsGridName}>{artist.name}</p>
-                                        </div>
-                                    </Link>
-                                )
-                            }
+                    <div  className={styles.sidebarLayout}>
+                        <Sidebar/>
+                        <div className={styles.mainColumn}>
+                            <div className={styles.artistsGrid}>
+                                {
+                                    artists.map((artist) =>
+                                        <Link href={`/resident/${artist.name}`} key={artist.id}>
+                                            <div className={styles.singleArtist}>
+                                                <Image
+                                                    src={artist.fullsize.url}
+                                                    alt="Shared Frequencies Logo"
+                                                    width={400} height={400} />
+                                                <p className={styles.artistsGridName}>{artist.name}</p>
+                                            </div>
+                                        </Link>
+                                    )
+                                }
+                            </div>
+    
                         </div>
-
                     </div>
+                    
                     <Footer/>
                 </main>
             </div>

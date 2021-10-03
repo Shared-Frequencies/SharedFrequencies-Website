@@ -20,12 +20,14 @@ export default function Home({ schedule }) {
                     </Head>
                     <main className={styles.main}>
                         <Header/>
-                        <Sidebar/>
-                        <div className={styles.mainColumn}>
-                            <TwitchVideo/>
-                            <div className={styles.bottomContainer}>
-                                <Schedule schedule={schedule} />
-                                <Chat />
+                        <div className={styles.sidebarLayout}>
+                            <Sidebar/>
+                            <div className={styles.mainColumn}>
+                                <TwitchVideo/>
+                                <div className={styles.bottomContainer}>
+                                    <Schedule schedule={schedule} />
+                                    <Chat />
+                                </div>
                             </div>
                         </div>
                     </main>
