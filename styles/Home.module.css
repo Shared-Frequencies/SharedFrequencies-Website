@@ -40,7 +40,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  transform: translateX(5vw);
 }
 
 
@@ -340,6 +339,12 @@
   color: dodgerblue;
 }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+
 
 @media only screen and (max-width: 1080px) {
   .sidebar ul{
@@ -390,13 +395,6 @@
   .twitchContainer {
     padding-left: 5vw;
   }
-}
-
-.about {
-  display: flex;
-  flex-direction: column;
-  padding-left: 10vw;
-  width: 50vw;
 }
 
 @media only screen and (max-width: 660px) {
