@@ -35,7 +35,6 @@ export default function Residents ({ artists }) {
                                 )
                             }
                         </div>
-
                     </div>
                     <Footer/>
                 </main>

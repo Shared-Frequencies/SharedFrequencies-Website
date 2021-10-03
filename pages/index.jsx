@@ -15,7 +15,7 @@ export default function Home({ schedule }) {
                 <div className={styles.container}>
                     <Head>
                         <title>Shared Frequencies</title>
-                        <meta name="description" content="Shared Frequencies" />
+                        <meta name="description" content="Shared Frequencies Radio is a collaborative radio station for all, operating from Austin, Texas, and Madrid, Spain. Shared Frequencies Radio is an independent, community-driven platform accessible to local and international partners to music industry professionals of all experience levels and backgrounds." />
                         <link rel="icon" href="/favicon.png" />
                     </Head>
                     <main className={styles.main}>
