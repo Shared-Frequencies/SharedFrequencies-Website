@@ -10,14 +10,13 @@
 .artistsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  alignment: center;
   align-items: center;
   width: 60vw;
 }
 .singleArtist:hover p {
   color: dodgerblue;
 }
-.artistsGrid:hover{
+.artistsGrid:hover {
   cursor: pointer;
 }
 
@@ -39,7 +38,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  alignment: center;
   justify-content: center;
   text-align: center;
   transform: translateX(5vw);
@@ -58,9 +56,13 @@
 }
 
 .mainColumn {
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
   /* transform: translateX(7%) ; */
   padding: 0 15px 0 15px;
+  padding-left: 15vw;
 }
 
 .footer {
@@ -100,19 +102,22 @@
 
 .sidebar {
   display: flex;
-  position: fixed;
+  position: absolute;
   flex-direction: column;
-  alignment: left;
   justify-content: left;
   width: 10vw;
-  padding-right: 5%;
-  padding-left: 0.75%;
+  /* padding-right: 10vw; */
+  /* padding-left: 13%; */
   transform: translateX(-37vw) translateY(10vh);
 }
 
 .sidebar ul {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   font-size: 25pt;
+  min-width: 25%;
+  padding-right: 5vw;
 }
 .sidebar li {
   padding: .5em;
@@ -144,16 +149,15 @@
   align-items: center;
   min-width: 80vw;
   min-height: 10vh;
-  max-width: 80%;
+  max-width: 100%;
 
 }
 .bottomContainer {
   display: flex;
   flex-direction: row;
-  alignment: center;
   width: 100%;
   min-height: 40%;
-  transform: translateX(0.5%);
+  /* transform: translateX(-5vw); */
   margin-right: 0;
   margin-bottom: 0;
 }
@@ -182,7 +186,6 @@
   text-overflow: ellipsis;
   /* font-size: 1.2em; */
   /* font-weight: 600; */
-  font-min-size: .66em;
   margin-right: 5em;
   margin-left: 1em;
 
@@ -208,7 +211,6 @@
   width: 30vw;
   min-height: 30vh;
   max-width: 80vw;
-  alignment: center;
   transform: translateX(-1%);
   /* border: solid black; */
   /* border-radius: 40px; */
@@ -317,14 +319,16 @@
   min-width: 55vw;
   width: inherit;
   height: 3em;
-  margin-left: 5vw;
+  margin-left: 3vw;
   border: solid black;
   border-radius: 40px;
   position: relative;
 }
 
 .logo {
-  padding-right: 15%;
+  display: flex;
+  align-self: flex-start;
+  padding-right: 25%;
   min-width: 10vw;
 }
 
@@ -336,6 +340,20 @@
   color: dodgerblue;
 }
 
+
+@media only screen and (max-width: 1080px) {
+  .sidebar ul{
+    padding-right: 20vw;
+    font-size: 14pt;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .mainColumn {
+    padding-left: 3vw;
+  }
+  
+}
 @media only screen and (max-width: 960px) {
   .footerImage{
     visibility: hidden;
@@ -369,6 +387,9 @@
   .chatBoxContainer{
     height: 100%;
   }
+  .twitchContainer {
+    padding-left: 5vw;
+  }
 }
 
 .about {
@@ -400,9 +421,7 @@
     transform: translateX(-50vw) translateY(10vh);
     height: 100%;
     padding-top: 5%;
-
   }
-
   .sidebar ul {
     font-size: 1em;
   }
@@ -437,7 +456,6 @@
     padding-left: 10vw;
     justify-content: center;
   }
-
   .chatInputContainer {
     transform: translateX(10%);
     width: 40vw;
