@@ -56,8 +56,9 @@
 .mainColumn {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   align-content: center;
+  min-width: 60vw;
   /* transform: translateX(7%) ; */
   /* padding: 0 15px 0 15px;
   padding-left: 10vw; */
@@ -343,6 +344,13 @@
   padding-right: 10vw;
 }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  max-width: 40vw;
+  padding-top: 5vh;
+}
+
 @media only screen and (max-width: 1080px) {
   .sidebar ul{
     padding-right: 20vw;
@@ -394,11 +402,7 @@
   }
 }
 
-.about {
-  display: flex;
-  flex-direction: column;
-  width: 50vw;
-}
+
 
 @media only screen and (max-width: 660px) {
   .artistsGrid {
