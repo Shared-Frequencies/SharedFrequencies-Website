@@ -22,7 +22,7 @@ export default function Residents ({ artists }) {
                     <div className={styles.mainColumn}>
                         <div className={styles.artistsGrid}>
                             {
-                                artists.map((artist) =>
+                                artists.sort((a,b) => { return a.id - b.id }).map((artist) =>
                                     <Link href={`/resident/${artist.name}`} key={artist.id}>
                                         <div className={styles.singleArtist}>
                                             <Image
