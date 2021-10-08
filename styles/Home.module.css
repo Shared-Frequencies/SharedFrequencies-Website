@@ -33,6 +33,7 @@
 .richText a {
   color: dodgerblue;
 }
+
 .artist {
   margin-left: 15%;
   display: flex;
@@ -42,15 +43,12 @@
   text-align: center;
 }
 
-
 .main {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 40px;
-  margin: auto;
-  width: 95vw;
   margin-bottom: 3em;
 }
 
@@ -142,9 +140,11 @@
 
 .header {
   display: flex;
-  margin: 1rem 1rem 1rem 1rem;
   flex-direction: row;
   flex-shrink: 0;
+  margin-top: 1vw;
+  margin-right: 6vw;
+  margin-left: 6vw;
   align-items: center;
   min-width: 80vw;
   min-height: 10vh;
@@ -177,9 +177,8 @@
 .nowPlaying {
   display: flex;
   flex-direction: row;
-  justify-content: left;
-  transform: translateY(-60%) translateX(10%);
-  align-items: flex-start;
+  /* transform: translateY(-60%) translateX(10%); */
+  align-items: flex-end;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -192,11 +191,11 @@
 
 .nowPlaying p {
   display: flex;
-  /* padding-left: 40vw; */
-  /* margin-right: 20vw; */
-  justify-content: left;
+  padding-left: 40vw;
+  margin-top: 1%;
+  /* justify-content: left; */
   white-space: nowrap;
-  /* animation: nowPlaying 12s linear infinite; */
+  animation: nowPlaying 12s linear infinite;
 }
 
 @keyframes nowPlaying {
@@ -315,13 +314,15 @@
 }
 
 .oval {
+  display: flex;
+  flex-direction: row;
   min-width: 55vw;
   width: inherit;
   height: 3em;
   margin-left: 3vw;
+  margin-right: 5vw;
   border: solid black;
   border-radius: 40px;
-  position: relative;
 }
 
 .logo {
@@ -373,9 +374,6 @@
   }
   .sidebar ul{
     font-size: 15pt;
-  }
-  .nowPlaying {
-    margin-right: 3em;
   }
   .calendar {
     transform: translateX(6%);
@@ -431,10 +429,6 @@
     transform: translateX(5vw);
     border-style: none;
   }
-  .nowPlaying {
-    margin-right: 4em;
-    margin-left: 2em;
-  }
   .nowPlaying p {
     font-size: .8em;
   }
@@ -462,7 +456,7 @@
 
 @media only screen and (min-width: 2000px) {
   .main {
-    margin-right: 20%;
-    margin-left: 20%;
+    margin-right: 40%;
+    margin-left: 40%;
   }
 }
