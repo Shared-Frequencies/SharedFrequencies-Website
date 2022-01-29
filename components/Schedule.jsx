@@ -30,7 +30,7 @@ export default function Schedule({schedule}) {
             `${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours()} :
              ${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() < 10 ?
                 "0" + parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() :
-                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} cst`),
+                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} CST`),
         [formattedSchedule]
     )
 

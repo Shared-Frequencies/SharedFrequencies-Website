@@ -167,7 +167,7 @@
   top: 50%;
   transform: translateY(-50%) translateX(70%);
   display: flex;
-  margin-right: 2em;
+  margin-right: 1em;
 }
 
 .playButton:hover {
@@ -191,11 +191,13 @@
 
 .nowPlaying p {
   display: flex;
-  padding-left: 40vw;
-  margin-top: 1%;
+  /* padding-left: 40vw; */
+  /* margin-top: 1%; */
   /* justify-content: left; */
-  white-space: nowrap;
-  animation: nowPlaying 12s linear infinite;
+  /* white-space: nowrap; */
+  /* animation: nowPlaying 12s linear infinite; */
+  margin: auto;
+  /* line-height: 309px; */
 }
 
 @keyframes nowPlaying {
@@ -392,6 +394,7 @@
   }
   .twitchContainer {
     padding-left: 5vw;
+    margin-right: auto;
   }
 }
 
