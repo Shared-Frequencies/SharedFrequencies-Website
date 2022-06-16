@@ -27,10 +27,8 @@ export default function Schedule({schedule}) {
 
     const times = useMemo(
         () =>  _.map(formattedSchedule, ele =>
-            `${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours()} :
-             ${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() < 10 ?
-                "0" + parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() :
-                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} CST`),
+            `${parse(ele.starts, 'YYYY-MM-DD hh:mm:ss').getHours()}:${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() < 10 ?
+            "0" + parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes(): parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} CST`),
         [formattedSchedule]
     )
 
@@ -66,7 +64,8 @@ export default function Schedule({schedule}) {
 
     return (
         <div className={styles.calendarContainer} ref={heightRef}>
-            <h2 className={styles.calendarTitle}> Schedule </h2>
+            <p className={styles.calendarTitle}> Schedule </p>
+            <hr/>
             <div className={styles.calendar}>
                 <ol className={styles.days}>
                     {
@@ -91,6 +90,7 @@ export default function Schedule({schedule}) {
                                             ))
                                     }
                                 </ol>
+                                <br/>
                             </li>
                         ))
                     }

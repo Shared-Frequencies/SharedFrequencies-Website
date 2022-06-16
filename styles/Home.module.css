@@ -52,6 +52,10 @@
   margin-bottom: 3em;
 }
 
+.outerColumn {
+  display: flex;
+}
+
 .mainColumn {
   display: flex;
   flex-direction: column;
@@ -59,7 +63,8 @@
   align-content: center;
   /* transform: translateX(7%) ; */
   padding: 0 15px 0 15px;
-  padding-left: 15vw;
+  /* padding-left: 10vw; */
+  max-width: 80vw;
 }
 
 .footer {
@@ -99,25 +104,28 @@
 
 .sidebar {
   display: flex;
-  position: absolute;
-  flex-direction: column;
+  /* position: absolute; */
+  /* flex-direction: column; */
   justify-content: left;
-  width: 10vw;
+  /* width: 5vw; */
   /* padding-right: 10vw; */
   /* padding-left: 13%; */
-  transform: translateX(-37vw) translateY(10vh);
+  /* transform: translateX(-37vw) translateY(10vh); */
+  padding-inline-start: 0;
 }
 
 .sidebar ul {
   display: flex;
   flex-direction: column;
   list-style: none;
-  font-size: 25pt;
+  font-size: 15pt;
   min-width: 25%;
-  padding-right: 5vw;
+  /* padding-right: 5vw; */
+  padding-inline-start: 0;
 }
 .sidebar li {
   padding: .5em;
+  padding-inline-start: 0;
 }
 
 .sidebar li:hover {
@@ -127,15 +135,15 @@
 
 .days {
   list-style-type: none;
-  padding-inline-start: 10px;
+  padding-inline-start: 0;
   margin-block-start: 0;
 }
 
 .dailyShows {
-  list-style-type: none;
+  /* list-style-type: none; */
   /* padding: 0 0 0 5%; */
   min-width: 80%;
-  padding-inline-start: 20px;
+  padding-inline-start: 0px;
 }
 
 .header {
@@ -159,6 +167,11 @@
   /* transform: translateX(-5vw); */
   margin-right: 0;
   margin-bottom: 0;
+}
+
+.horizontalRule {
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 .playButton {
@@ -211,7 +224,7 @@
   width: 30vw;
   min-height: 30vh;
   max-width: 80vw;
-  transform: translateX(-1%);
+  /* transform: translateX(-1%); */
   /* border: solid black; */
   /* border-radius: 40px; */
   margin-right: 1%;
@@ -237,14 +250,17 @@
   /* padding-left: 0.5vw; */
   /* border: solid black;
   border-radius: 40px; */
-  margin-right: 10%;
+  /* margin-right: 10%; */
+  margin-block-start: 0px;
+
 }
 
 .calendarTitle {
   /* padding-left: 0.5vw; */
   /* border: solid black;
   border-radius: 40px; */
-  margin-right: 10%;
+  /* margin-right: 10%; */
+  margin-block-start: 0px;
 }
 .chatBox {
   display: flex;
@@ -262,14 +278,20 @@
 
 .calendarContainer {
   height: 100%;
-  margin-right: 1%;
+  padding: 20px;
+  /* margin-right: 1%; */
+  border: solid black;
+  border-width: 1px;
+  border-radius: 0;
 }
 
 .times {
   /* transform: translateX(50%); */
   white-space: nowrap;
-  position: absolute;
-  right: 4em;
+  /* position: absolute;
+  right: 4em; */
+  /* text-align: right; */
+  justify-content: space-between;
 }
 
 .chatInputContainer {
@@ -281,8 +303,10 @@
 
 .show {
   display: flex;
-  width: 50%;
+  /* width: 50%; */
   flex-direction: row;
+  justify-content: space-between;
+  /* padding-right: 20px; */
 }
 
 .chatInput {
@@ -310,9 +334,18 @@
 .chatBoxContainer {
   display: flex;
   flex-direction: column;
-  width: inherit;
-  height: inherit;
-  max-height: inherit;
+  /* width: inherit;
+  height: inherit; */
+  /* max-height: inherit; */
+
+  /* height: 100%; */
+  padding: 20px;
+
+  border: solid black;
+  border-width: 1px;
+  border-radius: 0;
+
+  border-left-width: 0px;
 }
 
 .oval {
@@ -351,7 +384,7 @@
 
 @media only screen and (max-width: 1080px) {
   .sidebar ul{
-    padding-right: 20vw;
+    /* padding-right: 20vw; */
     font-size: 14pt;
   }
 }
@@ -378,10 +411,10 @@
     font-size: 15pt;
   }
   .calendar {
-    transform: translateX(6%);
+    /* transform: translateX(6%); */
   }
   .dates {
-    transform: translateX(9%);
+    /* transform: translateX(9%); */
   }
   .bottomContainer {
     flex-direction: column;
@@ -391,6 +424,10 @@
   }
   .chatBoxContainer{
     height: 100%;
+    border-width: 1px;
+    border-radius: 0;
+
+    border-top-width: 0px;
   }
   .twitchContainer {
     padding-left: 5vw;
@@ -406,7 +443,7 @@
     margin-bottom: 1vh;
   }
   .uniqueDays {
-    transform: translateX(-4vw);
+    /* transform: translateX(-4vw); */
   }
   .chatStream {
     font-size: .25em;
@@ -417,7 +454,7 @@
   }
   .sidebar {
     width: 10vw;
-    transform: translateX(-50vw) translateY(10vh);
+    /* transform: translateX(-50vw) translateY(10vh); */
     height: 100%;
     padding-top: 5%;
   }
@@ -425,18 +462,18 @@
     font-size: 1em;
   }
   .calendarTitle {
-    transform: translateX(5vw);
+    /* transform: translateX(5vw); */
     border-style: none;
   }
   .chatTitle {
-    transform: translateX(5vw);
+    /* transform: translateX(5vw); */
     border-style: none;
   }
   .nowPlaying p {
     font-size: .8em;
   }
   .calendar {
-    font-size: .25em;
+    font-size: .75em;
     width: 60vw;
   }
   .chatBox  {
@@ -452,7 +489,7 @@
     justify-content: center;
   }
   .chatInputContainer {
-    transform: translateX(10%);
+    /* transform: translateX(10%); */
     width: 40vw;
   }
 }

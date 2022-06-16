@@ -7,7 +7,7 @@ import HeightContext from "./HeightProvider";
 const socket = io("https://shared-frequency-chat.herokuapp.com");
 
 export default function Chat() {
-    const {height} = useContext(HeightContext);
+    const {height} = useContext(HeightContext) + 1;
 
     const messagesEndRef = useRef(null)
 
@@ -88,7 +88,8 @@ export default function Chat() {
 
     return (
         <div className={styles.chatBoxContainer} style={{height: height}}>
-            <h2 className={styles.chatTitle}> Chat </h2>
+            <p className={styles.chatTitle}> Chat </p>
+            <hr className={styles.horizontalRule}/>
             <div className={styles.chatBox} >
                 {recMsg.listMsg?.map((msgInfo, index) => {
                     return (
