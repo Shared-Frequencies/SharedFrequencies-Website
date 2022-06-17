@@ -170,8 +170,12 @@
 }
 
 .horizontalRule {
-  margin: 8px 0;
+  border: none;
+  height: 0px;
+  margin: 0 0 16px 0;
   box-sizing: border-box;
+  border-top: 1px solid black;
+  /* border-style: solid; */
 }
 
 .playButton {

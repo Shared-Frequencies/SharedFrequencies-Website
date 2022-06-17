@@ -65,7 +65,7 @@ export default function Schedule({schedule}) {
     return (
         <div className={styles.calendarContainer} ref={heightRef}>
             <p className={styles.calendarTitle}> Schedule </p>
-            <hr/>
+            <hr className={styles.horizontalRule}/>
             <div className={styles.calendar}>
                 <ol className={styles.days}>
                     {
