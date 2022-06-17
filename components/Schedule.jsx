@@ -27,8 +27,9 @@ export default function Schedule({schedule}) {
 
     const times = useMemo(
         () =>  _.map(formattedSchedule, ele =>
-            `${parse(ele.starts, 'YYYY-MM-DD hh:mm:ss').getHours()}:${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() < 10 ?
-            "0" + parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes(): parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} CST`),
+            `${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12 === 0 ? 12 : 
+                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12}:${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() < 10 ?
+                "0" + parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes():parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} PM`),
         [formattedSchedule]
     )
 
@@ -78,6 +79,8 @@ export default function Schedule({schedule}) {
                                     {
                                         zippedDatesShows
                                             .filter((shows) => shows[1] === day)
+                                            .filter((shows) => (shows[0] !== "Shared Frequencies Rotation")
+                                             && (shows[0] !== "SFR"))
                                             .map((show) => (
                                                 <li key={show} className={styles.show}>
                                                     <div className={styles.names}>

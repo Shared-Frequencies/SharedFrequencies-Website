@@ -94,7 +94,7 @@ export default function Chat() {
                 {recMsg.listMsg?.map((msgInfo, index) => {
                     return (
                         <div className={styles.chatStream} key={index}>
-                            <b>{msgInfo.userName}</b>: {msgInfo.msg}
+                            <b className={styles.chatBoxUser}>{msgInfo.userName}</b>: {msgInfo.msg}
                             <div ref={messagesEndRef} />
                         </div>
                     ) })}

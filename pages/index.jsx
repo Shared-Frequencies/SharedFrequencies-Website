@@ -21,7 +21,7 @@ export default function Home({ schedule }) {
                     <main className={styles.main}>
                         <Header/>
                         <div className={styles.outerColumn}>
-                        <Sidebar/>
+                            <Sidebar/>
                             <div className={styles.mainColumn}>
                                 {/* <TwitchVideo/> */}
                                 <div className={styles.bottomContainer}>

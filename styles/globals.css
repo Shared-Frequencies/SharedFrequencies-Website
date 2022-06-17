@@ -18,3 +18,8 @@ a {
   font-family: "AESTHET_NOVA";
   src: url("../public/AESTHET_NOVA_LIGHT.TTF");
 }
+
+@font-face {
+  font-family: "AESTHET_NOVA_LIGHTER";
+  src: url("../public/AESTHET_NOVA_LIGHTER.TTF");
+}
