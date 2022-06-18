@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.css'
 import Head from 'next/head'
-import TwitchVideo from "../components/TwitchVideo";
+// import TwitchVideo from "../components/TwitchVideo";
 import Schedule from "../components/Schedule";
 import Chat from "../components/Chat";
 import {HeightProvider} from "../components/HeightProvider";
@@ -20,6 +20,7 @@ export default function Home({ schedule }) {
                     </Head>
                     <main className={styles.main}>
                         <Header/>
+                        
                         <div className={styles.outerColumn}>
                             <Sidebar/>
                             <div className={styles.mainColumn}>

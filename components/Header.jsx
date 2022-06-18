@@ -13,12 +13,15 @@ export default function Header () {
     return (
         <header className={styles.header}>
             <Link href={"/"}>
-                <Image className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo" width={236} height={111} />
+                <img className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo"  />
             </Link>
-            <div className={styles.oval}>
+            <div className={styles.ovalContainer}>
                 <PlayPauseToggle/>
                 <div className={styles.nowPlaying}>
                     <p>{data !== undefined ? decode(data.name) : 'Shared Frequencies Radio'}</p>
+                </div>
+                <div className={styles.liveIndicator}>
+                    <p>LIVE</p>
                 </div>
             </div>
         </header>
