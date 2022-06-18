@@ -24,7 +24,7 @@ a {
   src: url("../public/AESTHET_NOVA_LIGHTER.TTF");
 }
 
-body {
+/* body {
   animation: gradient 30s linear infinite;
   background-color: #ffffff;
   background-image:  radial-gradient(#000000 0.5px, transparent 0.5px), radial-gradient(#000000 0.5px, #ffffff 0.5px);
@@ -38,5 +38,5 @@ body {
   100% {
       background-position: 0% 0%, 5% 100%;
   }
-}
+} */
 

@@ -79,8 +79,8 @@ export default function Schedule({schedule}) {
                                     {
                                         zippedDatesShows
                                             .filter((shows) => shows[1] === day)
-                                            .filter((shows) => (shows[0] !== "Shared Frequencies Rotation")
-                                             && (shows[0] !== "SFR"))
+                                            // .filter((shows) => (shows[0] !== "Shared Frequencies Rotation")
+                                            //  && (shows[0] !== "SFR"))
                                             .map((show) => (
                                                 <li key={show} className={styles.show}>
                                                     <div className={styles.names}>

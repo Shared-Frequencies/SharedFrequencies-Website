@@ -477,6 +477,10 @@
   .dates {
     /* transform: translateX(9%); */
   }
+
+}
+
+@media only screen and (max-width: 660px) {
   .bottomContainer {
     flex-direction: column;
   }
@@ -491,9 +495,6 @@
     padding-left: 5vw;
     margin-right: auto;
   }
-}
-
-@media only screen and (max-width: 660px) {
   .footerImage{
     display: none;
   }
