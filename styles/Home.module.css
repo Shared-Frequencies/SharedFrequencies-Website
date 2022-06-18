@@ -81,7 +81,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
-  height: 50px;
+  /* height: 50px; */
   border-top: 1px solid #000000;
   background-color: white;
   justify-content: left;
@@ -97,6 +97,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 3px 0 3px 0;
 }
 
 .footerRight{
@@ -109,7 +110,7 @@
 }
 
 .footer a {
-  padding-right: 1em;
+  padding: .25em;
 }
 
 .sidebar {
@@ -464,14 +465,6 @@
   
 }
 @media only screen and (max-width: 960px) {
-  .footerImage{
-    visibility: hidden;
-  }
-
-  .footerRight{
-    transform: translateY(-2vh);
-  }
-
   .artistsGrid {
     grid-template-columns: 1fr 1fr;
   }
@@ -501,6 +494,9 @@
 }
 
 @media only screen and (max-width: 660px) {
+  .footerImage{
+    display: none;
+  }
   .logo {
     display: none;
   }
@@ -511,7 +507,7 @@
     grid-template-columns: 1fr 1fr;
   }
   .header {
-    margin-bottom: 1vh;
+    margin: 0 0 1vh 0;
   }
   .uniqueDays {
     /* transform: translateX(-4vw); */
@@ -559,7 +555,15 @@
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
-    padding-left: 10vw;
+    /* padding-left: 10vw; */
+    justify-content: center;
+  }
+  .footerLeft{
+    display: flex;
+    justify-content: center;
+  }
+  .footerRight{
+    display: flex;
     justify-content: center;
   }
   .chatInputContainer {
