@@ -254,14 +254,22 @@
   border-width: 1px;
   margin: .5em .75em .5em auto;
   background-color:black;
+  animation: liveFlash 3s linear infinite;
 }
 
 .liveIndicator p {
-  color: white;
+  /* color: white; */
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   display: flex;
   margin: auto 10px auto 10px;
+}
+
+@keyframes liveFlash {
+  0%   { background-color:black; color:white;}
+  50%  { background-color:black; color:white;}
+  51%  { background-color:white; color:black;}
+  100% { background-color:white; color:black;}
 }
 
 @keyframes nowPlaying {
