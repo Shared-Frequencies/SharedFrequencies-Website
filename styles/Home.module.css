@@ -110,7 +110,7 @@
 }
 
 .footer a {
-  padding: .25em;
+  padding: .25em .75em .25em .75em;
 }
 
 .sidebar {
@@ -215,7 +215,7 @@
 }
 
 .onAir p {
-  font-size: 1.5em;
+  font-size: 16pt;
   display: flex;
   margin: auto;
 }
@@ -237,7 +237,7 @@
 
 .nowPlaying p {
   font-family: AESTHET_NOVA_LIGHTER;
-  font-size: 1.5em;
+  font-size: 16pt;
   display: flex;
   margin: auto;
 }
