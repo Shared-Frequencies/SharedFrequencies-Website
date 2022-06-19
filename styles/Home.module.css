@@ -209,9 +209,9 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-right: 1em;
-  margin-left: 1em;
-  /* min-width: 1em; */
+  margin-right: .75em;
+  margin-left: .75em;
+  min-width: 70px;
 }
 
 .onAir p {
