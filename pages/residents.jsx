@@ -10,6 +10,7 @@ import Link from "next/link";
 export default function Residents ({ artists }) {
     return (
         <>
+            <div className={styles.backgroundColor}/>
             <div className={styles.container}>
                 <Head>
                     <title>Shared Frequencies</title>

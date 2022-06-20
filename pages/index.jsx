@@ -11,8 +11,8 @@ import Footer from "../components/Footer";
 export default function Home({ schedule }) {
     return (
         <>
+            <div className={styles.backgroundColor}/>
             <HeightProvider>
-                <div className={styles.backgroundColor}/>
                 <div className={styles.container}>
                     <Head>
                         <title>Shared Frequencies Radio</title>

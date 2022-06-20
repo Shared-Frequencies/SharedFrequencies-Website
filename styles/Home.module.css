@@ -450,8 +450,12 @@
 .about {
   display: flex;
   flex-direction: column;
-  width: 50vw;
+  min-width: 55vw;
   padding: 15px;
+}
+
+.about p {
+  font-family: AESTHET_NOVA_LIGHTER;
 }
 
 /* .p5Background {
@@ -508,8 +512,8 @@
     height: 100%;
     border-width: 1px;
     border-radius: 0;
-
-    border-top-width: 0px;
+    border-left: 0 solid #00000000;
+    border-top: 1px solid #000000;
   }
   .twitchContainer {
     padding-left: 5vw;
