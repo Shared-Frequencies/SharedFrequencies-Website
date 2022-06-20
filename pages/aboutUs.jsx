@@ -18,13 +18,15 @@ export default function AboutUs ({ about }) {
                 </Head>
                 <main className={styles.main}>
                     <Header/>
-                    <Sidebar/>
-                    <div className={styles.mainColumn}>
-                        <div className={styles.about}>
-                            {documentToReactComponents(about.about.json)}
+                    <div className={styles.outerColumn}>
+                        <Sidebar/>
+                        <div className={styles.mainColumn}>
+                            <div className={styles.about}>
+                                {documentToReactComponents(about.about.json)}
+                            </div>
                         </div>
+                        <Footer/>
                     </div>
-                    <Footer/>
                 </main>
             </div>
         </>
