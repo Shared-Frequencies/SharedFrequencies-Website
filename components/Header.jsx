@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.css";
 import Link from 'next/link'
-import Image from "next/image";
+// import Image from "next/image";
 import PlayPauseToggle from "./PlayPauseToggle";
 import {decode} from "html-entities";
 import useSWR from "swr";
