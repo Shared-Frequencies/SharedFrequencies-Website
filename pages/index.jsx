@@ -12,6 +12,7 @@ export default function Home({ schedule }) {
     return (
         <>
             <HeightProvider>
+                <div className={styles.backgroundColor}/>
                 <div className={styles.container}>
                     <Head>
                         <title>Shared Frequencies Radio</title>
