@@ -450,12 +450,20 @@
 .about {
   display: flex;
   flex-direction: column;
-  min-width: 55vw;
+  max-width: 55vw;
   padding: 15px;
 }
 
 .about p {
   font-family: AESTHET_NOVA_LIGHTER;
+}
+
+.about h3 {
+  font-size: 0.67em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 /* .p5Background {
@@ -498,6 +506,9 @@
 }
 
 @media only screen and (max-width: 660px) {
+  .about {
+    max-width: none;
+  }
   /* .liveIndicator {
     display: none;
   }*/
