@@ -51,8 +51,7 @@ export default function Schedule({schedule}) {
     const today = new Date().getDay()
 
     const shortDates = useMemo(
-        // () => uniqueDates.slice(today - 1 === -1 ? 7 : today - 1, today -1 === -1 ? 13 : today + 3),
-        () => uniqueDates.slice(0, 3),
+        () => uniqueDates.slice(today - 1 === -1 ? 6 : today - 1, today -1 === -1 ? 10 : today + 3),
         [uniqueDates, today]
     )
 
@@ -80,8 +79,8 @@ export default function Schedule({schedule}) {
                                     {
                                         zippedDatesShows
                                             .filter((shows) => shows[1] === day)
-                                            // .filter((shows) => (shows[0] !== "Shared Frequencies Rotation")
-                                            //  && (shows[0] !== "SFR"))
+                                            .filter((shows) => (shows[0] !== "Shared Frequencies Rotation")
+                                             && (shows[0] !== "SFR"))
                                             .map((show) => (
                                                 <li key={show} className={styles.show}>
                                                     <div className={styles.names}>
