@@ -588,7 +588,7 @@
   }
   .chatInputContainer {
     /* transform: translateX(10%); */
-    width: 40vw;
+    width: 100%;
   }
 }
 
