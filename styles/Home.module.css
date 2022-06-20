@@ -115,7 +115,7 @@
 
 .sidebar {
   display: flex;
-  min-width: 60%;
+  min-width: 100%;
   /* padding: 0 15px 0 15px; */
   padding-inline-start: 0;
   margin-bottom: 1em;
@@ -564,7 +564,7 @@
   }
   .calendar {
     font-size: .75em;
-    width: 60vw;
+    width: 100%;
   }
   .chatBox  {
     height: 40vh;

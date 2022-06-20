@@ -20,7 +20,6 @@ export default function Home({ schedule }) {
                     </Head>
                     <main className={styles.main}>
                         <Header/>
-                        
                         <div className={styles.outerColumn}>
                             <Sidebar/>
                             <div className={styles.mainColumn}>
