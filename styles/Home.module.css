@@ -245,7 +245,7 @@
   /* font-weight: 600; */
   margin-right: auto;
   margin-left: auto;
-
+  padding-right: 3px;
 }
 
 .nowPlaying p {
@@ -510,9 +510,9 @@
   .about {
     max-width: none;
   }
-  /* .liveIndicator {
+  .liveIndicator {
     display: none;
-  }*/
+  }
   .nowPlaying {
     margin-left: 1em;
     margin-right: 1em;
