@@ -20,16 +20,21 @@ export default function Resident ({ resident }) {
                 <main className={styles.main}>
                     <Header/>
                     <Sidebar/>
-                    <div className={styles.mainColumn}>
+                    <div className={styles.artistColumn}>
                         {
                             resident.map((artist) =>
-                                    <div key={artist.id} className={styles.artist}>
+                                <div className={styles.bottomContainer}>
+                                    <div key={artist.id} className={styles.artistPic}>
                                         <Image
                                             className={styles.artistsGridImages}
                                             src={artist.fullsize.url}
-                                            alt="Shared Frequencies Logo"
+                                            alt="Artist Profile Photo"
                                             width={512} height={512} />
-                                        <p >{artist.name}</p>
+                                    </div>
+                                    <div key={artist.id} className={styles.artistBio}>
+                                        <div className={styles.artistName}>
+                                            <h1 className={styles.artistHeader}>{artist.name}</h1>
+                                        </div>
                                         <div className={styles.richText}>
                                             {artist.description ? documentToReactComponents(artist.description.json) : null}
                                         </div>
@@ -37,6 +42,7 @@ export default function Resident ({ resident }) {
                                             {artist.soundcloudEmbed ? ReactHtmlParser(artist.soundcloudEmbed) : null}
                                         </div>
                                     </div>
+                                </div>
                             )
                         }
                     </div>
