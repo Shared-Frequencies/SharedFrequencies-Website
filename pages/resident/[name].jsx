@@ -23,15 +23,15 @@ export default function Resident ({ resident }) {
                     <div className={styles.artistColumn}>
                         {
                             resident.map((artist) =>
-                                <div className={styles.bottomContainer}>
-                                    <div key={artist.id} className={styles.artistPic}>
+                                <div key={artist.id} className={styles.bottomContainer}>
+                                    <div className={styles.artistPic}>
                                         <Image
                                             className={styles.artistsGridImages}
                                             src={artist.fullsize.url}
                                             alt="Artist Profile Photo"
                                             width={512} height={512} />
                                     </div>
-                                    <div key={artist.id} className={styles.artistBio}>
+                                    <div className={styles.artistBio}>
                                         <div className={styles.artistName}>
                                             <h1 className={styles.artistHeader}>{artist.name}</h1>
                                         </div>
