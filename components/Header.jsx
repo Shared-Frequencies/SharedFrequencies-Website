@@ -8,7 +8,7 @@ import useSWR from "swr";
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Header () {
-    const { data } = useSWR('/api/nowPlaying', fetcher, { refreshInterval: 85000 })
+    const { data } = useSWR('/api/nowPlaying', fetcher, { refreshInterval: 200000 })
 
     return (
         <header className={styles.header}>
