@@ -18,7 +18,9 @@ export default function Header () {
             <div className={styles.ovalContainer}>
                 <PlayPauseToggle/>
                 <div className={styles.nowPlaying}>
-                    <p>{((data !== undefined) && (data.current.name !== undefined)) ? decode(data.current.name) : 'Shared Frequencies Radio'}</p>
+                    <p>{(data !== undefined && data.current !== undefined && data.current.name !== undefined) ?
+                        decode(data.current.name) :
+                        'Shared Frequencies Radio'}</p>
                 </div>
                 <div className={styles.liveIndicator}>
                     <p>LIVE</p>
