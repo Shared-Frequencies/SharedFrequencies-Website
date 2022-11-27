@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.css'
 import Head from 'next/head'
-import TwitchVideo from "../components/TwitchVideo";
+// import TwitchVideo from "../components/TwitchVideo";
 import Schedule from "../components/Schedule";
 import Chat from "../components/Chat";
 import {HeightProvider} from "../components/HeightProvider";
@@ -11,25 +11,28 @@ import Footer from "../components/Footer";
 export default function Home({ schedule }) {
     return (
         <>
+            <div className={styles.backgroundColor}/>
             <HeightProvider>
                 <div className={styles.container}>
                     <Head>
-                        <title>Shared Frequencies</title>
-                        <meta name="description" content="Shared Frequencies" />
+                        <title>Shared Frequencies Radio</title>
+                        <meta name="description" content="Shared Frequencies Radio is a collaborative radio station for all, operating from Austin, Texas, and Madrid, Spain. Shared Frequencies Radio is an independent, community-driven platform accessible to local and international partners to music industry professionals of all experience levels and backgrounds." />
                         <link rel="icon" href="/favicon.png" />
                     </Head>
                     <main className={styles.main}>
                         <Header/>
-                        <Sidebar/>
-                        <div className={styles.mainColumn}>
-                            <TwitchVideo/>
-                            <div className={styles.bottomContainer}>
-                                <Schedule schedule={schedule} />
-                                <Chat />
+                        <div className={styles.outerColumn}>
+                            <Sidebar/>
+                            <div className={styles.mainColumn}>
+                                {/* <TwitchVideo/> */}
+                                <div className={styles.bottomContainer}>
+                                    <Schedule schedule={schedule} />
+                                    <Chat />
+                                </div>
                             </div>
                         </div>
-                        <Footer/>
                     </main>
+                    <Footer/>
                 </div>
             </HeightProvider>
         </>

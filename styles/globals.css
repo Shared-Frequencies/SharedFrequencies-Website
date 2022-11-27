@@ -3,6 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: AESTHET_NOVA;
+  height: 100%;
 }
 
 a {
@@ -18,3 +19,25 @@ a {
   font-family: "AESTHET_NOVA";
   src: url("../public/AESTHET_NOVA_LIGHT.TTF");
 }
+
+@font-face {
+  font-family: "AESTHET_NOVA_LIGHTER";
+  src: url("../public/AESTHET_NOVA_LIGHTER.TTF");
+}
+
+/* body {
+  animation: gradient 30s linear infinite;
+  background-color: #ffffff;
+  background-image:  radial-gradient(#000000 0.5px, transparent 0.5px), radial-gradient(#000000 0.5px, #ffffff 0.5px);
+  background-size: 20px 20px;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 100%, 5% 5%;
+  }
+  100% {
+      background-position: 0% 0%, 5% 100%;
+  }
+} */
+

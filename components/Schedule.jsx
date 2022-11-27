@@ -28,10 +28,8 @@ export default function Schedule({schedule}) {
     const times = useMemo(
         () =>  _.map(formattedSchedule, ele =>
             `${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12 === 0 ? 12 : 
-                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12} :
-             ${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() < 10 ?
-                "0" + parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() :
-                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} cst`),
+                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12}:${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() < 10 ?
+                "0" + parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes():parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} CST`),
         [formattedSchedule]
     )
 
@@ -53,7 +51,7 @@ export default function Schedule({schedule}) {
     const today = new Date().getDay()
 
     const shortDates = useMemo(
-        () => uniqueDates.slice(today - 1 === -1 ? 7 : today - 1, today -1 === -1 ? 13 : today + 3),
+        () => uniqueDates.slice(today - 1 === -1 ? 6 : today - 1, today -1 === -1 ? 10 : today + 1),
         [uniqueDates, today]
     )
 
@@ -67,7 +65,8 @@ export default function Schedule({schedule}) {
 
     return (
         <div className={styles.calendarContainer} ref={heightRef}>
-            <h2 className={styles.calendarTitle}> Schedule </h2>
+            <p className={styles.calendarTitle}> Schedule </p>
+            <hr className={styles.horizontalRule}/>
             <div className={styles.calendar}>
                 <ol className={styles.days}>
                     {
@@ -80,6 +79,8 @@ export default function Schedule({schedule}) {
                                     {
                                         zippedDatesShows
                                             .filter((shows) => shows[1] === day)
+                                            .filter((shows) => (shows[0] !== "Shared Frequencies Rotation")
+                                             && (shows[0] !== "SFR"))
                                             .map((show) => (
                                                 <li key={show} className={styles.show}>
                                                     <div className={styles.names}>
@@ -92,6 +93,7 @@ export default function Schedule({schedule}) {
                                             ))
                                     }
                                 </ol>
+                                <br/>
                             </li>
                         ))
                     }
