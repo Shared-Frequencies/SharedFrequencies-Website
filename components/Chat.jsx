@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 import {useContext, useEffect, useRef, useState} from "react";
 import HeightContext from "./HeightProvider";
 
-const socket = io("https://shared-frequency-chat.herokuapp.com");
+const socket = io("https://shared-frequency-chat-2.herokuapp.com");
 
 export default function Chat() {
     const {height} = useContext(HeightContext) + 1;
