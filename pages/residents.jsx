@@ -27,10 +27,12 @@ export default function Residents ({ artists }) {
                                     artists.sort((a,b) => { return a.id - b.id }).map((artist) =>
                                         <Link href={`/resident/${artist.name}`} key={artist.id}>
                                             <div className={styles.singleArtist}>
-                                                <Image
-                                                    src={artist.fullsize.url}
-                                                    alt="Shared Frequencies Logo"
-                                                    width={400} height={400} />
+                                                <div className={styles.singleArtistImg}>
+                                                    <Image  
+                                                        src={artist.fullsize.url}
+                                                        alt="Shared Frequencies Logo"
+                                                        width={400} height={400} />
+                                                </div>
                                                 <p className={styles.artistsGridName}>{artist.name}</p>
                                             </div>
                                         </Link>

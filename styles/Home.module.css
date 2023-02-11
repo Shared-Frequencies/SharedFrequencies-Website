@@ -33,8 +33,29 @@
   align-items: center;
   width: 60vw;
 }
+.singleArtist {
+  margin: 10px 10px 10px 10px;
+  border: solid black;
+  border-width: 1px;
+  border-radius: 0;
+  box-shadow: 3px 3px;
+  transition: box-shadow .1s;
+}
+
+.singleArtistImg {
+  display: grid;
+  border-bottom: solid black;
+  border-width: 1px;
+}
+
+.singleArtist:hover {
+  box-shadow: 0px 0px;
+  transition: box-shadow .1s;
+  /* color: dodgerblue; */
+}
+
 .singleArtist:hover p {
-  color: dodgerblue;
+  /* color: dodgerblue; */
 }
 .artistsGrid:hover {
   cursor: pointer;
@@ -43,6 +64,7 @@
 .artistsGridName {
   display: flex;
   justify-content: center;
+  font-size: small;
 }
 
 .artistsGridImages {
