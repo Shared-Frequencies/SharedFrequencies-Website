@@ -31,21 +31,25 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
+  grid-gap: 1em;
   width: 60vw;
 }
 .singleArtist {
-  margin: 10px 10px 10px 10px;
+  /* margin: 10px 10px 10px 10px; */
   border: solid black;
   border-width: 1px;
   border-radius: 0;
   box-shadow: 3px 3px;
   transition: box-shadow .1s;
+  background: white;
 }
 
 .singleArtistImg {
   display: grid;
   border-bottom: solid black;
   border-width: 1px;
+  background-image: radial-gradient(#000000 0.5px, #ffffff 0.5px);
+  background-size: 10px 10px;
 }
 
 .singleArtist:hover {
@@ -202,7 +206,6 @@
   padding-inline-start: 0;
   margin-bottom: 1em;
   font-size: 1.25em;
-  
 }
 
 .sidebarContent {
@@ -221,8 +224,15 @@
 }
 
 .sidebarContent a {
+  transition: transform .15s;
   padding: 0 5px 0 5px;
 }
+
+.sidebarContent a:hover {
+  transition: color .15s;
+  color: dodgerblue;
+}
+
 
 .days {
   list-style-type: none;
@@ -529,14 +539,27 @@
 
 .about p {
   font-family: AESTHET_NOVA_LIGHTER;
+  margin-block-start: .5em;
+  margin-block-end: .5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 .about h3 {
   font-size: 1em;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block-start: .5em;
+  margin-block-end: .5em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+}
+
+.about a {
+  transition: color .15s;
+}
+
+.about a:hover {
+  transition: color .15s;
+  color: dodgerblue;
 }
 
 /* .p5Background {
