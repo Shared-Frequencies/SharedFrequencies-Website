@@ -1,8 +1,8 @@
 import React from 'react';
-import HomeComponent from "../pages/home";
-import About from "../pages/about";
-import Residents from '../pages/residents';
-import Resident from '../pages/resident/[name]';
+import HomeComponent from "./home";
+import About from "./about";
+import Residents from './residents';
+import Resident from './resident/[name]';
 
 export default function MainContent({ setCurrentPage, currentPage, setCurrentResident, currentResident, schedule, artists, about, resident}) {
     return (
