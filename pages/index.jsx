@@ -1,14 +1,17 @@
 import styles from '../styles/Home.module.css'
 import Head from 'next/head'
-// import TwitchVideo from "../components/TwitchVideo";
-import Schedule from "../components/Schedule";
-import Chat from "../components/Chat";
+import React , { setState, useState } from 'react';
 import {HeightProvider} from "../components/HeightProvider";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import {fetchAbout, fetchResident, fetchResidents} from "../utils/contentful-helper";
+import MainContent from "../components/MainContent";
+//import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 
-export default function Home({ schedule }) {
+export default function Home({ schedule, about, artists }) {
+    const [currentPage, setCurrentPage] = useState('home');
+    const [currentResident, setCurrentResident] = useState('none');
     return (
         <>
             <div className={styles.backgroundColor}/>
@@ -22,14 +25,16 @@ export default function Home({ schedule }) {
                     <main className={styles.main}>
                         <Header/>
                         <div className={styles.outerColumn}>
-                            <Sidebar/>
-                            <div className={styles.mainColumn}>
-                                {/* <TwitchVideo/> */}
-                                <div className={styles.bottomContainer}>
-                                    <Schedule schedule={schedule} />
-                                    <Chat />
-                                </div>
-                            </div>
+                            <Sidebar setCurrentPage={setCurrentPage} />
+                            <MainContent
+                                setCurrentPage={setCurrentPage}
+                                currentPage={currentPage}
+                                setCurrentResident={setCurrentResident}
+                                currentResident={currentResident}
+                                schedule={schedule}
+                                about={about}
+                                artists={artists}
+                            />
                         </div>
                     </main>
                     <Footer/>
@@ -40,11 +45,21 @@ export default function Home({ schedule }) {
 }
 
 export async function getServerSideProps(context) {
+    // schedule
     const scheduleRes = await fetch(`https://sharedfrequencies.airtime.pro/api/week-info`)
     const scheduleData = await scheduleRes.json()
+    
+    // about
+    const aboutData = await fetchAbout()
+
+    // residents
+    const residentsData = await fetchResidents()
+
     return {
         props: {
-            schedule: scheduleData
+            schedule: scheduleData,
+            about: aboutData.aboutCollection.items[0],
+            artists: residentsData.artistCollection.items,
         }, // will be passed to the page component as props
     }
 }
