@@ -95,7 +95,8 @@ export default function Chat() {
     }
 
     return (
-        <div className={styles.chatBoxContainer} style={{height: height}}> 
+        // <div className={styles.chatBoxContainer} style={{height: height}}> 
+        <div className={styles.chatBoxContainer}> 
             <p className={styles.chatTitle}> Chat </p>
             <hr className={styles.horizontalRule}/>
             <div className={styles.chatBox} >

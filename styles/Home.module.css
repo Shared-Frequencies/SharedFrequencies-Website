@@ -229,12 +229,12 @@
   border-width: 1px;
   border-radius: 0;
   box-shadow: 3px 3px;
-  cursor: pointer;
 }
 
 .sidebarContent a {
   transition: transform .15s;
   padding: 0 5px 0 5px;
+  cursor: pointer;
 }
 
 .sidebarContent a:hover {
@@ -505,10 +505,11 @@
 }
 
 .chatBoxContainer {
-  display: grid;
+  display: flex;
   flex-direction: column;
   padding: 15px;
   border-left: 1px solid #000000;
+  width: 100%;
 }
 
 .ovalContainer {
