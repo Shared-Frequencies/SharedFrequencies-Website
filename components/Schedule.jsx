@@ -28,7 +28,7 @@ export default function Schedule({schedule}) {
     const times = useMemo(
         () =>  _.map(formattedSchedule, ele =>
             `${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12 === 0 ? 12 : 
-                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12}:${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() < 10 ?
+                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() }:${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() < 10 ?
                 "0" + parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes():parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} CST`),
         [formattedSchedule]
     )
@@ -51,7 +51,7 @@ export default function Schedule({schedule}) {
     const today = new Date().getDay()
 
     const shortDates = useMemo(
-        () => uniqueDates.slice(today - 1 === -1 ? 6 : today - 1, today -1 === -1 ? 10 : today + 1),
+        () => uniqueDates.slice(today - 1 === -1 ? 6 : today - 1, today -1 === -1 ? 10 : today + 3),
         [uniqueDates, today]
     )
 
