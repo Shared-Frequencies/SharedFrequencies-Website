@@ -56,7 +56,7 @@ export default function Schedule({schedule}) {
     )
 
     useEffect(() => {
-        if(heightRef.current.clientHeight){
+        if(heightRef && heightRef.current && heightRef.current.clientHeight){
             setTimeout(() => {
                 setHeight(heightRef.current.clientHeight)
             }, 1000)

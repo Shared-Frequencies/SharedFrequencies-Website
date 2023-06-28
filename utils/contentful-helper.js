@@ -8,7 +8,7 @@ const graphQLClient = new GraphQLClient(endpoint, {
     },
 })
 
-export async function residents () {
+export async function fetchResidents () {
     const query = gql`
   {
   artistCollection {
@@ -28,7 +28,7 @@ export async function residents () {
     return graphQLClient.request(query)
 }
 
-export async function resident (name) {
+export async function fetchResident (name) {
     const query = gql`
   query getResident($name: String!){
   artistCollection(where: {name: $name}) {
@@ -50,7 +50,7 @@ export async function resident (name) {
     return graphQLClient.request(query, { name })
 }
 
-export async function about () {
+export async function fetchAbout () {
     const query = gql`
   {
   aboutCollection {
