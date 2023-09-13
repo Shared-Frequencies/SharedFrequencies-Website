@@ -392,6 +392,8 @@
   width: 25vw;
   height: 100%;
   overflow: hidden;
+  /* overflow: scroll; */
+  /* max-height: 100vh; */
   /* border: solid black;
   border-radius: 40px; */
 }

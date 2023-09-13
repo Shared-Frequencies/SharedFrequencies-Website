@@ -2,12 +2,16 @@ import styles from '../styles/Home.module.css'
 import { io } from "socket.io-client";
 // import userGen from "username-generator"
 import {useContext, useEffect, useRef, useState} from "react";
-import HeightContext from "./HeightProvider";
+import useStore from "../store/HeightStore";
 
+// const socket = io(process.env.CHAT_SERVER_URL);
+// const socket = io('http://localhost:4001');
 const socket = io("https://shared-frequency-chat.herokuapp.com");
 
+
+
 export default function Chat() {
-    const {height} = useContext(HeightContext) + 1;
+    const height = useStore(state => state.height);
 
     const messagesEndRef = useRef(null)
 
@@ -94,30 +98,46 @@ export default function Chat() {
         }
     }
 
+    console.log(height)
+
     return (
-        <div className={styles.chatBoxContainer} style={{height: height}}> 
-            <p className={styles.chatTitle}> Chat </p>
-            <hr className={styles.horizontalRule}/>
-            <div className={styles.chatBox} >
-                {recMsg.listMsg?.map((msgInfo, index) => {
-                    return (
-                        <div className={styles.chatStream} key={index}>
-                            <b className={styles.chatBoxUser}>{msgInfo.userName}</b>: {msgInfo.msg}
-                            <div ref={messagesEndRef} />
-                        </div>
-                    ) })}
-            </div>
-            <div className={styles.chatInputContainer}>
-                <input className={styles.chatInput}
-                       id="inputmsg"
-                       ref={messageInputRef}
-                       onKeyDown={(e) => enter(e) }
-                       value={inputValue}
-                       onChange={handleUserInput} />
-                <button className={styles.inputButton}
-                        id="btnmsg"
-                        onClick={() => { sendMessage() }}> Send </button>
-            </div>
-        </div >
+      <div
+        className={styles.chatBoxContainer}
+        style={{ maxHeight: height}}
+      >
+        <p className={styles.chatTitle}> Chat </p>
+        <hr className={styles.horizontalRule} />
+        <div className={styles.chatBox}>
+          {recMsg.listMsg?.map((msgInfo, index) => {
+            return (
+              <div className={styles.chatStream} key={index}>
+                <b className={styles.chatBoxUser}>{msgInfo.userName}</b>:{" "}
+                {msgInfo.msg}
+                <div ref={messagesEndRef} />
+              </div>
+            );
+          })}
+        </div>
+        <div className={styles.chatInputContainer}>
+          <input
+            className={styles.chatInput}
+            id="inputmsg"
+            ref={messageInputRef}
+            onKeyDown={(e) => enter(e)}
+            value={inputValue}
+            onChange={handleUserInput}
+          />
+          <button
+            className={styles.inputButton}
+            id="btnmsg"
+            onClick={() => {
+              sendMessage();
+            }}
+          >
+            {" "}
+            Send{" "}
+          </button>
+        </div>
+      </div>
     );
 }

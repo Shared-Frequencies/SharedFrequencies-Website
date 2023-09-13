@@ -3,7 +3,6 @@ import Head from 'next/head'
 // import TwitchVideo from "../components/TwitchVideo";
 import Schedule from "../components/Schedule";
 import Chat from "../components/Chat";
-import {HeightProvider} from "../components/HeightProvider";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -12,7 +11,6 @@ export default function Home({ schedule }) {
     return (
         <>
             <div className={styles.backgroundColor}/>
-            <HeightProvider>
                 <div className={styles.container}>
                     <Head>
                         <title>Shared Frequencies Radio</title>
@@ -34,7 +32,6 @@ export default function Home({ schedule }) {
                     </main>
                     <Footer/>
                 </div>
-            </HeightProvider>
         </>
     )
 }

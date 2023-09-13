@@ -5,16 +5,16 @@ export default function Sidebar() {
     return (
       <div className={styles.sidebar}>
         <div className={styles.sidebarContent}>
-          <Link href="/">
+          <Link passHref href="/">
             <a>LISTEN</a>
           </Link>
-          <Link href="/residents">
+          <Link passHref href="/residents">
             <a>RESIDENTS</a>
           </Link>
-          <Link href="/aboutUs">
+          <Link passHref href="/aboutUs">
             <a>ABOUT US</a>
           </Link>
-          <Link href="https://www.patreon.com/sharedfrequenciesradio">
+          <Link passHref href="https://www.patreon.com/sharedfrequenciesradio">
             <a target="_blank" rel="noopener noreferrer">
               BLOG
             </a>

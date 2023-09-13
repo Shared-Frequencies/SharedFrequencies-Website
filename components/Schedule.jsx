@@ -3,11 +3,11 @@ import { parse } from 'date-format-parse';
 import {decode} from 'html-entities';
 import _ from 'lodash';
 import {useContext, useEffect, useMemo, useRef} from "react";
-import HeightContext from "./HeightProvider";
 import {useWindowSize} from "./TwitchVideo";
+import useStore from "../store/HeightStore";
 
 export default function Schedule({schedule}) {
-    const {setHeight} = useContext(HeightContext);
+    const setHeight = useStore(state => state.setHeight);
 
     const size = useWindowSize();
 
