@@ -9,6 +9,7 @@ export default function Residents ({ artists, setCurrentPage, setCurrentResident
                     {
                         artists.sort((a,b) => { return a.id - b.id }).map((artist) =>
                             <div onClick={() => {
+                                    window.scrollTo(0, 0);
                                     setCurrentPage('resident')
                                     setCurrentResident(artist)
                                     }} key={artist.id}>

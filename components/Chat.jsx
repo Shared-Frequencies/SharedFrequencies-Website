@@ -13,9 +13,9 @@ export default function Chat() {
 
     const messageInputRef = useRef(null)
 
-    const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-    }
+    // const scrollToBottom = () => {
+    //     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+    // }
 
     const [user, setUser] = useState({
         usersList: null
@@ -53,14 +53,14 @@ export default function Chat() {
             let listMessages = recMsg.listMsg;
             listMessages.push(JSON.parse(data));
             setRecMsg({listMsg: listMessages});
-            scrollToBottom();
+            // scrollToBottom();
         });
 
         socket.on("sendHistory", data => {
             let listMessages = recMsg.listMsg;
             listMessages.push(JSON.parse(data));
             setRecMsg({listMsg: listMessages});
-            scrollToBottom();
+            // scrollToBottom();
         });
 
     }, [recMsg.listMsg, setLoggedUser]);

@@ -8,10 +8,10 @@ export default function Sidebar({ setCurrentPage }) {
             <div className={styles.sidebarContent}>
                 <a onClick={() => {setCurrentPage('home')}}>LISTEN</a>
                 <a onClick={() => {setCurrentPage('residents')}}>RESIDENTS</a>
-                <a onClick={() => {setCurrentPage('about')}}>ABOUT</a>
-                <Link href="https://www.patreon.com/sharedfrequenciesradio">
+                {/* <a onClick={() => {setCurrentPage('about')}}>ABOUT</a> */}
+                {/* <Link href="https://www.patreon.com/sharedfrequenciesradio">
                     <a target="_blank" rel="noopener noreferrer">BLOG</a>
-                </Link>
+                </Link> */}
             </div>
         </div>
     )

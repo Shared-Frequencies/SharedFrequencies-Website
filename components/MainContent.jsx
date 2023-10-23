@@ -10,6 +10,7 @@ export default function MainContent({ setCurrentPage, currentPage, setCurrentRes
             {currentPage === 'home' && (
                 <HomeComponent
                     schedule={schedule}
+                    about={about}
                 />
             )}
             {currentPage === 'residents' && (

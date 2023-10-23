@@ -19,7 +19,7 @@
 }
 
 .container {
-  padding: 0 0.5rem;
+  /* padding: 0 0.5rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,7 +31,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
-  grid-gap: 1em;
+  /* grid-gap: 1em; */
   /* width: 60vw; */
 }
 .singleArtist {
@@ -39,9 +39,10 @@
   border: solid black;
   border-width: 1px;
   border-radius: 0;
-  box-shadow: 3px 3px;
-  transition: box-shadow .1s;
+  /* box-shadow: 3px 3px; */
+  /* transition: box-shadow .1s; */
   background: white;
+  filter: grayscale(1);
 }
 
 .singleArtistImg {
@@ -50,11 +51,15 @@
   border-width: 1px;
   background-image: radial-gradient(#000000 0.5px, #ffffff 0.5px);
   background-size: 10px 10px;
+
 }
 
 .singleArtist:hover {
-  box-shadow: 0px 0px;
-  transition: box-shadow .1s;
+  /* box-shadow: 0px 0px;
+  transition: box-shadow .1s; */
+  background-color: black;
+  color:white;
+  filter: grayscale(0);
   /* color: dodgerblue; */
 }
 
@@ -84,7 +89,7 @@
   flex-direction: column;
   align-items: center;
   align-content: center;
-  padding: 0 15px 0 15px;
+  /* padding: 0 15px 0 15px; */
   animation: fadeIn .25s;
 }
 
@@ -139,14 +144,15 @@
   margin-block-end: 5px;
 }
 
+/* MAIN */
 .main {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 40px;
+  /* padding-bottom: 40px; */
   margin-bottom: 3em;
-  width: 80vw;
+  width: 100%;
 }
 
 .outerColumn {
@@ -154,14 +160,15 @@
   width: 100%;
 }
 
-.mainColumn {
+/* .mainColumn {
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
+  padding: 0 0 0 0px;
   padding: 0 15px 0 15px;
   animation: fadeIn .25s;
-}
+} */
 
 @keyframes fadeIn {
   0% { opacity: 0; }
@@ -177,7 +184,7 @@
   background-color: white;
   justify-content: left;
   align-items: center;
-  padding: 0 1em 0 1em;
+  padding: 0 15px 0 15px;
   /* margin-top: 3%; */
   position: fixed;
   left: 0;
@@ -201,7 +208,9 @@
 }
 
 .footer a {
-  padding: .25em .75em .25em .75em;
+  /* padding: .25em .75em .25em .75em; */
+  padding-right: .75em;
+
 }
 
 .sidebar {
@@ -209,14 +218,15 @@
   min-width: 100%;
   /* padding: 0 15px 0 15px; */
   padding-inline-start: 0;
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
   font-size: 1.25em;
 }
 
 .sidebarContent {
-  background-color: white;
+  background-color: black;
+  color: white;
   /* font-family: Arial, Helvetica, sans-serif; */
-  margin: 0 15px 0 15px;
+  /* margin: 0 15px 0 15px; */
   padding: 6px 0 6px 0;
   display: flex;
   width: 100%;
@@ -225,7 +235,7 @@
   border: solid black;
   border-width: 1px;
   border-radius: 0;
-  box-shadow: 3px 3px;
+  /* box-shadow: 3px 3px; */
 }
 
 .sidebarContent a {
@@ -235,8 +245,9 @@
 }
 
 .sidebarContent a:hover {
-  transition: color .15s;
-  color: dodgerblue;
+  transition: color .05s;
+  color: black;
+  background-color:white;
 }
 
 
@@ -245,6 +256,12 @@
   padding-inline-start: 0;
   margin-block-start: 0;
   margin-block-end: 0;
+  /* max-height: 60vh;
+  overflow-y: scroll; */
+}
+
+.days::-webkit-scrollbar {
+  display: none;
 }
 
 .dailyShows {
@@ -256,11 +273,12 @@
 }
 
 .header {
+  background-color: black;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   flex-shrink: 0;
-  padding: 1em;
+  padding: 1em 1em 0em 1em;
   align-items: center;
   /* margin: 0 1em 0 1em; */
   /* min-width: 80vw; */
@@ -279,9 +297,10 @@
   margin-right: 0;
   margin-bottom: 0;
   background-color:white;
-  box-shadow: 3px 3px;
-  border: 1px solid #000;
+  /* box-shadow: 3px 3px; */
+  /* border: 1px solid #000; */
   border-radius: 0;
+  overflow: wrap;
 }
 
 .horizontalRule {
@@ -384,7 +403,7 @@
 .calendar {
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  /* width: 30vw; */
   min-height: 30vh;
   /* max-width: 80vw; */
   /* transform: translateX(-1%); */
@@ -405,6 +424,7 @@
   font-size: .7em;
 }
 .chatStream {
+  /* max-width: 33vw; */
   max-height: inherit;
   word-wrap: break-word;
   font-family: AESTHET_NOVA_LIGHTER;
@@ -443,12 +463,20 @@
 }
 
 .calendarContainer {
-  height: 100%;
+  /* height: 100%; */
   padding: 15px;
   /* margin-right: 1%; */
   /* border: solid black;
   border-width: 1px;
   border-radius: 0; */
+  width:33%
+}
+
+.aboutContainer {
+  /* height: fill; */
+  padding: 15px;
+  border-left: 1px solid #000000;
+  width: 34%;
 }
 
 .times {
@@ -506,7 +534,7 @@
   flex-direction: column;
   padding: 15px;
   border-left: 1px solid #000000;
-  width: 100%;
+  width: 33%;
 }
 
 .ovalContainer {
@@ -520,7 +548,7 @@
   border-radius: 40px;
   border-width: 1px;
   background-color:white;
-  box-shadow: 3px 3px;
+  /* box-shadow: 3px 3px; */
 }
 
 .logo {
@@ -545,7 +573,7 @@
   display: flex;
   flex-direction: column;
   /* max-width: 55vw; */
-  padding: 15px;
+  /* padding: 15px; */
 }
 
 .about p {
@@ -602,9 +630,19 @@
   }
   .sidebar {
     font-size: 13pt;
+    display: none;
   }
   .calendar {
     min-width: 70%;
+  }
+  .calendarContainer {
+    width: 100%;
+  }
+  .chatBoxContainer {
+      width: 100%;
+  }
+  .aboutContainer {
+    width: 100%;
   }
   .main {
     width: 100vw;
@@ -633,6 +671,13 @@
     border-left: 0 solid #00000000;
     border-top: 1px solid #000000;
   }
+  .aboutContainer{
+    display: none;
+    border-width: 1px;
+    border-radius: 0;
+    border-left: 0 solid #00000000;
+    border-top: 1px solid #000000;
+  }
   .artistBio{
     height: 100%;
     width: 100%;
@@ -648,6 +693,9 @@
   .footerImage{
     display: none;
   }
+  .ovalContainer {
+    border-radius: 0;
+  }
   .logo {
     display: none;
   }
@@ -659,7 +707,8 @@
   }
   .header {
     max-width: 100vw;
-    margin: 0 0 1vh 0;
+    padding:0;
+    /* margin: 0 0 1vh 0; */
   }
   .chatStream {
     font-size: 1em;
@@ -698,6 +747,10 @@
     font-size: 1em;
     width: 100%;
   }
+  /* .days {
+    max-height: 100%;
+    overflow: hidden;
+  } */
   .chatBox  {
     height: 40vh;
     width: 100%;
@@ -711,7 +764,7 @@
   }
   .footerLeft{
     display: flex;
-    justify-content: center;
+    justify-content:space-between
   }
   .footerRight{
     display: flex;

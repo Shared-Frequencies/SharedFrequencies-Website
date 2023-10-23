@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {fetchAbout, fetchResident, fetchResidents} from "../utils/contentful-helper";
 import MainContent from "../components/MainContent";
+import Residents from '../components/residents';
 //import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 
 export default function Home({ schedule, about, artists }) {
@@ -23,7 +24,9 @@ export default function Home({ schedule, about, artists }) {
                         <link rel="icon" href="/favicon.png" />
                     </Head>
                     <main className={styles.main}>
-                        <Header/>
+                        <Header>
+                            {/* <Sidebar setCurrentPage={setCurrentPage} /> */}
+                        </Header>
                         <div className={styles.outerColumn}>
                             <Sidebar setCurrentPage={setCurrentPage} />
                             <MainContent
@@ -34,6 +37,11 @@ export default function Home({ schedule, about, artists }) {
                                 schedule={schedule}
                                 about={about}
                                 artists={artists}
+                            />
+                             <Residents
+                            artists={artists}
+                            setCurrentPage={setCurrentPage}
+                            setCurrentResident={setCurrentResident}
                             />
                         </div>
                     </main>
@@ -63,3 +71,4 @@ export async function getServerSideProps(context) {
         }, // will be passed to the page component as props
     }
 }
+Residents
