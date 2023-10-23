@@ -469,14 +469,14 @@
   /* border: solid black;
   border-width: 1px;
   border-radius: 0; */
-  width:33%
+  width: 33.33%;
 }
 
 .aboutContainer {
   /* height: fill; */
   padding: 15px;
   border-left: 1px solid #000000;
-  width: 34%;
+  width: 33.33%;
 }
 
 .times {
@@ -534,7 +534,7 @@
   flex-direction: column;
   padding: 15px;
   border-left: 1px solid #000000;
-  width: 33%;
+  width: 33.33%;
 }
 
 .ovalContainer {
