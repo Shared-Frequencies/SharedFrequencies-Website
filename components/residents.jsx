@@ -7,7 +7,7 @@ export default function Residents ({ artists, setCurrentPage, setCurrentResident
             <div className={styles.mainColumn}>
                 <div className={styles.artistsGrid}>
                     {
-                        artists.sort((a,b) => { return a.id - b.id }).map((artist) =>
+                        artists.sort((a,b) => { return a.id + b.id }).map((artist) =>
                             <div onClick={() => {
                                     window.scrollTo(0, 0);
                                     setCurrentPage('resident')

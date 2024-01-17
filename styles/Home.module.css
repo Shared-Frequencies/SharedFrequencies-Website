@@ -1,4 +1,19 @@
 @font-face {
+  font-family: "ApfelGrotezk";
+  src: url("../public/ApfelGrotezk-Regular.woff2");
+}
+
+@font-face {
+  font-family: ApfelGrotezk-Bold;
+  src: url("../public/ApfelGrotezk-Mittel.woff2");
+}
+
+@font-face {
+  font-family: "ApfelGrotezk-Bolder";
+  src: url("../public/ApfelGrotezk-Fett.woff2");
+}
+
+/* @font-face {
   font-family: "AESTHET_NOVA";
   src: url("../public/AESTHET_NOVA_LIGHT.TTF");
 }
@@ -6,7 +21,7 @@
 @font-face {
   font-family: "AESTHET_NOVA_LIGHTER";
   src: url("../public/AESTHET_NOVA_LIGHTER.TTF");
-}
+} */
 
 .backgroundColor {
   z-index: -1;
@@ -160,6 +175,11 @@
   width: 100%;
 }
 
+.mainColumn {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
 /* .mainColumn {
   display: flex;
   flex-direction: column;
@@ -269,7 +289,7 @@
   /* padding: 0 0 0 5%; */
   min-width: 80%;
   padding-inline-start: 0px;
-  font-family: AESTHET_NOVA_LIGHTER;
+  font-family: ApfelGrotezk;
 }
 
 .header {
@@ -359,7 +379,7 @@
 }
 
 .nowPlaying p {
-  font-family: AESTHET_NOVA_LIGHTER;
+  font-family: ApfelGrotezk;
   font-size: 16pt;
   display: flex;
   margin: auto;
@@ -415,19 +435,19 @@
 .names li {
   list-style-type: none;
   flex-direction: column;
-  font-size: .7em;
+  font-size: .5em;
   width: 50%;
 }
 .dates li {
   list-style-type: none;
   flex-direction: column;
-  font-size: .7em;
+  font-size: .5em;
 }
 .chatStream {
   /* max-width: 33vw; */
   max-height: inherit;
   word-wrap: break-word;
-  font-family: AESTHET_NOVA_LIGHTER;
+  font-family: ApfelGrotezk;
   /* margin: 1em 1em 1em 1em; */
 }
 .chatTitle {
@@ -437,9 +457,11 @@
   /* margin-right: 10%; */
   margin-block-start: 0px;
   margin-block-end: 10px;
+  font-family: ApfelGrotezk-Bold;
 }
 
 .calendarTitle {
+  font-family: ApfelGrotezk-Bold;
   /* padding-left: 0.5vw; */
   /* border: solid black;
   border-radius: 40px; */
@@ -460,6 +482,7 @@
 
 .uniqueDays {
   list-style-type: none;
+  font-family: ApfelGrotezk-Bold;
 }
 
 .calendarContainer {
@@ -477,6 +500,27 @@
   padding: 15px;
   border-left: 1px solid #000000;
   width: 33.33%;
+  /* overflow-x: hidden; */
+}
+
+.shopContainer {
+  /* height: fill; */
+  padding: 15px;
+  border-left: 1px solid #000000;
+  width: 33.33%;
+  /* overflow-x: hidden;
+  overflow-y: visible; */
+}
+
+.merchPicture {
+  max-width: 100%;
+  transition: transform .2s;
+  overflow: hidden;
+}
+
+.merchPicture:hover {
+  transform: scale(1.3); 
+  overflow: hidden;
 }
 
 .times {
@@ -507,16 +551,15 @@
   width: inherit;
   border: solid 1px black;
   border-radius: 0px;
-  font-family: AESTHET_NOVA_LIGHTER;
+  font-family: ApfelGrotezk;
 }
 
 .chatInput:focus {
   outline-width: 0;
 }
 
-.chatBoxUser {
-  font-family: AESTHET_NOVA;
-}
+/* .chatBoxUser {
+} */
 
 .inputButton {
   border: solid 1px black;
@@ -577,7 +620,7 @@
 }
 
 .about p {
-  font-family: AESTHET_NOVA_LIGHTER;
+  font-family: "ApfelGrotezk";
   margin-block-start: .5em;
   margin-block-end: .5em;
   margin-inline-start: 0px;
@@ -585,7 +628,7 @@
 }
 
 .about h3 {
-  font-size: 1em;
+  /* font-size: 1em; */
   margin-block-start: .5em;
   margin-block-end: .5em;
   margin-inline-start: 0px;
@@ -644,6 +687,9 @@
   .aboutContainer {
     width: 100%;
   }
+  .shopContainer {
+    width: 100%;
+  }
   .main {
     width: 100vw;
   }
@@ -672,6 +718,13 @@
     border-top: 1px solid #000000;
   }
   .aboutContainer{
+    display: none;
+    border-width: 1px;
+    border-radius: 0;
+    border-left: 0 solid #00000000;
+    border-top: 1px solid #000000;
+  }
+  .shopContainer{
     display: none;
     border-width: 1px;
     border-radius: 0;
@@ -726,12 +779,12 @@
   .calendarTitle {
     /* transform: translateX(5vw); */
     border-style: none;
-    font-style: bold;
+    font-family: ApfelGrotezk-Bold;
   }
   .chatTitle {
     /* transform: translateX(5vw); */
     border-style: none;
-    font-style: bold;
+    font-family: ApfelGrotezk-Bold;
   }
   .onAir {
     display: none;
@@ -782,3 +835,4 @@
     margin-left: 40%;
   }
 }
+

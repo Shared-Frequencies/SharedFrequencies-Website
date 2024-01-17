@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: AESTHET_NOVA;
+  font-family: ApfelGrotezk;
   height: 100%;
 }
 
@@ -16,6 +16,21 @@ a {
 }
 
 @font-face {
+  font-family: ApfelGrotezk;
+  src: url("../public/ApfelGrotezk-Regular.woff2");
+}
+
+@font-face {
+  font-family: "ApfelGrotezk-Bold";
+  src: url("../public/ApfelGrotezk-Mittel.woff2");
+}
+
+@font-face {
+  font-family: "ApfelGrotezk-Bolder";
+  src: url("../public/ApfelGrotezk-Fett.woff2");
+}
+/* 
+@font-face {
   font-family: "AESTHET_NOVA";
   src: url("../public/AESTHET_NOVA_LIGHT.TTF");
 }
@@ -23,7 +38,7 @@ a {
 @font-face {
   font-family: "AESTHET_NOVA_LIGHTER";
   src: url("../public/AESTHET_NOVA_LIGHTER.TTF");
-}
+} */
 
 /* body {
   animation: gradient 30s linear infinite;
