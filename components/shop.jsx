@@ -7,7 +7,7 @@ export default function Shop () {
             <div className={styles.shopContainer}>
                 <p className={styles.chatTitle}> New Shirt! </p>
                 <hr className={styles.horizontalRule}/>
-                <a href="https://sharedfrequencies.myshopify.com/" target="_blank">
+                <a href="https://sharedfrequencies.myshopify.com/" target="_blank" rel="noreferrer">
                     <img className={styles.merchPicture} src="shirt.png" alt="t-shirt"></img>
                 </a>
             </div>
