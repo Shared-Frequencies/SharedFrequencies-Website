@@ -67,8 +67,11 @@ export default function Schedule({schedule}) {
     return (
         <div className={styles.calendarContainer} ref={heightRef}>
             <p className={styles.calendarTitle}> Schedule </p>
-            <hr className={styles.horizontalRule}/>
-            <div className={styles.calendar}>
+            <hr className={styles.horizontalRule} />
+            <p className={styles.dailyShows}>Shared Frequencies Radio is on haitus.</p>
+            <p className={styles.dailyShows}>All streams are from our archives.</p>
+            <p className={styles.dailyShows}>See you soon!</p>
+            {/* <div className={styles.calendar}>
                 <ol className={styles.days}>
                     {
                         shortDates.map((day) => (
@@ -99,7 +102,7 @@ export default function Schedule({schedule}) {
                         ))
                     }
                 </ol>
-            </div>
+            </div> */}
         </div>
     )
 }
