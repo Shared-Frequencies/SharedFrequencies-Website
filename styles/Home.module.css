@@ -178,6 +178,7 @@
 .mainColumn {
   overflow-x: hidden;
   overflow-y: hidden;
+  border-bottom: 1px solid var(--dark-color);
 }
 
 /* .mainColumn {
