@@ -51,7 +51,7 @@
 }
 .singleArtist {
   /* margin: 10px 10px 10px 10px; */
-  border: solid black;
+  border: solid var(--dark-color);
   border-width: 1px;
   border-radius: 0;
   /* box-shadow: 3px 3px; */
@@ -62,9 +62,9 @@
 
 .singleArtistImg {
   display: grid;
-  border-bottom: solid black;
+  border-bottom: solid var(--dark-color);
   border-width: 1px;
-  background-image: radial-gradient(#000000 0.5px, #ffffff 0.5px);
+  background-image: radial-gradient(var(--dark-color) 0.5px, #ffffff 0.5px);
   background-size: 10px 10px;
 
 }
@@ -72,7 +72,7 @@
 .singleArtist:hover {
   /* box-shadow: 0px 0px;
   transition: box-shadow .1s; */
-  background-color: black;
+  background-color: var(--dark-color);
   color:white;
   filter: grayscale(0);
   /* color: dodgerblue; */
@@ -104,7 +104,7 @@
   flex-direction: column;
   align-items: center;
   align-content: center;
-  /* padding: 0 15px 0 15px; */
+  border-top: 1px solid var(--dark-color);
   animation: fadeIn .25s;
 }
 
@@ -131,7 +131,7 @@
   text-align: left;
   /* width: 25vw; */
   /* background-color: #ffffff; */
-  background-image: radial-gradient(#000000 0.5px, #ffffff 0.5px);
+  background-image: radial-gradient(var(--dark-color) 0.5px, #ffffff 0.5px);
   background-size: 10px 10px;
 }
 
@@ -139,7 +139,7 @@
   display: flex;
   flex-direction: column;
   padding: 15px;
-  border-left: 1px solid #000000;
+  border-left: 1px solid var(--dark-color);
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -200,7 +200,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   /* height: 50px; */
-  border-top: 1px solid #000000;
+  border-top: 1px solid var(--dark-color);
   background-color: white;
   justify-content: left;
   align-items: center;
@@ -243,7 +243,7 @@
 }
 
 .sidebarContent {
-  background-color: black;
+  background-color: var(--dark-color);
   color: white;
   /* font-family: Arial, Helvetica, sans-serif; */
   /* margin: 0 15px 0 15px; */
@@ -252,7 +252,7 @@
   width: 100%;
   justify-content: space-evenly;
   /* margin: auto; */
-  border: solid black;
+  border: solid var(--dark-color);
   border-width: 1px;
   border-radius: 0;
   /* box-shadow: 3px 3px; */
@@ -266,7 +266,7 @@
 
 .sidebarContent a:hover {
   transition: color .05s;
-  color: black;
+  color: var(--dark-color);
   background-color:white;
 }
 
@@ -293,7 +293,7 @@
 }
 
 .header {
-  background-color: black;
+  background-color: var(--dark-color);
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -328,7 +328,7 @@
   height: 0px;
   margin: 0 0 16px 0;
   box-sizing: border-box;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--dark-color);
   /* border-style: solid; */
 }
 
@@ -397,11 +397,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border: solid black;
+  border: solid var(--dark-color);
   border-radius: 5px;
   border-width: 1px;
   margin: .5em .5em .5em auto;
-  background-color:black;
+  background-color:var(--dark-color);
   animation: liveFlash 3s linear infinite;
 }
 
@@ -414,10 +414,10 @@
 }
 
 @keyframes liveFlash {
-  0%   { background-color:black; color:white;}
-  50%  { background-color:black; color:white;}
-  51%  { background-color:white; color:black;}
-  100% { background-color:white; color:black;}
+  0%   { background-color:var(--dark-color); color:white;}
+  50%  { background-color:var(--dark-color); color:white;}
+  51%  { background-color:var(--dark-color); color:var(--dark-color);}
+  100% { background-color:var(--dark-color); color:var(--dark-color);}
 }
 
 @keyframes nowPlaying {
@@ -503,7 +503,7 @@
 .aboutContainer {
   /* height: fill; */
   padding: 15px;
-  border-left: 1px solid #000000;
+  border-left: 1px solid var(--dark-color);
   width: 33.33%;
   /* overflow-x: hidden; */
 }
@@ -511,7 +511,7 @@
 .shopContainer {
   /* height: fill; */
   padding: 15px;
-  border-left: 1px solid #000000;
+  border-left: 1px solid var(--dark-color);
   width: 33.33%;
   /* overflow-x: hidden;
   overflow-y: visible; */
@@ -554,7 +554,7 @@
 
 .chatInput {
   width: inherit;
-  border: solid 1px black;
+  border: solid 1px var(--dark-color);
   border-radius: 0px;
   font-family: ApfelGrotezk;
 }
@@ -567,7 +567,7 @@
 } */
 
 .inputButton {
-  border: solid 1px black;
+  border: solid 1px var(--dark-color);
   border-radius: 0px;
   font-family: inherit;  
 }
@@ -581,7 +581,7 @@
   display: flex;
   flex-direction: column;
   padding: 15px;
-  border-left: 1px solid #000000;
+  border-left: 1px solid var(--dark-color);
   width: 33.33%;
 }
 
@@ -592,7 +592,7 @@
   width: 100%;
   height: 3em;
   margin: 0 0 0 1em;
-  border: solid black;
+  border: solid var(--dark-color);
   border-radius: 10px;
   border-width: 1px;
   background-color:white;
@@ -719,30 +719,30 @@
     height: 100%;
     border-width: 1px;
     border-radius: 0;
-    border-left: 0 solid #00000000;
-    border-top: 1px solid #000000;
+    border-left: 0 solid var(--dark-color);
+    border-top: 1px solid var(--dark-color);
   }
   .aboutContainer{
     display: none;
     border-width: 1px;
     border-radius: 0;
-    border-left: 0 solid #00000000;
-    border-top: 1px solid #000000;
+    border-left: 0 solid var(--dark-color);
+    border-top: 1px solid var(--dark-color);
   }
   .shopContainer{
     display: none;
     border-width: 1px;
     border-radius: 0;
-    border-left: 0 solid #00000000;
-    border-top: 1px solid #000000;
+    border-left: 0 solid var(--dark-color);
+    border-top: 1px solid var(--dark-color);
   }
   .artistBio{
     height: 100%;
     width: 100%;
     border-width: 1px;
     border-radius: 0;
-    border-left: 0 solid #00000000;
-    border-top: 1px solid #000000;
+    border-left: 0 solid var(--dark-color);
+    border-top: 1px solid var(--dark-color);
   }
   .twitchContainer {
     padding-left: 5vw;

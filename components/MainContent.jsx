@@ -7,7 +7,11 @@ import Resident from './resident/[name]';
 export default function MainContent({ setCurrentPage, currentPage, setCurrentResident, currentResident, schedule, artists, about, resident}) {
     return (
         <>
-            {currentPage === 'home' && (
+        <HomeComponent
+                schedule={schedule}
+                about={about}
+            />
+            {/* {currentPage === 'home' && (
                 <HomeComponent
                     schedule={schedule}
                     about={about}
@@ -24,7 +28,7 @@ export default function MainContent({ setCurrentPage, currentPage, setCurrentRes
                 <About
                     about={about}
                 />
-            )}
+            )} */}
             {currentPage === 'resident' && (
                 <Resident
                     resident={currentResident}

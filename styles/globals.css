@@ -4,6 +4,8 @@ body {
   margin: 0;
   font-family: ApfelGrotezk;
   height: 100%;
+  --light-color:white;
+  --dark-color: black;
 }
 
 a {
