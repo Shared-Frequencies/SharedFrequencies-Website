@@ -29,7 +29,7 @@
   width: 100%;
   position: fixed;
   background-size: cover;
-  background-color: var(--light-color);
+  background-color: var(--dark-color);
   overflow: hidden;
 }
 
@@ -48,7 +48,10 @@
   align-items: center;
   /* grid-gap: 1em; */
   /* width: 60vw; */
+  background-image: radial-gradient(var(--light-color) 0.5px, var(--dark-color) 0.5px);
+  background-size: 10px 10px;
 }
+
 .singleArtist {
   /* margin: 10px 10px 10px 10px; */
   border: solid var(--dark-color);
@@ -346,7 +349,7 @@
   justify-content: space-between;
   flex-direction: row;
   flex-shrink: 0;
-  padding: .5em .5em 0em .5em;
+  padding: .5em .5em .5em .5em;
   align-items: center;
   /* margin: 0 1em 0 1em; */
   /* min-width: 80vw; */

@@ -28,7 +28,7 @@ export default function Home({ schedule, about, artists }) {
                             {/* <Sidebar setCurrentPage={setCurrentPage} /> */}
                         </Header>
                         <div className={styles.outerColumn}>
-                            <Sidebar setCurrentPage={setCurrentPage} />
+                            {/* <Sidebar setCurrentPage={setCurrentPage} /> */}
                             <MainContent
                                 setCurrentPage={setCurrentPage}
                                 currentPage={currentPage}

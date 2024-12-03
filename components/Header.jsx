@@ -11,7 +11,7 @@ export default function Header () {
     const { data } = useSWR('/api/nowPlaying', fetcher, { refreshInterval: 10000 })
 
     return (
-        <header className={styles.header}>
+        <header className={styles.header} style={{ position: 'sticky', top: 0, zIndex: 1000 }}>
             <Link href={"/"}>
                 <img className={styles.logo} src="/logo.png" alt="Shared Frequencies Logo"  />
             </Link>
