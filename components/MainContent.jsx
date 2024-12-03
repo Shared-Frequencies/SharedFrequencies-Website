@@ -29,11 +29,11 @@ export default function MainContent({ setCurrentPage, currentPage, setCurrentRes
                     about={about}
                 />
             )} */}
-            {/* UPDATE {currentPage === 'resident' && (
+            {currentPage === 'resident' && (
                 <Resident
                     resident={currentResident}
                 /> 
-            )} */}
+            )}
         </>
     )
 }

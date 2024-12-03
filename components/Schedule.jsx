@@ -69,7 +69,6 @@ export default function Schedule({schedule}) {
             <p className={styles.calendarTitle}> Schedule </p>
             <hr className={styles.horizontalRule} />
             <p className={styles.dailyShows}>Season 11 will begin January 1, 2025.</p>
-            <p style={{color: "#0aa5f2"}} className={styles.dailyShows}><a href="https://forms.gle/TUq53spEN1m8FHAy6">Apply here.</a></p>
             <p className={styles.dailyShows}>See you soon!</p>
             {/* <div className={styles.calendar}>
                 <ol className={styles.days}>

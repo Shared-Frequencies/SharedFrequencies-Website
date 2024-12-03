@@ -21,6 +21,13 @@ export async function fetchResidents () {
       description {
         json
       }
+      showTitle
+      showDescription {
+        json
+      }
+      socialMedia
+      programTime
+      genreTags
     }
   }
 }
@@ -42,6 +49,13 @@ export async function fetchResident (name) {
       description {
         json
       }
+      showTitle
+      showDescription {
+        json
+      }
+      socialMedia
+      programTime
+      genreTags
     }
   }
 }

@@ -38,11 +38,11 @@ export default function Home({ schedule, about, artists }) {
                                 about={about}
                                 artists={artists}
                             />
-                             {/*UPDATE <Residents
+                            <Residents
                             artists={artists}
                             setCurrentPage={setCurrentPage}
                             setCurrentResident={setCurrentResident}
-                            /> */}
+                            />
                         </div>
                     </main>
                     <Footer/>
