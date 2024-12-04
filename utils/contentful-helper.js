@@ -11,7 +11,7 @@ const graphQLClient = new GraphQLClient(endpoint, {
 export async function fetchResidents () {
     const query = gql`
   {
-  artistCollection {
+  artistCollection (limit: 150) {
     items {
       id
       name
