@@ -5,10 +5,9 @@ import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 import ReactHtmlParser from 'react-html-parser';
 
 export default function Resident ({ resident }) {
-    console.log(resident)
     return (
         <>
-            <div className={styles.artistColumn}>
+            <div className={styles.artistColumn} id="resident-section">
                         <div key={resident.id} className={styles.bottomContainer}>
                             <div className={styles.artistPic}>
                                 <Image

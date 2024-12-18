@@ -2,6 +2,16 @@ import styles from '../styles/Home.module.css'
 import Image from "next/image";
 
 export default function Residents ({ artists, setCurrentPage, setCurrentResident }) {
+    const scrollToResident = () => {
+        // Give React time to render the new component
+        setTimeout(() => {
+            const residentElement = document.getElementById('resident-section');
+            if (residentElement) {
+                residentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 30);
+    };
+    
     return (
         <>
             <div className={styles.mainColumn}>
@@ -9,11 +19,7 @@ export default function Residents ({ artists, setCurrentPage, setCurrentResident
                     {
                         artists.sort((a,b) => { return a.id + b.id }).map((artist) =>
                             <div onClick={() => {
-                                    window.scrollTo({
-                                        top: 500,
-                                        left: 0,
-                                        behavior: "smooth",
-                                    });
+                                    scrollToResident()
                                     setCurrentPage('resident')
                                     setCurrentResident(artist)
                                     }} key={artist.id}>

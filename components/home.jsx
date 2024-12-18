@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from '../styles/Home.module.css'
 import Schedule from "../components/Schedule";
 import Chat from "../components/Chat";
 import About from "../components/about";
 import Shop from "../components/shop";
-// import {HeightProvider} from "../components/HeightProvider";
+import Blog from "../components/Blog";
+export default function HomeComponent({ schedule, about, blogs }) {
 
-export default function HomeComponent({schedule, about}) {
     return (
         <>
             <div className={styles.mainColumn}>
-                {/* <TwitchVideo/> */}
-                <div className={styles.bottomContainer}>
+]                <div className={styles.bottomContainer}>
                     <Schedule schedule={schedule} />
                     <Chat />
                     <Shop />
                 </div>
+                <Blog blogs={blogs} blogID={"1"} />
             </div>
         </>
     )

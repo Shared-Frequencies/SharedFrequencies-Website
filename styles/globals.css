@@ -31,6 +31,22 @@ a {
   font-family: "ApfelGrotezk-Bolder";
   src: url("../public/ApfelGrotezk-Fett.woff2");
 }
+
+@font-face {
+  font-family: "Director-Light";
+  src: url("../public/Director-Light.woff2");
+}
+
+@font-face {
+  font-family: "Director-Regular";
+  src: url("../public/Director-Regular.woff2");
+}
+
+@font-face {
+  font-family: "Director-Bold";
+  src: url("../public/Director-Bold.woff2");
+}
+
 /* 
 @font-face {
   font-family: "AESTHET_NOVA";

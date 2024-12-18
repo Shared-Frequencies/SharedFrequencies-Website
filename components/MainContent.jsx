@@ -4,12 +4,13 @@ import About from "./about";
 import Residents from './residents';
 import Resident from './resident/[name]';
 
-export default function MainContent({ setCurrentPage, currentPage, setCurrentResident, currentResident, schedule, artists, about, resident}) {
+export default function MainContent({ setCurrentPage, currentPage, setCurrentResident, currentResident, schedule, artists, about, resident, blogs}) {
     return (
         <>
         <HomeComponent
                 schedule={schedule}
                 about={about}
+                blogs={blogs}
             />
             {/* {currentPage === 'home' && (
                 <HomeComponent

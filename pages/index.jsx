@@ -5,12 +5,12 @@ import {HeightProvider} from "../components/HeightProvider";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import {fetchAbout, fetchResident, fetchResidents} from "../utils/contentful-helper";
+import {fetchAbout, fetchResident, fetchResidents, fetchBlogs} from "../utils/contentful-helper";
 import MainContent from "../components/MainContent";
 import Residents from '../components/residents';
 //import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 
-export default function Home({ schedule, about, artists }) {
+export default function Home({ schedule, about, artists, blogs }) {
     const [currentPage, setCurrentPage] = useState('home');
     const [currentResident, setCurrentResident] = useState('none');
     return (
@@ -37,6 +37,7 @@ export default function Home({ schedule, about, artists }) {
                                 schedule={schedule}
                                 about={about}
                                 artists={artists}
+                                blogs={blogs}
                             />
                             <Residents
                             artists={artists}
@@ -63,11 +64,15 @@ export async function getServerSideProps(context) {
     // residents
     const residentsData = await fetchResidents()
 
+    // blog
+    const blogsData = await fetchBlogs()
+
     return {
         props: {
             schedule: scheduleData,
             about: aboutData.aboutCollection.items[0],
             artists: residentsData.artistCollection.items,
+            blogs: blogsData.blogPostCollection.items,
         }, // will be passed to the page component as props
     }
 }
