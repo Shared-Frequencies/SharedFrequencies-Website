@@ -30,7 +30,7 @@ export default function Blog ( {blogs, blogID} ) {
                 <div className={styles.blogContainerBackgroundOuter} style={{ pointerEvents: 'none' }}>
                     <Image 
                         className={styles.blogContainerBackground}
-                        fill={true}
+                        fill={"true"}
                         src={blogPost.coverimage.url}
                         alt="Blog Post Photo"
                         layout="fill"

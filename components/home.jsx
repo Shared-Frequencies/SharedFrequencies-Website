@@ -10,7 +10,7 @@ export default function HomeComponent({ schedule, about, blogs }) {
     return (
         <>
             <div className={styles.mainColumn}>
-]                <div className={styles.bottomContainer}>
+                <div className={styles.bottomContainer}>
                     <Schedule schedule={schedule} />
                     <Chat />
                     <Shop />
