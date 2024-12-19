@@ -30,6 +30,13 @@ export default function Chat() {
 
     var emojis = ["⏳","⚪","⚽","⛄","⛎","⛔","⛪","⛲","⛵","⛺","⛽","✅","✨","❌","❎","⬛","⭐","⭕","🀄","🃏","🆎","🆑","🆒","🆓","🆔","🆕","🆖","🆗","🆘","🆙","🈁","🈚","🈯","🈲","🈳","🈴","🈵","🈸","🈹","🉐","🌀","🌁","🌂","🌃","🌄","🌅","🌆","🌇","🌈","🌉","🌊","🌋","🌍","🌏","🌐","🌑","🌒","🌓","🌔","🌖","🌗","🌙","🌚","🌛","🌜","🌝","🌟","🌭","🌮","🌰","🌲","🌴","🌷","🌸","🌹","🌺","🌻","🌼","🌽","🌾","🌿","🍀","🍁","🍂","🍃","🍄","🍅","🍆","🍇","🍈","🍉","🍋","🍌","🍍","🍎","🍐","🍑","🍒","🍓","🍔","🍕","🍖","🍗","🍘","🍙","🍚","🍛","🍜","🍝","🍞","🍟","🍠","🍡","🍢","🍣","🍤","🍥","🍦","🍧","🍨","🍩","🍪","🍫","🍬","🍭","🍮","🍯","🍰","🍱","🍲","🍳","🍴","🍵","🍶","🍷","🍸","🍹","🍺","🍼","🍾","🎀","🎁","🎂","🎃","🎄","🎆","🎇","🎈","🎉","🎊","🎋","🎌","🎍","🎎","🎏","🎐","🎑","🎒","🎠","🎡","🎢","🎣","🎤","🎥","🎦","🎧","🎨","🎩","🎪","🎫","🎬","🎭","🎮","🎯","🎰","🎱","🎲","🎳","🎴","🎵","🎶","🎷","🎸","🎹","🎺","🎻","🎼","🎽","🎾","🎿","🏀","🏁","🏅","🏆","🏇","🏈","🏉","🏊","🏏","🏐","🏠","🏮","🏯","🏴","🏸","🏹","🏺","🐀","🐁","🐂","🐃","🐄","🐅","🐆","🐈","🐉","🐊","🐌","🐍","🐏","🐑","🐓","🐔","🐕","🐖","🐗","🐘","🐙","🐚","🐛","🐜","🐝","🐞","🐟","🐠","🐡","🐢","🐣","🐤","🐥","🐦","🐧","🐨","🐪","🐫","🐬","🐭","🐮","🐯","🐰","🐱","🐲","🐳","🐴","🐵","🐶","🐷","🐸","🐹","🐺","🐻","🐼","🐽","👑","👒","👓","👔","👕","👖","👗","👘","👙","👚","👛","👜","👝","👞","👟","👠","👡","👢","👣","👥","👹","👺","👻","👽","👾","👿","💀","💂","💃","💄","💈","💉","💊","💋","💌","💍","💎","💐","💓","💔","💕","💖","💗","💘","💙","💚","💛","💜","💝","💞","💟","💠","💡","💢","💣","💤","💥","💦","💧","💨","💩","💫","💭","💮","💯","💰","💱","💲","💳","💴","💶","💸","💹","💺","💻","💼","💽","💾","💿","📀","📁","📂","📃","📄","📅","📆","📇","📈","📉","📊","📋","📌","📍","📎","📏","📐","📑","📒","📓","📔","📕","📖","📗","📘","📙","📚","📛","📜","📝","📞","📟","📠","📡","📢","📣","📤","📥","📦","📧","📨","📩","📪","📬","📮","📯","📰","📱","📲","📳","📵","📶","📸","📹","📺","📻","📿","🔀","🔁","🔃","🔄","🔅","🔆","🔈","🔉","🔊","🔋","🔌","🔍","🔎","🔏","🔐","🔑","🔒","🔓","🔕","🔖","🔗","🔘","🔙","🔚","🔛","🔜","🔝","🔞","🔟","🔥","🔦","🔧","🔨","🔩","🔪","🔬","🔮","🔯","🔰","🔱","🔲","🔳","🔴","🔵","🔶","🔷","🔸","🔹","🔺","🔻","🔼","🕋","🕌","🕍","🕐","🕘","🖤","🗻"];
 
+    const [isChatOpen, setIsChatOpen] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth > 660;
+        }
+        return false;
+    });
+
     useEffect(() => {
         // subscribe a new user
         var result = [];
@@ -94,30 +101,40 @@ export default function Chat() {
         }
     }
 
+    // Add toggle function
+    const toggleChat = () => {
+        if (window.innerWidth <= 660) {
+            setIsChatOpen(!isChatOpen);
+        }
+    };
+
     return (
-        // <div className={styles.chatBoxContainer} style={{height: height}}> 
-        <div className={styles.chatBoxContainer}> 
-            <p className={styles.chatTitle}> Chat </p>
-            <hr className={styles.horizontalRule}/>
-            <div className={styles.chatBox} >
-                {recMsg.listMsg?.map((msgInfo, index) => {
-                    return (
-                        <div className={styles.chatStream} key={index}>
-                            <b className={styles.chatBoxUser}>{msgInfo.userName}</b>: {msgInfo.msg}
-                            <div ref={messagesEndRef} />
-                        </div>
-                    ) })}
+        <div className={`${styles.chatBoxContainer} ${!isChatOpen ? styles.chatBoxClosed : ''}`}> 
+            <div className={styles.chatTitle} onClick={toggleChat}> 
+                Chat <span className={styles.toggleIndicator}>{!isChatOpen ? '+' : '-'}</span>
             </div>
-            <div className={styles.chatInputContainer}>
-                <input className={styles.chatInput}
-                       id="inputmsg"
-                       ref={messageInputRef}
-                       onKeyDown={(e) => enter(e) }
-                       value={inputValue}
-                       onChange={handleUserInput} />
-                <button className={styles.inputButton}
-                        id="btnmsg"
-                        onClick={() => { sendMessage() }}> Send </button>
+            <hr className={styles.horizontalRule}/>
+            <div className={`${styles.chatContent} ${!isChatOpen ? styles.hidden : ''}`}>
+                <div className={styles.chatBox} >
+                    {recMsg.listMsg?.map((msgInfo, index) => {
+                        return (
+                            <div className={styles.chatStream} key={index}>
+                                <b className={styles.chatBoxUser}>{msgInfo.userName}</b>: {msgInfo.msg}
+                                <div ref={messagesEndRef} />
+                            </div>
+                        ) })}
+                </div>
+                <div className={styles.chatInputContainer}>
+                    <input className={styles.chatInput}
+                           id="inputmsg"
+                           ref={messageInputRef}
+                           onKeyDown={(e) => enter(e) }
+                           value={inputValue}
+                           onChange={handleUserInput} />
+                    <button className={styles.inputButton}
+                            id="btnmsg"
+                            onClick={() => { sendMessage() }}> Send </button>
+                </div>
             </div>
         </div >
     );

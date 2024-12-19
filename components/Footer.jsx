@@ -6,7 +6,7 @@ export default function Footer () {
         <footer className={styles.footer}>
             <div className={styles.footerLeft}>
                 <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/sharedfrequenciesradio/">Instagram</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/sharedfrequenciesradio">Soundcloud</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/sharedfrequenciesradio">Archive</a>
             </div>
             <div className={styles.footerImage}>
                 <Image src="/favicon.png" width={35} height={35}/>

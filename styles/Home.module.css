@@ -262,14 +262,13 @@
 
 .footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
-  /* height: 50px; */
+  min-height: 50px;
   border-top: 1px solid var(--dark-color);
   justify-content: left;
   align-items: center;
   padding: 0 15px 0 15px;
-  /* margin-top: 3%; */
   position: fixed;
   left: 0;
   bottom: 0;
@@ -282,21 +281,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   margin: 3px 0 3px 0;
+  height: 44px;
 }
 
 .footerRight{
   display: flex;
   justify-content: right;
-}
-
-.footerRight{
-  display: flex;
+  margin-left: auto;
 }
 
 .footer a {
   /* padding: .25em .75em .25em .75em; */
   padding-right: .75em;
+  padding-left: .75em;
 
 }
 
@@ -682,6 +683,7 @@
   flex-direction: row;
   padding-top: 0.25vh;
   width: 100%;
+  margin-top: auto;
 }
 
 .show {
@@ -811,6 +813,42 @@
   object-fit: cover;
 }
 
+.chatContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.chatTitle {
+  cursor: default;
+}
+
+@media only screen and (max-width: 660px) {
+  .chatTitle {
+    cursor: pointer;
+  }
+
+  .chatTitle:hover {
+    color: dodgerblue;
+  }
+
+  .chatBoxContainer {
+    transition: all 0.3s ease;
+  }
+
+  .chatBoxClosed {
+    height: auto;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .chatContent {
+    transition: all 0.3s ease;
+  }
+}
 
 @media only screen and (max-width: 1080px) {
   .sidebar ul{
@@ -900,6 +938,8 @@
   }
   .ovalContainer {
     border-radius: 0;
+    border-left: 0;
+    border-right: 0;
   }
   .logo {
     display: none;
@@ -962,24 +1002,25 @@
   }
   .footer {
     display: flex;
-    justify-content: space-between;
-    padding: 4px 15px 24px 15px;
+    /* justify-content: space-between; */
+    justify-content: center;
+    padding: 4px 4px 16px 4px;
     margin: 0;
+    transform: translateY(1px);
   }
   .footerLeft {
     display: flex;
     align-items: center;
+    margin-right: auto;
   }
   .footerImage {
     display: flex;
     align-items: center;
-    /* position: absolute; */
-    left: 50%;
-    transform: translateX(-50%);
   }
   .footerRight {
     display: flex;
     align-items: center;
+    margin-left: auto;
   }
   .chatInputContainer {
     /* transform: translateX(10%); */
@@ -992,5 +1033,15 @@
     margin-right: 40%;
     margin-left: 40%;
   }
+}
+
+.toggleIndicator {
+    display: none;
+}
+
+@media only screen and (max-width: 660px) {
+    .toggleIndicator {
+        display: inline;
+    }
 }
 
