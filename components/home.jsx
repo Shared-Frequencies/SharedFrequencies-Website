@@ -15,6 +15,13 @@ export default function HomeComponent({ schedule, about, blogs }) {
                     <Chat />
                     <Shop />
                 </div>
+                {/* <div style={{ width: '100%', height: '5vh', padding: '1px', filter: 'invert(75%)'}}>
+                    <img 
+                        src="/EDITORIALS.png"
+                        alt="Editorials and Interviews"
+                        style={{ width: '100%', height: '100%', objectFit: 'fill', filter: 'blur(0px)'}}
+                    />
+                </div> */}
                 <Blog blogs={blogs} blogID={"1"} />
             </div>
         </>

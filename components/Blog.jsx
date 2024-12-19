@@ -13,7 +13,7 @@ export default function Blog ( {blogs, blogID} ) {
         <>
             <div className={styles.blogContainerOuter} style={{ position: 'relative', overflow: 'hidden' }}>
                 <div className={styles.blogContainer} >
-                    <p className={styles.chatTitle}>Blog</p>
+                    <p className={styles.chatTitle}>Editorials & Interviews</p>
                     <hr className={styles.horizontalRuleLight}/>
                     <div className={styles.blogPost}>
                         <h1 className={styles.blogPostTitle}>{blogPost.title}</h1>

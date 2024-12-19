@@ -3,38 +3,28 @@ import HomeComponent from "./home";
 import About from "./about";
 import Residents from './residents';
 import Resident from './resident/[name]';
+import Image from 'next/image';
 
 export default function MainContent({ setCurrentPage, currentPage, setCurrentResident, currentResident, schedule, artists, about, resident, blogs}) {
     return (
         <>
         <HomeComponent
-                schedule={schedule}
-                about={about}
-                blogs={blogs}
+            schedule={schedule}
+            about={about}
+            blogs={blogs}
             />
-            {/* {currentPage === 'home' && (
-                <HomeComponent
-                    schedule={schedule}
-                    about={about}
-                />
-            )}
-            {currentPage === 'residents' && (
-                <Residents
-                    artists={artists}
-                    setCurrentPage={setCurrentPage}
-                    setCurrentResident={setCurrentResident}
-                />
-            )}
-            {currentPage === 'about' && (
-                <About
-                    about={about}
-                />
-            )} */}
-            {currentPage === 'resident' && (
-                <Resident
-                    resident={currentResident}
-                /> 
-            )}
+        <div style={{ width: '100%', height: '5vh', padding: '1px'}}>
+            <img 
+                src="/SEASON 11 RESIDENTS.png"
+                alt="Season 11 Residents"
+                style={{ width: '100%', height: '100%', objectFit: 'fill', filter: 'blur(0px)'}}
+            />
+        </div>
+        {currentPage === 'resident' && (
+            <Resident
+                resident={currentResident}
+            /> 
+        )}
         </>
     )
 }
