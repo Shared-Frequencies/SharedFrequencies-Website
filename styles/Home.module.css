@@ -44,19 +44,28 @@
 
 .artistsGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  align-items: center;
-  /* grid-gap: 1em; */
-  /* width: 60vw; */
-  background-image: radial-gradient(var(--light-color) 0.5px, var(--dark-color) 0.5px);
-  background-size: 10px 10px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+}
+
+.artistWrapper {
+  border-right: 1px solid var(--dark-color);
+  border-bottom: 1px solid var(--dark-color);
+}
+
+.artistWrapper:nth-child(-n+6) {  /* First row of 6 items */
+  border-top: 1px solid var(--dark-color);
+}
+
+.artistWrapper:nth-child(6n) {  /* Every 6th item */
+  border-right: none;
 }
 
 .singleArtist {
   /* margin: 10px 10px 10px 10px; */
-  border: solid var(--dark-color);
-  border-width: 1px;
-  border-radius: 0;
+  /* border: solid var(--dark-color); */
+  /* border-width: 1px; */
+  /* border-radius: 0; */
   /* box-shadow: 3px 3px; */
   /* transition: box-shadow .1s; */
   background: var(--light-color);

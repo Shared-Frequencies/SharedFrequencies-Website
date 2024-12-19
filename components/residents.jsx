@@ -22,7 +22,9 @@ export default function Residents ({ artists, setCurrentPage, setCurrentResident
                                     scrollToResident()
                                     setCurrentPage('resident')
                                     setCurrentResident(artist)
-                                    }} key={artist.id}>
+                                    }} 
+                                key={artist.id}
+                                className={styles.artistWrapper}>
                                 <div className={styles.singleArtist}>
                                     <div className={styles.singleArtistImg}>
                                         <Image  
