@@ -457,6 +457,7 @@
   margin-right: auto;
   margin-left: auto;
   padding-right: 3px;
+  color: var(--dark-color);
 }
 
 .nowPlaying p {
@@ -473,11 +474,12 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border: solid var(--dark-color);
+  border: solid var(--light-color);
   border-radius: 5px;
   border-width: 1px;
   margin: .5em .5em .5em auto;
-  background-color:var(--dark-color);
+  background-color:var(--light-color);
+  color: var(--dark-color);
   animation: liveFlash 3s linear infinite;
 }
 
@@ -817,12 +819,6 @@
   }
 }
 
-@media only screen and (min-width: 2560px) {
-  .mainColumn {
-    padding-left: 3vw;
-  }
-  
-}
 @media only screen and (max-width: 960px) {
   .artistsGrid {
     grid-template-columns: 1fr 1fr 1fr;
@@ -858,6 +854,9 @@
   }
   .liveIndicator {
     display: none;
+  }
+  .playButton {
+    margin-left: 15px;
   }
   .nowPlaying {
     margin-left: auto;
@@ -898,9 +897,6 @@
   .twitchContainer {
     padding-left: 5vw;
     margin-right: auto;
-  }
-  .footerImage{
-    display: flex;
   }
   .ovalContainer {
     border-radius: 0;
@@ -966,13 +962,24 @@
   }
   .footer {
     display: flex;
-    justify-content: center;
-    padding: 4px 15px 0 15px;
+    justify-content: space-between;
+    padding: 4px 15px 24px 15px;
     margin: 0;
   }
-  .footerLeft, 
+  .footerLeft {
+    display: flex;
+    align-items: center;
+  }
+  .footerImage {
+    display: flex;
+    align-items: center;
+    /* position: absolute; */
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .footerRight {
-    display: none;
+    display: flex;
+    align-items: center;
   }
   .chatInputContainer {
     /* transform: translateX(10%); */

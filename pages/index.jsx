@@ -40,9 +40,9 @@ export default function Home({ schedule, about, artists, blogs }) {
                                 blogs={blogs}
                             />
                             <Residents
-                            artists={artists}
-                            setCurrentPage={setCurrentPage}
-                            setCurrentResident={setCurrentResident}
+                                artists={artists}
+                                setCurrentPage={setCurrentPage}
+                                setCurrentResident={setCurrentResident}
                             />
                         </div>
                     </main>

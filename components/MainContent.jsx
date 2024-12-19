@@ -13,7 +13,7 @@ export default function MainContent({ setCurrentPage, currentPage, setCurrentRes
             about={about}
             blogs={blogs}
             />
-        <div style={{ width: '100%', height: '5vh', padding: '1px'}}>
+        <div style={{ width: '100%', height: '5vh'}}>
             <img 
                 src="/SEASON 11 RESIDENTS.png"
                 alt="Season 11 Residents"
