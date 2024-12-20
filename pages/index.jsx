@@ -69,6 +69,7 @@ export async function getServerSideProps(context) {
 
     // residents
     const residentsData = await fetchResidents()
+    const shuffledResidents = [...residentsData.artistCollection.items].sort(() => Math.random() - 0.5)
 
     // blog
     const blogsData = await fetchBlogs()
@@ -77,7 +78,7 @@ export async function getServerSideProps(context) {
         props: {
             schedule: scheduleData,
             about: aboutData.aboutCollection.items[0],
-            artists: residentsData.artistCollection.items,
+            artists: shuffledResidents,
             blogs: blogsData.blogPostCollection.items,
         }, // will be passed to the page component as props
     }
