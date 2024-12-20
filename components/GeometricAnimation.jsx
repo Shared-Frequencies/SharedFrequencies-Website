@@ -12,8 +12,16 @@ export default function GeometricAnimation() {
     let time = 0;
 
     const setup = useCallback((p5, canvasParentRef) => {
+        const pixelDensity = window.devicePixelRatio || 1;
+        p5.pixelDensity(pixelDensity);
+        
         const parentWidth = canvasParentRef.offsetWidth;
-        p5.createCanvas(parentWidth, 150).parent(canvasParentRef);
+        const canvas = p5.createCanvas(parentWidth, 150).parent(canvasParentRef);
+        
+        canvas.touchStarted(() => true);
+        canvas.touchMoved(() => true);
+        canvas.touchEnded(() => true);
+        
         p5.frameRate(30);
         p5.textAlign(p5.CENTER, p5.CENTER);
         p5.textSize(window.innerWidth <= 660 ? 16 : 18);
@@ -112,9 +120,22 @@ export default function GeometricAnimation() {
             position: 'relative', 
             zIndex: 0,
             width: '100%',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            WebkitTransform: 'translateZ(0)',
+            transform: 'translateZ(0)',
+            WebkitPerspective: '1000',
+            perspective: '1000',
+            WebkitBackfaceVisibility: 'hidden',
+            backfaceVisibility: 'hidden'
         }}>
-            <Sketch setup={setup} draw={draw} windowResized={windowResized} />
+            <Sketch 
+                setup={setup} 
+                draw={draw} 
+                windowResized={windowResized}
+                touchStarted={() => true}
+                touchMoved={() => true}
+                touchEnded={() => true}
+            />
         </div>
     );
 } 

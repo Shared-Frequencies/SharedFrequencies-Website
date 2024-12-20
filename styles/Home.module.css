@@ -1017,9 +1017,9 @@
     display: flex;
     /* justify-content: space-between; */
     justify-content: center;
-    padding: 4px 16px 24px 16px;
+    padding: 8px 16px 30px 16px;
     margin: 0;
-    transform: translateY(1px);
+    transform: translateY(4px);
   }
   .footerLeft {
     display: flex;
@@ -1029,6 +1029,7 @@
   .footerImage {
     display: flex;
     align-items: center;
+    transform: translateX(-50%) translateY(0px);
   }
   .footerRight {
     display: flex;
