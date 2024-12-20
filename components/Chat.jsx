@@ -110,10 +110,10 @@ export default function Chat() {
 
     return (
         <div className={`${styles.chatBoxContainer} ${!isChatOpen ? styles.chatBoxClosed : ''}`}> 
-            <div className={styles.chatTitle} onClick={toggleChat}> 
+            <div className={`${styles.chatTitle} ${!isChatOpen ? styles.chatTitleClosed : ''}`} onClick={toggleChat}> 
                 Chat <span className={styles.toggleIndicator}>{!isChatOpen ? '+' : '-'}</span>
             </div>
-            <hr className={styles.horizontalRule}/>
+            <hr className={`${styles.horizontalRule} ${!isChatOpen ? styles.hidden : ''}`} />
             <div className={`${styles.chatContent} ${!isChatOpen ? styles.hidden : ''}`}>
                 <div className={styles.chatBox} >
                     {recMsg.listMsg?.map((msgInfo, index) => {

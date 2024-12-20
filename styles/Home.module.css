@@ -840,6 +840,10 @@
     cursor: pointer;
   }
 
+  .chatTitleClosed {
+    margin-bottom: 0;
+  }
+
   .chatTitle:hover {
     color: dodgerblue;
   }
@@ -1015,7 +1019,7 @@
     display: flex;
     /* justify-content: space-between; */
     justify-content: center;
-    padding: 4px 16px 16px 16px;
+    padding: 4px 16px 20px 16px;
     margin: 0;
     transform: translateY(1px);
   }
