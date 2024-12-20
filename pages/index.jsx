@@ -22,6 +22,7 @@ export default function Home({ schedule, about, artists, blogs }) {
                     <Head>
                         <title>Shared Frequencies Radio</title>
                         <meta name="description" content="Collaborative independent radio platform accessible to all 📡 🎶 🌎" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1" />
                         <link rel="icon" href="/favicon.png" />
                     </Head>
                     <main className={styles.main}>

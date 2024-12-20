@@ -110,7 +110,7 @@ export default function GeometricAnimation() {
     return (
         <div style={{ 
             position: 'relative', 
-            zIndex: -1,
+            zIndex: 0,
             width: '100%',
             overflow: 'hidden'
         }}>

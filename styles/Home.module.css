@@ -315,9 +315,7 @@
 .sidebar {
   display: flex;
   min-width: 100%;
-  /* padding: 0 15px 0 15px; */
   padding-inline-start: 0;
-  /* margin-bottom: 1em; */
   font-size: 1.25em;
 }
 
@@ -1019,7 +1017,7 @@
     display: flex;
     /* justify-content: space-between; */
     justify-content: center;
-    padding: 4px 16px 20px 16px;
+    padding: 4px 16px 24px 16px;
     margin: 0;
     transform: translateY(1px);
   }
