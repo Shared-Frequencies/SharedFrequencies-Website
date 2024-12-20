@@ -115,6 +115,31 @@ export default function GeometricAnimation() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    useEffect(() => {
+        // Request permissions for device motion and orientation
+        const requestPermissions = async () => {
+            if (typeof DeviceMotionEvent !== 'undefined' && 
+                typeof DeviceMotionEvent.requestPermission === 'function') {
+                try {
+                    const motionPermission = await DeviceMotionEvent.requestPermission();
+                    const orientationPermission = await DeviceOrientationEvent.requestPermission();
+                    
+                    if (motionPermission === 'granted' && orientationPermission === 'granted') {
+                        // Permissions granted
+                        console.log('Motion and orientation permissions granted');
+                    }
+                } catch (error) {
+                    console.log('Permission request error:', error);
+                }
+            }
+        };
+
+        // Only request on iOS devices
+        if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+            requestPermissions();
+        }
+    }, []);
+
     return (
         <div style={{ 
             position: 'relative', 
