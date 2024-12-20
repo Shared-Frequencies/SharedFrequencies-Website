@@ -2,7 +2,6 @@ import styles from '../../styles/Home.module.css'
 import {fetchResident, fetchResidents} from "../../utils/contentful-helper";
 import Image from "next/image";
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
-import ReactHtmlParser from 'react-html-parser';
 
 export default function Resident ({ resident }) {
     return (

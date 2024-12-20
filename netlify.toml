@@ -1,10 +1,20 @@
 [build]
-  command = "next build"
+  command = "npm run build"
   publish = ".next"
+  ignore = "git diff --quiet HEAD^ HEAD ./"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [build.environment]
   NEXT_USE_NETLIFY_EDGE = "true"
-  NODE_VERSION = "18"
+  NODE_VERSION = "14"
+  NEXT_FORCE_EDGE_IMAGES = "true"
+
+[functions]
+  included_files = ["node_modules/**"]
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
