@@ -46,6 +46,12 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 0;
+  background-image: radial-gradient(
+    var(--light-color) 0.5px,
+    var(--dark-color) 0.5px
+  );
+  background-size: 15px 15px;
+  background-position: bottom;
 }
 
 .artistWrapper {
@@ -62,12 +68,6 @@
 }
 
 .singleArtist {
-  /* margin: 10px 10px 10px 10px; */
-  /* border: solid var(--dark-color); */
-  /* border-width: 1px; */
-  /* border-radius: 0; */
-  /* box-shadow: 3px 3px; */
-  /* transition: box-shadow .1s; */
   background: var(--light-color);
   filter: grayscale(1);
   display: flex;
@@ -75,12 +75,16 @@
   height: 100%;
 }
 
+.singleArtist:hover {
+  cursor: pointer;
+}
+
 .singleArtistImg {
   display: grid;
   border-bottom: solid var(--dark-color);
   border-width: 1px;
-  background-image: radial-gradient(var(--dark-color) 0.5px, var(--light-color) 0.5px);
-  background-size: 10px 10px;
+  /* background-image: radial-gradient(var(--dark-color) 0.5px, var(--light-color) 0.5px); */
+  /* background-size: 10px 10px; */
   flex: 1;
 }
 
@@ -91,10 +95,6 @@
   color:var(--light-color);
   filter: grayscale(0);
   /* color: dodgerblue; */
-}
-
-.artistsGrid:hover {
-  cursor: pointer;
 }
 
 .artistsGridName {
@@ -303,11 +303,13 @@
   margin-left: auto;
 }
 
-.footer a {
+.footerLeft a {
   /* padding: .25em .75em .25em .75em; */
   padding-right: .75em;
-  padding-left: .75em;
+}
 
+.footerRight a {
+  padding-left: .75em;
 }
 
 .sidebar {
@@ -1013,7 +1015,7 @@
     display: flex;
     /* justify-content: space-between; */
     justify-content: center;
-    padding: 4px 4px 16px 4px;
+    padding: 4px 16px 16px 16px;
     margin: 0;
     transform: translateY(1px);
   }

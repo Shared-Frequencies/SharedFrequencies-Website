@@ -2,12 +2,13 @@ import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import React , { setState, useState } from 'react';
 import {HeightProvider} from "../components/HeightProvider";
-import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {fetchAbout, fetchResident, fetchResidents, fetchBlogs} from "../utils/contentful-helper";
-import MainContent from "../components/MainContent";
+import HomeComponent from "../components/home";
+import Resident from '../components/resident/[name]';
 import Residents from '../components/residents';
+import GeometricAnimation from '../components/GeometricAnimation';
 //import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 
 export default function Home({ schedule, about, artists, blogs }) {
@@ -24,26 +25,31 @@ export default function Home({ schedule, about, artists, blogs }) {
                         <link rel="icon" href="/favicon.png" />
                     </Head>
                     <main className={styles.main}>
-                        <Header>
-                            {/* <Sidebar setCurrentPage={setCurrentPage} /> */}
-                        </Header>
+                        <Header/>
                         <div className={styles.outerColumn}>
-                            {/* <Sidebar setCurrentPage={setCurrentPage} /> */}
-                            <MainContent
-                                setCurrentPage={setCurrentPage}
-                                currentPage={currentPage}
-                                setCurrentResident={setCurrentResident}
-                                currentResident={currentResident}
+                            <HomeComponent
                                 schedule={schedule}
                                 about={about}
-                                artists={artists}
                                 blogs={blogs}
-                            />
+                                />
+                            <div style={{ width: '100%', height: '5vh'}}>
+                                <img 
+                                    src="/SEASON 11 RESIDENTS.png"
+                                    alt="Season 11 Residents"
+                                    style={{ width: '100%', height: '100%', objectFit: 'fill', filter: 'blur(0px)'}}
+                                />
+                            </div>
+                            {currentPage === 'resident' && (
+                                <Resident
+                                    resident={currentResident}
+                                /> 
+                            )}
                             <Residents
                                 artists={artists}
                                 setCurrentPage={setCurrentPage}
                                 setCurrentResident={setCurrentResident}
                             />
+                            <GeometricAnimation />
                         </div>
                     </main>
                     <Footer/>
@@ -52,7 +58,6 @@ export default function Home({ schedule, about, artists, blogs }) {
         </>
     )
 }
-
 export async function getServerSideProps(context) {
     // schedule
     const scheduleRes = await fetch(`https://sharedfrequencies.airtime.pro/api/week-info`)
