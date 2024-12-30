@@ -5,11 +5,18 @@ import {HeightProvider} from "../components/HeightProvider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {fetchAbout, fetchResident, fetchResidents, fetchBlogs} from "../utils/contentful-helper";
-import HomeComponent from "../components/home";
 import Resident from '../components/resident/[name]';
 import Residents from '../components/residents';
 import GeometricAnimation from '../components/GeometricAnimation';
-//import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
+import SeasonBanner from "../components/SeasonBanner";
+import DonateBanner from '../components/DonateBanner';
+import Chat from "../components/Chat";
+import About from "../components/about";
+import Shop from "../components/shop";
+import Blog from "../components/Blog";
+import Schedule from "../components/Schedule";
+import LiveEvents from "../components/LiveEvents";
+import NoiseOverlay from '../components/NoiseOverlay';
 
 export default function Home({ schedule, about, artists, blogs }) {
     const [currentPage, setCurrentPage] = useState('home');
@@ -28,22 +35,25 @@ export default function Home({ schedule, about, artists, blogs }) {
                     <main className={styles.main}>
                         <Header/>
                         <div className={styles.outerColumn}>
-                            <HomeComponent
-                                schedule={schedule}
-                                about={about}
-                                blogs={blogs}
-                                />
-                            <div style={{ width: '100%', height: '5vh'}}>
-                                <img 
-                                    src="/SEASON 11 RESIDENTS.png"
-                                    alt="Season 11 Residents"
-                                    style={{ width: '100%', height: '100%', objectFit: 'fill', filter: 'blur(0px)'}}
-                                />
+                            <div className={styles.mainColumn}>
+                                <div className={styles.bottomContainer}>
+                                    <Schedule schedule={schedule} />
+                                    <Chat />
+                                    <Shop />
+                                </div>
+                                <Blog blogs={blogs} blogID={"1"} />
+                                {/* <div className={styles.thirdsContainer}>
+                                    <div className={styles.oneThird}>
+                                        <LiveEvents />
+                                    </div>
+                                    <div className={styles.twoThirds}>
+                                        <DonateBanner />
+                                    </div>
+                                </div> */}
                             </div>
+                            <SeasonBanner />
                             {currentPage === 'resident' && (
-                                <Resident
-                                    resident={currentResident}
-                                /> 
+                                <Resident resident={currentResident} /> 
                             )}
                             <Residents
                                 artists={artists}
@@ -56,6 +66,7 @@ export default function Home({ schedule, about, artists, blogs }) {
                     <Footer/>
                 </div>
             </HeightProvider>
+            {/* <NoiseOverlay /> */}
         </>
     )
 }

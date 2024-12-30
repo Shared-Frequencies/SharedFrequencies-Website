@@ -89,7 +89,12 @@ export default function GeometricAnimation() {
     }, [particles]);
 
     const windowResized = useCallback((p5) => {
-        const parentWidth = p5.canvas.parentElement.offsetWidth;
+        if (!p5) return;
+        
+        const canvasParent = p5.canvas?.parentElement || document.querySelector('div[style*="overflow: hidden"]');
+        if (!canvasParent) return;
+        
+        const parentWidth = canvasParent.offsetWidth;
         p5.resizeCanvas(parentWidth, 150);
         
         const padding = parentWidth / 2;

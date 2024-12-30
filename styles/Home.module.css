@@ -607,10 +607,12 @@
 
 .blogContainerOuter {
   width: 100%;
+  height: 100%;
 }
 
 .blogStack {
   display: flex;
+  height: 100%;
 }
 
 .blogContainerBackground {
@@ -627,11 +629,12 @@
   /* height: fill; */
   color: var(--light-color);
   padding: 15px;
-  border-top: 1px solid var(--dark-color);
+  /* border-top: 1px solid var(--dark-color); */
   /* overflow-x: hidden;
   overflow-y: visible; */
   /* filter: greyscale(1); */
   min-height: 35vw;
+  height: 100%;
 }
 
 /* .blogPostTitle {
@@ -668,13 +671,14 @@
 }
 
 .merchPicture {
+  z-index: 1000;
   max-width: 100%;
   transition: transform .2s;
   overflow: hidden;
 }
 
 .merchPicture:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1) rotate(1deg);
   overflow: hidden;
 }
 
@@ -928,9 +932,9 @@
   .chatBoxContainer {
     height: 100%;
   }
-  .aboutContainer, .shopContainer {
+  /* .aboutContainer, .shopContainer {
     display: none;
-  }
+  } */
   .artistBio {
     height: 100%;
     width: 100%;
@@ -1028,3 +1032,33 @@
   }
 }
 
+.thirdsContainer {
+  display: flex;
+  gap: 0;
+}
+
+.twoThirds {
+  width: 66.666%;
+}
+
+.oneThird {
+  width: 33.333%;
+}
+
+.liveEventsContainer {
+  padding: 15px 15px 0px 15px;
+  border-right: 1px solid var(--dark-color);
+  color: var(--light-color);
+  position: relative;
+}
+
+.eventPicture {
+  max-width: 100%;
+  transition: transform .2s;
+  overflow: hidden;
+}
+
+.eventPicture:hover {
+  transform: scale(1.1) rotate(1deg);
+  overflow: hidden;
+}

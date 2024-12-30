@@ -52,9 +52,31 @@ export default function Schedule({schedule}) {
 
     // amount of days to show on schedule
     const shortDates = useMemo(
-        () => uniqueDates.slice(today - 1 === -1 ? 6 : today - 1, today -1 === -1 ? 10 : today + 1), 
-        [uniqueDates, today]
-    )
+        () => {
+            const today = new Date();
+            const nextWeek = [];
+            
+            // Get next 7 days
+            for (let i = 0; i < 7; i++) {
+                const date = new Date(today);
+                date.setDate(today.getDate() + i);
+                nextWeek.push(date.toDateString());
+            }
+            
+            // Filter to only include dates that exist in our uniqueDates array
+            // and have shows after filtering out SFR
+            const datesWithContent = nextWeek.filter(date => {
+                const dayShows = zippedDatesShows
+                    .filter(shows => shows[1] === date)
+                    .filter(shows => shows[0] !== "Shared Frequencies Rotation" && shows[0] !== "SFR");
+                return dayShows.length > 0;
+            });
+            
+            // Return only the first 3 days with content
+            return datesWithContent.slice(0, 3);
+        },
+        [uniqueDates, zippedDatesShows]
+    );
 
     useEffect(() => {
         if(heightRef && heightRef.current && heightRef.current.clientHeight){
@@ -68,23 +90,24 @@ export default function Schedule({schedule}) {
         <div className={styles.calendarContainer} ref={heightRef}>
             <p className={styles.calendarTitle}> Schedule </p>
             <hr className={styles.horizontalRule} />
-            <p className={styles.dailyShows}>Season 11 will begin January 1, 2025.</p>
-            <p className={styles.dailyShows}>See you soon!</p>
-            {/* <div className={styles.calendar}>
+            <div className={styles.calendar}>
                 <ol className={styles.days}>
                     {
-                        shortDates.map((day) => (
-                            <li key={day} className={styles.uniqueDays}>
-                                <b>
-                                    {day.toString().slice(0, day.toString().length - 4)}
-                                </b>
-                                <ol className={styles.dailyShows}>
-                                    {
-                                        zippedDatesShows
-                                            .filter((shows) => shows[1] === day)
-                                            .filter((shows) => (shows[0] !== "Shared Frequencies Rotation")
-                                             && (shows[0] !== "SFR"))
-                                            .map((show) => (
+                        shortDates.map((day) => {
+                            // Filter shows for this day first
+                            const dayShows = zippedDatesShows
+                                .filter((shows) => shows[1] === day)
+                                .filter((shows) => (shows[0] !== "Shared Frequencies Rotation") && (shows[0] !== "SFR"));
+                            
+                            // Only render the day if it has shows
+                            return dayShows.length > 0 ? (
+                                <li key={day} className={styles.uniqueDays}>
+                                    <b>
+                                        {day.toString().slice(0, day.toString().length - 4)}
+                                    </b>
+                                    <ol className={styles.dailyShows}>
+                                        {
+                                            dayShows.map((show) => (
                                                 <li key={show} className={styles.show}>
                                                     <div className={styles.names}>
                                                         {decode(show[0])}
@@ -94,14 +117,15 @@ export default function Schedule({schedule}) {
                                                     </div>
                                                 </li>
                                             ))
-                                    }
-                                </ol>
-                                <br/>
-                            </li>
-                        ))
+                                        }
+                                    </ol>
+                                    <br/>
+                                </li>
+                            ) : null;
+                        })
                     }
                 </ol>
-            </div> */}
+            </div>
         </div>
     )
 }
