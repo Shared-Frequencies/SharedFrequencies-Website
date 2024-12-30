@@ -10,6 +10,6 @@ export default async function handler(req, res) {
         res.status(200).json(nowPlayingResult);
     } catch (error) {
         console.error('Error fetching now playing data:', error);
-        res.status(500).json({ error: 'Failed to fetch now playing data' });
+        res.status(600).json({ error: 'Failed to fetch now playing data' });
     }
 }
