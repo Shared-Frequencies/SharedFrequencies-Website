@@ -71,27 +71,33 @@ export default function Home({ schedule, about, artists, blogs }) {
     )
 }
 export async function getServerSideProps(context) {
-    // schedule
-    const scheduleRes = await fetch(`https://sharedfrequencies.airtime.pro/api/week-info`)
-    const scheduleData = await scheduleRes.json()
-    
-    // about
-    const aboutData = await fetchAbout()
+    try {
+        const scheduleRes = await fetch(`https://sharedfrequencies.airtime.pro/api/week-info`);
+        const scheduleData = await scheduleRes.json();
 
-    // residents
-    const residentsData = await fetchResidents()
-    const shuffledResidents = [...residentsData.artistCollection.items].sort(() => Math.random() - 0.5)
+        const aboutData = await fetchAbout();
+        const residentsData = await fetchResidents();
+        const shuffledResidents = [...residentsData.artistCollection.items].sort(() => Math.random() - 0.5);
+        const blogsData = await fetchBlogs();
 
-    // blog
-    const blogsData = await fetchBlogs()
-
-    return {
-        props: {
-            schedule: scheduleData,
-            about: aboutData.aboutCollection.items[0],
-            artists: shuffledResidents,
-            blogs: blogsData.blogPostCollection.items,
-        }, // will be passed to the page component as props
+        return {
+            props: {
+                schedule: scheduleData,
+                about: aboutData.aboutCollection.items[0],
+                artists: shuffledResidents,
+                blogs: blogsData.blogPostCollection.items,
+            },
+        };
+    } catch (error) {
+        console.error('Error in getServerSideProps:', error);
+        return {
+            props: {
+                schedule: null,
+                about: null,
+                artists: [],
+                blogs: [],
+            },
+        };
     }
 }
 Residents

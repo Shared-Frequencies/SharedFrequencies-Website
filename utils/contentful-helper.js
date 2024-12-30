@@ -32,7 +32,12 @@ export async function fetchResidents () {
     }
   }
   `
-  return graphQLClient.request(query)
+  try {
+    return await graphQLClient.request(query);
+  } catch (error) {
+    console.error('Error fetching residents:', error);
+    throw error;
+  }
 }
 
 export async function fetchResident (name) {

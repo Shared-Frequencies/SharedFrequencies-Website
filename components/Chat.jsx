@@ -73,8 +73,11 @@ export default function Chat() {
     }, [recMsg.listMsg, setLoggedUser]);
 
     useEffect( () => {
-        socket.emit("getHistory", loggedUser ? loggedUser.id : null);
-
+        try {
+            socket.emit("getHistory", loggedUser ? loggedUser.id : null);
+        } catch (error) {
+            console.error('Error getting history:', error);
+        }
     }, [loggedUser])
 
 

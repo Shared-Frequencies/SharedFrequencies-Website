@@ -1,7 +1,15 @@
 export default async function handler(req, res) {
-    const nowPlayingRes = await fetch(`https://sharedfrequencies.airtime.pro/api/live-info-v2`)
-    const nowPlayingData = await nowPlayingRes.json()
-    const nowPlayingResult = await nowPlayingData.shows
+    try {
+        const nowPlayingRes = await fetch(`https://sharedfrequencies.airtime.pro/api/live-info-v2`);
+        if (!nowPlayingRes.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const nowPlayingData = await nowPlayingRes.json();
+        const nowPlayingResult = nowPlayingData.shows;
 
-    res.status(200).json(nowPlayingResult)
+        res.status(200).json(nowPlayingResult);
+    } catch (error) {
+        console.error('Error fetching now playing data:', error);
+        res.status(500).json({ error: 'Failed to fetch now playing data' });
+    }
 }
