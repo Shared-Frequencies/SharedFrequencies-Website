@@ -80,7 +80,7 @@ export default function Schedule({schedule}) {
         }
     },[size, setHeight]);
 
-    if (!schedule || Object.keys(schedule).length === 0) {
+    if (!schedule) {
         return (
             <div className={styles.calendarContainer} ref={heightRef}>
                 <p className={styles.calendarTitle}> Schedule </p>
