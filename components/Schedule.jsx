@@ -8,12 +8,78 @@ import {useWindowSize} from "./TwitchVideo";
 
 export default function Schedule({schedule}) {
     const {setHeight} = useContext(HeightContext);
-
     const size = useWindowSize();
+    const heightRef = useRef(null);
 
-    const heightRef = useRef(null)
+    const formattedSchedule = useMemo(
+        () => schedule ? Object.values(schedule)
+            .flat()
+            .splice(0, Object.values(schedule).flat().length - 1) : [],
+        [schedule]
+    );
 
-    // Add error checking for schedule
+    const dates = useMemo(
+        () => schedule ? _.map(formattedSchedule, ele => parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').toDateString()) : [],
+        [formattedSchedule]
+    );
+
+    const times = useMemo(
+        () => schedule ? _.map(formattedSchedule, ele =>
+            `${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12 === 0 ? 12 : 
+                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() }:${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() < 10 ?
+                "0" + parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes():parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} CST`) : [],
+        [formattedSchedule]
+    );
+
+    const shows = useMemo(
+        () => schedule ? _.map(formattedSchedule, ele => ele.name) : [],
+        [formattedSchedule]
+    );
+
+    const uniqueDates = useMemo(
+        () => _.uniq(dates),
+        [dates]
+    );
+
+    const zippedDatesShows = useMemo(
+        () => _.zip(shows, dates, times),
+        [shows, dates, times]
+    );
+
+    const shortDates = useMemo(
+        () => {
+            if (!schedule) return [];
+            
+            const today = new Date();
+            const nextWeek = [];
+            
+            for (let i = 0; i < 7; i++) {
+                const date = new Date(today);
+                date.setDate(today.getDate() + i);
+                nextWeek.push(date.toDateString());
+            }
+            
+            const datesWithContent = nextWeek.filter(date => {
+                const dayShows = zippedDatesShows
+                    .filter(shows => shows[1] === date)
+                    .filter(shows => shows[0] !== "Shared Frequencies Rotation" && shows[0] !== "SFR");
+                return dayShows.length > 0;
+            });
+            
+            // Return only the first 3 days with content
+            return datesWithContent.slice(0, 3);
+        },
+        [zippedDatesShows]
+    );
+
+    useEffect(() => {
+        if(heightRef && heightRef.current && heightRef.current.clientHeight){
+            setTimeout(() => {
+                setHeight(heightRef.current.clientHeight)
+            }, 1000)
+        }
+    },[size, setHeight]);
+
     if (!schedule || Object.keys(schedule).length === 0) {
         return (
             <div className={styles.calendarContainer} ref={heightRef}>
@@ -25,79 +91,6 @@ export default function Schedule({schedule}) {
             </div>
         );
     }
-
-    const formattedSchedule = useMemo(
-        () => Object.values(schedule)
-            .flat()
-            .splice(0, Object.values(schedule).flat().length - 1),
-        [schedule]
-    )
-
-    const dates = useMemo(
-        () => _.map(formattedSchedule, ele => parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').toDateString()),
-        [formattedSchedule]
-    )
-
-    const times = useMemo(
-        () =>  _.map(formattedSchedule, ele =>
-            `${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() % 12 === 0 ? 12 : 
-                parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getHours() }:${parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes() < 10 ?
-                "0" + parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes():parse(ele.starts, 'YYYY-MM-DD HH:mm:ss').getMinutes()} CST`),
-        [formattedSchedule]
-    )
-
-    const shows = useMemo(
-        () => _.map(formattedSchedule, ele => ele.name),
-        [formattedSchedule]
-    )
-
-    const uniqueDates = useMemo(
-        () => _.uniq(dates),
-        [dates]
-    )
-
-    const zippedDatesShows = useMemo(
-        () => _.zip(shows, dates, times),
-        [shows, dates, times]
-    )
-
-    const today = new Date().getDay()
-
-    // amount of days to show on schedule
-    const shortDates = useMemo(
-        () => {
-            const today = new Date();
-            const nextWeek = [];
-            
-            // Get next 7 days
-            for (let i = 0; i < 7; i++) {
-                const date = new Date(today);
-                date.setDate(today.getDate() + i);
-                nextWeek.push(date.toDateString());
-            }
-            
-            // Filter to only include dates that exist in our uniqueDates array
-            // and have shows after filtering out SFR
-            const datesWithContent = nextWeek.filter(date => {
-                const dayShows = zippedDatesShows
-                    .filter(shows => shows[1] === date)
-                    .filter(shows => shows[0] !== "Shared Frequencies Rotation" && shows[0] !== "SFR");
-                return dayShows.length > 0;
-            });
-            
-            // Return only the first 3 days with content
-            return datesWithContent.slice(0, 3);
-        },
-        [uniqueDates, zippedDatesShows]
-    );
-
-    useEffect(() => {
-        if(heightRef && heightRef.current && heightRef.current.clientHeight){
-            setTimeout(() => {
-                setHeight(heightRef.current.clientHeight)
-            }, 1000)
-        }
-    },[size, setHeight])
 
     return (
         <div className={styles.calendarContainer} ref={heightRef}>
