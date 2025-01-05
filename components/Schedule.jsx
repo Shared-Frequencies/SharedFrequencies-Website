@@ -13,6 +13,19 @@ export default function Schedule({schedule}) {
 
     const heightRef = useRef(null)
 
+    // Add error checking for schedule
+    if (!schedule || Object.keys(schedule).length === 0) {
+        return (
+            <div className={styles.calendarContainer} ref={heightRef}>
+                <p className={styles.calendarTitle}> Schedule </p>
+                <hr className={styles.horizontalRule} />
+                <div className={styles.calendar}>
+                    <p>No schedule available at this time.</p>
+                </div>
+            </div>
+        );
+    }
+
     const formattedSchedule = useMemo(
         () => Object.values(schedule)
             .flat()
