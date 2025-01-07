@@ -41,6 +41,7 @@ export default function Home({ schedule, about, artists, blogs }) {
                                     <Chat />
                                     <Shop />
                                 </div>
+                                <GeometricAnimation />
                                 <Blog blogs={blogs} blogID={"1"} />
                                 {/* <div className={styles.thirdsContainer}>
                                     <div className={styles.oneThird}>
@@ -60,7 +61,7 @@ export default function Home({ schedule, about, artists, blogs }) {
                                 setCurrentPage={setCurrentPage}
                                 setCurrentResident={setCurrentResident}
                             />
-                            <GeometricAnimation />
+                            
                         </div>
                     </main>
                     <Footer/>

@@ -22,7 +22,7 @@ export default function GeometricAnimation() {
         canvas.touchMoved(() => true);
         canvas.touchEnded(() => true);
         
-        p5.frameRate(30);
+        p5.frameRate(45);
         p5.textAlign(p5.CENTER, p5.CENTER);
         p5.textSize(window.innerWidth <= 660 ? 16 : 18);
         
