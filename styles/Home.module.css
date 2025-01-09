@@ -457,15 +457,11 @@
 .nowPlaying {
   display: flex;
   flex-direction: row;
-  /* transform: translateY(-60%) translateX(10%); */
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* font-size: 1.2em; */
-  /* font-weight: 600; */
-  margin-right: auto;
-  margin-left: auto;
   padding-right: 3px;
   color: var(--dark-color);
 }
@@ -473,8 +469,7 @@
 .nowPlaying p {
   font-family: ApfelGrotezk-Bold;
   font-size: 16pt;
-  display: flex;
-  margin: auto;
+  margin: 0;
 }
 
 .liveIndicator {
@@ -1071,4 +1066,26 @@
 .eventPicture:hover {
   transform: scale(1.1) rotate(1deg);
   overflow: hidden;
+}
+
+@media only screen and (min-width: 661px) {
+  .nowPlaying {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .nowPlaying {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .nowPlaying p {
+    font-size: 16px;
+  }
 }
