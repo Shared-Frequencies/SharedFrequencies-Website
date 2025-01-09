@@ -38,16 +38,16 @@ export default function Chat() {
     const chatBoxRef = useRef(null);
 
     // Add this useEffect to calculate max messages based on height
-    useEffect(() => {
-        if (chatBoxRef.current && isChatOpen) {
-            const messageHeight = 22; 
-            const containerHeight = chatBoxRef.current.clientHeight;
-            const calculatedMax = Math.floor(containerHeight / messageHeight);
-            console.log('Container height:', containerHeight);
-            console.log('Calculated max messages:', calculatedMax);
-            setMaxMessages(calculatedMax > 0 ? calculatedMax : 1);
-        }
-    }, [height, isChatOpen]);
+    // useEffect(() => {
+    //     if (chatBoxRef.current && isChatOpen) {
+    //         const messageHeight = 22; 
+    //         const containerHeight = chatBoxRef.current.clientHeight;
+    //         const calculatedMax = Math.floor(containerHeight / messageHeight);
+    //         console.log('Container height:', containerHeight);
+    //         console.log('Calculated max messages:', calculatedMax);
+    //         setMaxMessages(calculatedMax > 0 ? calculatedMax : 1);
+    //     }
+    // }, [height, isChatOpen]);
 
     useEffect(() => {
         setIsClient(true);
@@ -62,10 +62,12 @@ export default function Chat() {
         }
         var emojiName = result.join('');
         socket.emit("login", emojiName);
+
         // list of connected users
         socket.on("users", data => {
             setUser({ usersList: JSON.parse(data) })
         });
+        
         // get the logged user
         socket.on("connecteduser", data => {
             setLoggedUser(JSON.parse(data));
@@ -75,7 +77,6 @@ export default function Chat() {
         socket.on("getMsg", data => {
             setRecMsg(prev => {
                 const newMessages = [...prev.listMsg, JSON.parse(data)];
-                // Keep only the most recent messages up to maxMessages
                 return {
                     listMsg: newMessages.slice(-maxMessages)
                 };
@@ -91,7 +92,14 @@ export default function Chat() {
             });
         });
 
-    }, [maxMessages]); // Add maxMessages as dependency
+        // Cleanup function to remove listeners
+        return () => {
+            socket.off("users");
+            socket.off("connecteduser");
+            socket.off("getMsg");
+            socket.off("sendHistory");
+        };
+    }, [maxMessages]);
 
     useEffect( () => {
         try {

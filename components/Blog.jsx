@@ -11,8 +11,8 @@ export default function Blog ( {blogs, blogID} ) {
 
     return (
         <>
-            <div className={styles.blogContainerOuter} style={{ position: 'relative', overflow: 'hidden' }}>
-                <div className={styles.blogContainer} >
+            <a href={blogPost.link} target="_blank" rel="noreferrer" className={styles.blogContainerOuter} style={{ position: 'relative', overflow: 'hidden' }}>
+                <div className={styles.blogContainer}>
                     <p className={styles.chatTitle}>Editorials & Interviews</p>
                     <hr className={styles.horizontalRuleLight}/>
                     <div className={styles.blogPost}>
@@ -21,11 +21,9 @@ export default function Blog ( {blogs, blogID} ) {
                             {blogPost.blogContent ? documentToReactComponents(blogPost.blogContent.json) : null}
                         </div>
                     </div>
-                    <a className={styles.readMoreButtonLink} href={blogPost.link} target="_blank" rel="noreferrer">
-                        <div className={styles.readMoreButton}>
-                            <span>Read More</span>
-                        </div>
-                    </a>
+                    <div className={styles.readMoreButton}>
+                        <span style={{ fontSize: '1.1rem' }}>Read More</span>
+                    </div>
                 </div>
                 <div className={styles.blogContainerBackgroundOuter} style={{ pointerEvents: 'none' }}>
                     <Image 
@@ -39,7 +37,7 @@ export default function Blog ( {blogs, blogID} ) {
                     />
                     <div className={styles.gradientOverlay}></div>
                 </div>
-            </div>
+            </a>
         </>
     )
 }

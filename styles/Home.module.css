@@ -44,7 +44,7 @@
 
 .artistsGrid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 0;
   background-image: radial-gradient(
     var(--light-color) 0.5px,
@@ -59,11 +59,11 @@
   border-bottom: 1px solid var(--dark-color);
 }
 
-.artistWrapper:nth-child(-n+6) {  /* First row of 6 items */
+.artistWrapper:nth-child(-n+7) {
   border-top: 1px solid var(--dark-color);
 }
 
-.artistWrapper:nth-child(6n) {  /* Every 6th item */
+.artistWrapper:nth-child(7n) {
   border-right: none;
 }
 
@@ -405,7 +405,7 @@
   height: 0px;
   margin: 0 0 16px 0;
   box-sizing: border-box;
-  border-top: 1px solid var(--dark-color);
+  border-top: 1px solid var(--light-color);
   /* border-style: solid; */
 }
 
@@ -567,7 +567,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* border: solid black;
   border-radius: 40px; */
   margin-bottom: 8px;
@@ -579,13 +579,12 @@
 }
 
 .calendarContainer {
-  /* height: 100%; */
   padding: 15px;
-  /* margin-right: 1%; */
-  /* border: solid black;
-  border-width: 1px;
-  border-radius: 0; */
   width: 33.33%;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border-top: 1px solid var(--light-color);
+  border-bottom: 1px solid var(--light-color);
 }
 
 .aboutContainer {
@@ -597,12 +596,13 @@
 }
 
 .shopContainer {
-  /* height: fill; */
   padding: 15px;
-  border-left: 1px solid var(--dark-color);
+  border-left: 1px solid var(--light-color);
+  border-top: 1px solid var(--light-color);
+  border-bottom: 1px solid var(--light-color);
   width: 33.33%;
-  /* overflow-x: hidden;
-  overflow-y: visible; */
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 
 .blogContainerOuter {
@@ -673,12 +673,14 @@
 .merchPicture {
   z-index: 1000;
   max-width: 100%;
-  transition: transform .2s;
-  overflow: hidden;
+  transition: transform .2s, filter .2s;
+  /* overflow: hidden; */
+  filter: drop-shadow(3px 6px 6px #000000);
 }
 
 .merchPicture:hover {
   transform: scale(1.1) rotate(1deg);
+  filter: drop-shadow(3px 8px 8px #000000);
   overflow: hidden;
 }
 
@@ -709,9 +711,11 @@
 
 .chatInput {
   width: inherit;
-  border: solid 1px var(--dark-color);
+  border: solid 1px var(--light-color);
   border-radius: 0px;
   font-family: ApfelGrotezk;
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 
 .chatInput:focus {
@@ -722,9 +726,11 @@
 } */
 
 .inputButton {
-  border: solid 1px var(--dark-color);
+  border: solid 1px var(--light-color);
   border-radius: 0px;
-  font-family: inherit;  
+  font-family: inherit;
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 
 .inputButton:hover {
@@ -736,9 +742,13 @@
   display: flex;
   flex-direction: column;
   padding: 15px;
-  border-left: 1px solid var(--dark-color);
+  border-left: 1px solid var(--light-color);
+  border-top: 1px solid var(--light-color);
+  border-bottom: 1px solid var(--light-color);
   width: 33.33%;
   overflow: hidden;
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 
 .ovalContainer {
