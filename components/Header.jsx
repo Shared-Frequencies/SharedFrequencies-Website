@@ -22,9 +22,13 @@ export default function Header () {
                         decode(data.current.name) :
                         'Shared Frequencies Radio'}</p>
                 </div>
-                <div className={styles.liveIndicator}>
-                    <p>LIVE</p>
-                </div>
+                {(data?.current?.name && 
+                  data.current.name !== 'Shared Frequencies Rotation' && 
+                  data.current.name !== 'Shared Frequencies Radio') && (
+                    <div className={styles.liveIndicator}>
+                        <p>LIVE</p>
+                    </div>
+                )}
             </div>
         </header>
     )

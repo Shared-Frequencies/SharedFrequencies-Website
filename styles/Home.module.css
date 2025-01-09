@@ -485,7 +485,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   border: solid var(--light-color);
-  border-radius: 5px;
+  /* border-radius: 5px; */
   border-width: 1px;
   margin: .5em .5em .5em auto;
   background-color:var(--light-color);
@@ -759,7 +759,7 @@
   height: 3em;
   margin: 0 0 0 1em;
   border: solid var(--dark-color);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   border-width: 1px;
   background-color:var(--light-color);
   /* box-shadow: 3px 3px; */
