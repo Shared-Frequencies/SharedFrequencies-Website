@@ -28,40 +28,10 @@ export default function Chat() {
 
     const [loggedUser, setLoggedUser] = useState();
 
-    var emojis = ["⏳","⚪","⚽","⛄","⛎","⛔","⛪","⛲","⛵","⛺","⛽","✅","✨","❌","❎","⬛","⭐","⭕","🀄","🃏","🆎","🆑","🆒","🆓","🆔","🆕","🆖","🆗","🆘","🆙","🈁","🈚","🈯","🈲","🈳","🈴","🈵","🈸","🈹","🉐","🌀","🌁","🌂","🌃","🌄","🌅","🌆","🌇","🌈","🌉","🌊","🌋","🌍","🌏","🌐","🌑","🌒","🌓","🌔","🌖","🌗","🌙","🌚","🌛","🌜","🌝","🌟","🌭","🌮","🌰","🌲","🌴","🌷","🌸","🌹","🌺","🌻","🌼","🌽","🌾","🌿","🍀","🍁","🍂","🍃","🍄","🍅","🍆","🍇","🍈","🍉","🍋","🍌","🍍","🍎","🍐","🍑","🍒","🍓","🍔","🍕","🍖","🍗","🍘","🍙","🍚","🍛","🍜","🍝","🍞","🍟","🍠","🍡","🍢","🍣","🍤","🍥","🍦","🍧","🍨","🍩","🍪","🍫","🍬","🍭","🍮","🍯","🍰","🍱","🍲","🍳","🍴","🍵","🍶","🍷","🍸","🍹","🍺","🍼","🍾","🎀","🎁","🎂","🎃","🎄","🎆","🎇","🎈","🎉","🎊","🎋","🎌","🎍","🎎","🎏","🎐","🎑","🎒","🎠","🎡","🎢","🎣","🎤","🎥","🎦","🎧","🎨","🎩","🎪","🎫","🎬","🎭","🎮","🎯","🎰","🎱","🎲","🎳","🎴","🎵","🎶","🎷","🎸","🎹","🎺","🎻","🎼","🎽","🎾","🎿","🏀","🏁","🏅","🏆","🏇","🏈","🏉","🏊","🏏","🏐","🏠","🏮","🏯","🏴","🏸","🏹","🏺","🐀","🐁","🐂","🐃","🐄","🐅","🐆","🐈","🐉","🐊","🐌","🐍","🐏","🐑","🐓","🐔","🐕","🐖","🐗","🐘","🐙","🐚","🐛","🐜","🐝","🐞","🐟","🐠","🐡","🐢","🐣","🐤","🐥","🐦","🐧","🐨","🐪","🐫","🐬","🐭","🐮","🐯","🐰","🐱","🐲","🐳","🐴","🐵","🐶","🐷","🐸","🐹","🐺","🐻","🐼","🐽","👑","👒","👓","👔","👕","👖","👗","👘","👙","👚","👛","👜","👝","👞","👟","👠","👡","👢","👣","👥","👹","👺","👻","👽","👾","👿","💀","💂","💃","💄","💈","💉","💊","💋","💌","💍","💎","💐","💓","💔","💕","💖","💗","💘","💙","💚","💛","💜","💝","💞","💟","💠","💡","💢","💣","💤","💥","💦","💧","💨","💩","💫","💭","💮","💯","💰","💱","💲","💳","💴","💶","💸","💹","💺","💻","💼","💽","💾","💿","📀","📁","📂","📃","📄","📅","📆","📇","📈","📉","📊","📋","📌","📍","📎","📏","📐","📑","📒","📓","📔","📕","📖","📗","📘","📙","📚","📛","📜","📝","📞","📟","📠","📡","📢","📣","📤","📥","📦","📧","📨","📩","📪","📬","📮","📯","📰","📱","📲","📳","📵","📶","📸","📹","📺","📻","📿","🔀","🔁","🔃","🔄","🔅","🔆","🔈","🔉","🔊","🔋","🔌","🔍","🔎","🔏","🔐","🔑","🔒","🔓","🔕","🔖","🔗","🔘","🔙","🔚","🔛","🔜","🔝","🔞","🔟","🔥","🔦","🔧","🔨","🔩","🔪","🔬","🔮","🔰","🔱","🔲","🔳","🔴","🔵","🔶","🔷","🔸","🔹","🔺","🔻","🔼","🕌","🕍","🕐","🕘","🖤","🗻"];
+    var emojis = ["⏳","⚪","⚽","⛄","⛎","⛔","⛪","⛲","⛵","⛺","⛽","✅","✨","❌","❎","⬛","⭐","⭕","🀄","🃏","🆎","🆑","🆒","🆓","🆔","🆕","🆖","🆗","🆘","🆙","🈁","🈚","🈯","🈲","🈳","🈴","🈵","🈸","🈹","🉐","🌀","🌁","🌂","🌃","🌄","🌅","🌆","🌇","🌈","🌉","🌊","🌋","🌍","🌏","🌐","🌑","🌒","🌓","🌔","🌖","🌗","🌙","🌚","🌛","🌜","🌝","🌟","🌭","🌮","🌰","🌲","🌴","🌷","🌸","🌹","🌺","🌻","🌼","🌽","🌾","🌿","🍀","🍁","🍂","🍃","🍄","🍅","🍆","🍇","🍈","🍉","🍋","🍌","🍍","🍎","🍐","🍑","🍒","🍓","🍔","🍕","🍖","🍗","🍘","🍙","🍚","🍛","🍜","🍝","🍞","🍟","🍠","🍡","🍢","🍣","🍤","🍥","🍦","🍧","🍨","🍩","🍪","🍫","🍬","🍭","🍮","🍯","🍰","🍱","🍲","🍳","🍴","🍵","🍶","🍷","🍸","🍹","🍺","🍼","🍾","🎀","🎁","🎂","🎃","🎄","🎆","🎇","🎈","🎉","🎊","🎋","🎌","🎍","🎎","🎏","🎐","🎑","🎒","🎠","🎡","🎢","🎣","🎤","🎥","🎦","🎧","🎨","🎩","🎪","🎫","🎬","🎭","🎮","🎯","🎰","🎱","🎲","🎳","🎴","🎵","🎶","🎷","🎸","🎹","🎺","🎻","🎼","🎽","🎾","🎿","🏀","🏁","🏅","🏆","🏇","🏈","🏉","🏊","🏏","🏐","🏠","🏮","🏯","🏴","🏸","🏹","🏺","🐀","🐁","🐂","🐃","🐄","🐅","🐆","🐈","🐉","🐊","🐌","🐍","🐏","🐑","🐓","🐔","🐕","🐖","🐗","🐘","🐙","🐚","🐛","🐜","🐝","🐞","🐟","🐠","🐡","🐢","🐣","🐤","🐥","🐦","🐧","🐨","🐪","🐫","🐬","🐭","🐮","🐯","🐰","🐱","🐲","🐳","🐴","🐵","🐶","🐷","🐸","🐹","🐺","🐻","🐼","🐽","👑","👒","👓","👔","👕","👖","👗","👘","👙","👚","👛","👜","👝","👞","👟","👠","👡","👢","👣","👥","👹","👺","👻","👽","👾","👿","💀","💂","💃","💄","💈","💉","💊","💋","💌","💍","💎","💐","💓","💔","💕","💖","💗","💘","💙","💚","💛","💜","💝","💞","💟","💠","💡","💢","💣","💤","💥","💦","💧","💨","💩","💫","💭","💮","💯","💰","💱","💲","💳","💴","💶","💸","💹","💺","💻","💼","💽","💾","💿","📀","📁","📂","📃","📄","📅","📆","📇","📈","📉","📊","📋","📌","📍","📎","📏","📐","📑","📒","📓","📔","📕","📖","📗","📘","📙","📚","📛","📜","📝","📞","📟","📠","📡","📢","📣","📤","📥","📦","📧","📨","📩","📪","📬","📮","📯","📰","📱","📲","📳","📵","📶","📸","📹","📺","📻","📿","🔀","🔁","🔃","🔄","🔅","🔆","🔈","🔉","🔊","🔋","🔌","🔍","🔎","🔏","🔐","🔑","🔒","🔓","🔕","🔖","🔗","🔘","🔙","🔚","🔛","🔜","🔝","🔟","🔥","🔦","🔧","🔨","🔩","🔪","🔬","🔮","🔰","🔱","🔲","🔳","🔴","🔵","🔶","🔷","🔸","🔹","🔺","🔻","🔼","🕐","🕘","🖤","🗻"];
 
     const [isChatOpen, setIsChatOpen] = useState(false);
     const [isClient, setIsClient] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
-
-    // Add state for max messages
-    const [maxMessages, setMaxMessages] = useState(10);
-    const chatBoxRef = useRef(null);
-
-    // Add mobile detection
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
-        
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        
-        return () => window.removeEventListener('resize', checkMobile);
-    }, []);
-
-    // Modified useEffect to handle different device types
-    useEffect(() => {
-        if (chatBoxRef.current && isChatOpen) {
-            const messageHeight = isMobile ? 26 : 32; // Reduced from 28 to 26 for mobile
-            const containerHeight = chatBoxRef.current.clientHeight;
-            const calculatedMax = Math.floor(containerHeight / messageHeight);
-            
-            // Increased mobile limit
-            const maxLimit = isMobile ? 21 : 15; // Increased mobile limit to 21
-            setMaxMessages(Math.min(calculatedMax > 0 ? calculatedMax : 1, maxLimit));
-        }
-    }, [height, isChatOpen, isMobile]);
 
     useEffect(() => {
         setIsClient(true);
@@ -76,12 +46,10 @@ export default function Chat() {
         }
         var emojiName = result.join('');
         socket.emit("login", emojiName);
-
         // list of connected users
         socket.on("users", data => {
             setUser({ usersList: JSON.parse(data) })
         });
-        
         // get the logged user
         socket.on("connecteduser", data => {
             setLoggedUser(JSON.parse(data));
@@ -89,31 +57,20 @@ export default function Chat() {
 
         // we get the messages
         socket.on("getMsg", data => {
-            setRecMsg(prev => {
-                const newMessages = [...prev.listMsg, JSON.parse(data)];
-                return {
-                    listMsg: newMessages.slice(-maxMessages)
-                };
-            });
+            let listMessages = recMsg.listMsg;
+            listMessages.push(JSON.parse(data));
+            setRecMsg({listMsg: listMessages});
+            // scrollToBottom();
         });
 
         socket.on("sendHistory", data => {
-            setRecMsg(prev => {
-                const newMessages = [...prev.listMsg, JSON.parse(data)];
-                return {
-                    listMsg: newMessages.slice(-maxMessages)
-                };
-            });
+            let listMessages = recMsg.listMsg;
+            listMessages.push(JSON.parse(data));
+            setRecMsg({listMsg: listMessages});
+            // scrollToBottom();
         });
 
-        // Cleanup function to remove listeners
-        return () => {
-            socket.off("users");
-            socket.off("connecteduser");
-            socket.off("getMsg");
-            socket.off("sendHistory");
-        };
-    }, [maxMessages]);
+    }, [recMsg.listMsg, setLoggedUser]);
 
     useEffect( () => {
         try {
@@ -159,7 +116,7 @@ export default function Chat() {
             </div>
             <hr className={`${styles.horizontalRule} ${!isChatOpen ? styles.hidden : ''}`} />
             <div className={`${styles.chatContent} ${!isChatOpen ? styles.hidden : ''}`}>
-                <div className={styles.chatBox} ref={chatBoxRef}>
+                <div className={styles.chatBox} >
                     {recMsg.listMsg?.map((msgInfo, index) => {
                         return (
                             <div className={styles.chatStream} key={index}>
