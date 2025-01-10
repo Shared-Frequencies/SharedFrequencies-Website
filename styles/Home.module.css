@@ -709,6 +709,7 @@
   border: solid 1px var(--light-color);
   border-radius: 0px;
   font-family: ApfelGrotezk;
+  font-size: 16px;
   background-color: var(--dark-color);
   color: var(--light-color);
 }
