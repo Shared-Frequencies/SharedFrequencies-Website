@@ -32,22 +32,36 @@ export default function Chat() {
 
     const [isChatOpen, setIsChatOpen] = useState(false);
     const [isClient, setIsClient] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     // Add state for max messages
-    const [maxMessages, setMaxMessages] = useState(20); // Default value
+    const [maxMessages, setMaxMessages] = useState(10);
     const chatBoxRef = useRef(null);
 
-    // Add this useEffect to calculate max messages based on height
-    // useEffect(() => {
-    //     if (chatBoxRef.current && isChatOpen) {
-    //         const messageHeight = 22; 
-    //         const containerHeight = chatBoxRef.current.clientHeight;
-    //         const calculatedMax = Math.floor(containerHeight / messageHeight);
-    //         console.log('Container height:', containerHeight);
-    //         console.log('Calculated max messages:', calculatedMax);
-    //         setMaxMessages(calculatedMax > 0 ? calculatedMax : 1);
-    //     }
-    // }, [height, isChatOpen]);
+    // Add mobile detection
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    // Modified useEffect to handle different device types
+    useEffect(() => {
+        if (chatBoxRef.current && isChatOpen) {
+            const messageHeight = isMobile ? 26 : 32; // Reduced from 28 to 26 for mobile
+            const containerHeight = chatBoxRef.current.clientHeight;
+            const calculatedMax = Math.floor(containerHeight / messageHeight);
+            
+            // Increased mobile limit
+            const maxLimit = isMobile ? 21 : 15; // Increased mobile limit to 21
+            setMaxMessages(Math.min(calculatedMax > 0 ? calculatedMax : 1, maxLimit));
+        }
+    }, [height, isChatOpen, isMobile]);
 
     useEffect(() => {
         setIsClient(true);
