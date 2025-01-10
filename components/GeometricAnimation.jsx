@@ -50,6 +50,8 @@ export default function GeometricAnimation() {
         p5.background(0, 0, 0, 255);
         time += 0.033;
         
+        const divisorWave = p5.map(p5.sin(time * 0.1), -1, 1, 8, 30);
+        
         particles.forEach(particle => {
             particle.x += 2;
             
@@ -77,7 +79,7 @@ export default function GeometricAnimation() {
             p5.noStroke();
             
             let stretch;
-            const speedFactor = Math.pow(Math.abs(currentSpeed), 2) / 25;
+            const speedFactor = Math.pow(Math.abs(currentSpeed), 2) / divisorWave;
             stretch = p5.map(speedFactor, 0, 1, 1, window.innerWidth <= 660 ? 5.0 : 10.0);
             
             p5.push();
