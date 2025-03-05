@@ -8,7 +8,7 @@ export default function Shop () {
                 <p className={styles.chatTitle}>Shop</p>
                 <hr className={styles.horizontalRule}/>
                 <a href="https://sharedfrequencies.myshopify.com/" target="_blank" rel="noreferrer">
-                    <img className={styles.merchPicture} src="sweatshirt.png" alt="sweatshirt mockups"></img>
+                    <img className={styles.merchPicture} src="shirt.png" alt="sweatshirt mockups"></img>
                 </a>
                 {/* <p className={styles.chatTitle}>Live Events</p>
                 <hr className={styles.horizontalRule}/>

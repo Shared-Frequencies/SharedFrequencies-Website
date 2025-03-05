@@ -10,16 +10,26 @@ const DonateBanner = () => {
       rel="noopener noreferrer"
       className={styles.donateBanner}
     >
-      {text.split('').map((char, index) => (
+      {text.split(' ').map((word, wordIndex) => (
         <span 
-          key={index} 
-          className={styles.wiggleChar}
+          key={`word-${wordIndex}`}
           style={{ 
-            animationDelay: `${index * 0.1}s`,
-            marginLeft: char === ' ' ? '0.5em' : '0.1em'
+            marginRight: '0.5em',
+            display: 'inline-block'
           }}
         >
-          {char === ' ' ? '\u00A0' : char}
+          {word.split('').map((char, charIndex) => (
+            <span 
+              key={`${wordIndex}-${charIndex}`}
+              className={styles.wiggleChar}
+              style={{ 
+                animationDelay: `${(wordIndex * word.length + charIndex) * 0.1}s`,
+                marginLeft: '0.1em'
+              }}
+            >
+              {char}
+            </span>
+          ))}
         </span>
       ))}
     </a>

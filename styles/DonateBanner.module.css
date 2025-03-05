@@ -18,11 +18,11 @@
   width: 100%;
   padding: 1.5rem;
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   text-decoration: none;
-  color: #fff;
-  background-color: #000;
+  color: #ffffff;
+  background-color: #000000;
   /* transition: background-color 0.3s ease, color 0.3s ease; */
 }
 

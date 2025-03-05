@@ -42,13 +42,14 @@ export default function Home({ schedule, about, artists, blogs }) {
                                     <Shop />
                                 </div>
                                 <GeometricAnimation />
-                                <Blog blogs={blogs} blogID={"1"} />
+
+                                {/* <Blog blogs={blogs} blogID={"1"} /> */}
                                 {/* <div className={styles.thirdsContainer}>
                                     <div className={styles.oneThird}>
                                         <LiveEvents />
                                     </div>
                                     <div className={styles.twoThirds}>
-                                        <DonateBanner />
+                                        
                                     </div>
                                 </div> */}
                             </div>
@@ -61,8 +62,8 @@ export default function Home({ schedule, about, artists, blogs }) {
                                 setCurrentPage={setCurrentPage}
                                 setCurrentResident={setCurrentResident}
                             />
-                            
                         </div>
+                        <DonateBanner />
                     </main>
                     <Footer/>
                 </div>
