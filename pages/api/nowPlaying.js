@@ -5,7 +5,8 @@ export default async function handler(req, res) {
             throw new Error('Network response was not ok');
         }
         const nowPlayingData = await nowPlayingRes.json();
-        const nowPlayingResult = nowPlayingData.shows;
+        // const nowPlayingResult = nowPlayingData.shows;
+        const nowPlayingResult = nowPlayingData.tracks;
 
         res.status(200).json(nowPlayingResult);
     } catch (error) {

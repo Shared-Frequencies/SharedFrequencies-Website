@@ -8,7 +8,7 @@ import useSWR from "swr";
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Header () {
-    const { data } = useSWR('/api/nowPlaying', fetcher, { refreshInterval: 10000 })
+    const { data } = useSWR('/api/nowPlaying', fetcher, { refreshInterval: 20000 })
 
     return (
         <header className={styles.header} style={{ position: 'sticky', top: 0, zIndex: 1000 }}>
@@ -18,17 +18,20 @@ export default function Header () {
             <div className={styles.ovalContainer}>
                 <PlayPauseToggle/>
                 <div className={styles.nowPlaying}>
-                    <p>{(data !== undefined && data.current !== undefined && data.current.name !== undefined) ?
+                    {/* <p>{(data !== undefined && data.current !== undefined && data.current.name !== undefined) ?
                         decode(data.current.name) :
+                        'Shared Frequencies Radio'}</p> */}
+                    <p>{(data !== undefined && data.current !== undefined && data.current.name !== undefined) ?
+                        decode(data.current.metadata.track_title) :
                         'Shared Frequencies Radio'}</p>
                 </div>
-                {(data?.current?.name && 
+                {/* {(data?.current?.name && 
                   data.current.name !== 'Shared Frequencies Rotation' && 
                   data.current.name !== 'Shared Frequencies Radio') && (
                     <div className={styles.liveIndicator}>
                         <p>LIVE</p>
                     </div>
-                )}
+                )} */}
             </div>
         </header>
     )
