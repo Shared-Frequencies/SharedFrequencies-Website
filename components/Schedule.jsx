@@ -99,7 +99,7 @@ export default function Schedule({schedule}) {
             <div className={styles.calendar}>
                 <p>We are currently on hiatus.</p>
                 <p>Until Season 12, enjoy reruns of our shows.</p>
-                <p>Support Medical Aid for Palestinians: <a href="https://www.maap.org.uk/donate">https://www.maap.org.uk/donate</a></p>
+                <p>Support Medical Aid for Palestinians: <a href="https://www.map.org.uk/">https://www.maap.org.uk/donate</a></p>
                 <ol className={styles.days}>
                     {
                         shortDates.map((day) => {
